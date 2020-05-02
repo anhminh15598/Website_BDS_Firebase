@@ -8,83 +8,102 @@
       row-key="id"
       v-loading="loading"
     >
+    <!--
       <el-table-column type="selection" width="55"></el-table-column>
-
+-->
       <el-table-column
         :label="fields.supplierProfile.label"
         :prop="fields.supplierProfile.name"
-        width="80"
-        align="center"
-      >
+        width="130"
+        align="center">
         <template slot-scope="scope">
           <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
+
       <el-table-column
+        :label="fields.supplierLocation.label"
+        :prop="fields.supplierLocation.name">
+      </el-table-column>
+
+       <el-table-column
         :label="fields.supplierNames.label"
-        :prop="fields.supplierNames.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'supplierNames') }}</template>
-      </el-table-column>
-<!--
-
-      <el-table-column
-        :label="fields.supplierBusinessName.label"
-        :prop="fields.supplierBusinessName.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'supplierBusinessName') }}</template>
+        :prop="fields.supplierNames.name">
       </el-table-column>
 
       <el-table-column
-        :label="fields.supplierEmail.label"
-        :prop="fields.supplierEmail.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'supplierEmail') }}</template>
+        :label="fields.supplierPhoneNumber.label"
+        :prop="fields.supplierPhoneNumber.name">
       </el-table-column>
 
       <el-table-column
-        :label="fields.supplierPayType.label"
-        :prop="fields.supplierPayType.name"
-        sortable="center"
-      >
+        :label="fields.supplierProfile1.label"
+        :prop="fields.supplierProfile1.name"
+        width="100"
+        align="center">
         <template slot-scope="scope">
-          <el-tag type="warning">{{ presenter(scope.row, 'supplierPayType') }}</el-tag>
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile1')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
--->
+      
       <el-table-column
-        :label="fields.supplierStatus.label"
-        :prop="fields.supplierStatus.name"
-        sortable="center"
-      >
+        :label="fields.supplierProfile2.label"
+        :prop="fields.supplierProfile2.name"
+        width="100"
+        align="center">
         <template slot-scope="scope">
-          <el-tag type="info">{{ presenter(scope.row, 'supplierStatus') }}</el-tag>
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile2')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
+      <el-table-column
+        :label="fields.supplierProfile3.label"
+        :prop="fields.supplierProfile3.name"
+        width="100"
+        align="center">
+        <template slot-scope="scope">
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile3')"></app-list-item-app-avatar>
+        </template>
+      </el-table-column>
+
+      <el-table-column
+        :label="fields.supplierProfile4.label"
+        :prop="fields.supplierProfile4.name"
+        width="100"
+        align="center">
+        <template slot-scope="scope">
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile4')"></app-list-item-app-avatar>
+        </template>
+      </el-table-column>
+
+       <el-table-column
+        :label="fields.supplierProfile5.label"
+        :prop="fields.supplierProfile5.name"
+        width="100"
+        align="center">
+        <template slot-scope="scope">
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile5')"></app-list-item-app-avatar>
+        </template>
+      </el-table-column>
+      
+      <el-table-column
+        :label="fields.supplierProfile6.label"
+        :prop="fields.supplierProfile6.name"
+        width="100"
+        align="center">
+        <template slot-scope="scope">
+          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile6')"></app-list-item-app-avatar>
+        </template>
+      </el-table-column>
+
+      <el-table-column :fixed="isMobile? undefined : 'right'" align="right" width="80">
         <template slot-scope="scope">
           <div class="table-actions">
-            <router-link :to="`/suppliers/${scope.row.id}`">
-              <el-button type="primary" icon="el-icon-view" circle>
-              </el-button>
-            </router-link>
-
             <router-link :to="`/suppliers/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
               <el-button type="info" icon="el-icon-edit" circle>
               </el-button>
             </router-link>
 
-            <el-button
-              :disabled="destroyLoading"
-              @click="doDestroyWithConfirm(scope.row.id)"
-              type="danger" icon="el-icon-fa-trash" circle
-              v-if="hasPermissionToDestroy"
-            >
-            </el-button>
           </div>
         </template>
       </el-table-column>

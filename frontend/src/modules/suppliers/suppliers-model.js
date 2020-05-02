@@ -19,11 +19,42 @@ function enumeratorLabel(name, value) {
   return i18n(`entities.suppliers.enumerators.${name}.${value}`);
 }
 
+
+
 const fields = {
   id: new IdField('id', label('id')),
+
   supplierProfile: new ImagesField('supplierProfile', label('supplierProfile'), 'suppliers/supplierProfile', {
     "required": true,
-    "max": 10
+    "max": 1
+  }),
+  supplierProfile1: new ImagesField('supplierProfile1', label('supplierProfile1'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile2: new ImagesField('supplierProfile2', label('supplierProfile2'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile3: new ImagesField('supplierProfile3', label('supplierProfile3'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile4: new ImagesField('supplierProfile4', label('supplierProfile4'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile5: new ImagesField('supplierProfile5', label('supplierProfile5'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile6: new ImagesField('supplierProfile6', label('supplierProfile6'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
+  }),
+  supplierProfile7: new ImagesField('supplierProfile7', label('supplierProfile7'), 'suppliers/supplierProfile', {
+    "required": true,
+    "max": 1
   }),
   supplierNames: new StringField('supplierNames', label('supplierNames'), {
     "required": true

@@ -141,7 +141,7 @@ const fields = {
     required: true,
   }),
   rolesRequired: new RolesField('roles', label('roles'), {
-    required: true,
+    // required: true,
   }),
   roles: new RolesField('roles', label('roles')),
   createdAt: new DateTimeField(

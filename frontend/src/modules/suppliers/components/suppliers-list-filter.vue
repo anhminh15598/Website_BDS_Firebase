@@ -12,61 +12,11 @@
     ref="form"
   >
     <el-row>
-      
-        <el-form-item :prop="fields.supplierNames.name">
-          <el-input :placeholder="fields.supplierNames.label" v-model="model[fields.supplierNames.name]"/>
-        </el-form-item>
-      
-
-      <!--
-        <el-form-item :prop="fields.supplierBusinessName.name">
-          <el-input :placeholder="fields.supplierBusinessName.label" v-model="model[fields.supplierBusinessName.name]"/>
-        </el-form-item>
-      
-      
-        <el-form-item :prop="fields.supplierPhoneNumber.name">
-          <el-input :placeholder="fields.supplierPhoneNumber.label" v-model="model[fields.supplierPhoneNumber.name]"/>
-        </el-form-item>
-      
-
-      
-        <el-form-item :prop="fields.supplierPayTerm.name">
-          <el-select :placeholder="fields.supplierPayTerm.label" v-model="model[fields.supplierPayTerm.name]">
-            <el-option :value="undefined">--</el-option>
-            <el-option
-              :key="option.id"
-              :label="option.label"
-              :value="option.id"
-              v-for="option in fields.supplierPayTerm.options"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      
--->
-
-      
-        <el-form-item  :prop="fields.supplierStatus.name">
-          <el-select :placeholder="fields.supplierStatus.label" v-model="model[fields.supplierStatus.name]">
-            <el-option :value="undefined">--</el-option>
-            <el-option
-              :key="option.id"
-              :label="option.label"
-              :value="option.id"
-              v-for="option in fields.supplierStatus.options"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      
+    
     </el-row>
 
     <div class="filter-buttons">
-      <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary" round>
-        <app-i18n code="common.search"></app-i18n>
-      </el-button>
-
-      <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo" round>
-        <app-i18n code="common.reset"></app-i18n>
-      </el-button>
+ 
     </div>
   </el-form>
     

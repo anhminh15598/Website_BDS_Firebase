@@ -5,13 +5,14 @@
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
-
+<!--
     <router-link :to="{ path: '/suppliers/import' }" v-if="hasPermissionToImport">
       <el-button icon="el-icon-fa-upload" type="info" round>
         <app-i18n code="common.import"></app-i18n>
       </el-button>
     </router-link>
-
+-->
+<!--
     <el-tooltip
       :content="destroyButtonTooltip"
       :disabled="!destroyButtonTooltip"
@@ -29,6 +30,7 @@
         </el-button>
       </span>
     </el-tooltip>
+-->
 <!--
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'suppliers' } }"

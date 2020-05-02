@@ -19,6 +19,7 @@
         <template slot-scope="scope">
           <app-list-item-image :value="presenter(scope.row, 'brandCover')"></app-list-item-image>
         </template>
+        
       </el-table-column>
 
 

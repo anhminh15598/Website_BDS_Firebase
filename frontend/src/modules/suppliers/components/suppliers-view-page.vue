@@ -32,6 +32,13 @@
         <div style="margin-left: 50px">
 
         <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfile')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilemot')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilehai')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfileba')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilebon')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilenam')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilesau')"></app-view-item-image>
+        <app-view-item-image :label="fields.supplierProfile.label" :value="presenter(record, 'supplierProfilebay')"></app-view-item-image>
 
         <app-view-item-text :label="fields.supplierNames.label" :value="presenter(record, 'supplierNames')"></app-view-item-text>
 <!--

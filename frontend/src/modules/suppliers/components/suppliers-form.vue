@@ -15,22 +15,8 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.supplierProfile.label"
-          :prop="fields.supplierProfile.name"
-          :required="fields.supplierProfile.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-image-upload
-              :max="fields.supplierProfile.max"
-              :path="fields.supplierProfile.path"
-              :schema="fields.supplierProfile.fileSchema"
-              v-model="model[fields.supplierProfile.name]"
-            ></app-image-upload>
-          </el-col>
-        </el-form-item>
 
-        <el-form-item
+       <el-form-item
           :label="fields.supplierNames.label"
           :prop="fields.supplierNames.name"
           :required="fields.supplierNames.required"
@@ -39,27 +25,7 @@
             <el-input v-model="model[fields.supplierNames.name]" />
           </el-col>
         </el-form-item>
-<!--
-        <el-form-item
-          :label="fields.supplierBusinessName.label"
-          :prop="fields.supplierBusinessName.name"
-          :required="fields.supplierBusinessName.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.supplierBusinessName.name]" />
-          </el-col>
-        </el-form-item>
 
-        <el-form-item
-          :label="fields.supplierEmail.label"
-          :prop="fields.supplierEmail.name"
-          :required="fields.supplierEmail.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.supplierEmail.name]" />
-          </el-col>
-        </el-form-item>
--->
         <el-form-item
           :label="fields.supplierLocation.label"
           :prop="fields.supplierLocation.name"
@@ -70,6 +36,8 @@
           </el-col>
         </el-form-item>
 
+        
+
         <el-form-item
           :label="fields.supplierPhoneNumber.label"
           :prop="fields.supplierPhoneNumber.name"
@@ -79,56 +47,132 @@
             <el-input v-model="model[fields.supplierPhoneNumber.name]" />
           </el-col>
         </el-form-item>
-<!--
+
+
 
         <el-form-item
-          :label="fields.supplierPayTerm.label"
-          :prop="fields.supplierPayTerm.name"
-          :required="fields.supplierPayTerm.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-select placeholder v-model="model[fields.supplierPayTerm.name]">
-              <el-option :value="undefined">--</el-option>
-              <el-option
-                :key="option.id"
-                :label="option.label"
-                :value="option.id"
-                v-for="option in fields.supplierPayTerm.options"
-              ></el-option>
-            </el-select>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item
-          :label="fields.supplierPayType.label"
-          :prop="fields.supplierPayType.name"
-          :required="fields.supplierPayType.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-radio-group v-model="model[fields.supplierPayType.name]">
-              <el-radio
-                :key="option.id"
-                :label="option.id"
-                v-for="option of fields.supplierPayType.options"
-              >{{option.label}}</el-radio>
-            </el-radio-group>
-          </el-col>
-        </el-form-item>
--->
-        <el-form-item
-          :label="fields.supplierDocs.label"
-          :prop="fields.supplierDocs.name"
-          :required="fields.supplierDocs.required"
+          :label="fields.supplierProfile.label"
+          :prop="fields.supplierProfile.name"
+          :required="fields.supplierProfile.required"
         >
           <el-col :lg="11" :md="16" :sm="24">
             <app-file-upload
-              :max="fields.supplierDocs.max"
-              :path="fields.supplierDocs.path"
-              :schema="fields.supplierDocs.fileSchema"
-              v-model="model[fields.supplierDocs.name]"
+              :max="fields.supplierProfile.max"
+              :path="fields.supplierProfile.path"
+              :schema="fields.supplierProfile.fileSchema"
+              v-model="model[fields.supplierProfile.name]"
             ></app-file-upload>
           </el-col>
         </el-form-item>
+
+         <el-form-item
+          :label="fields.supplierProfile1.label"
+          :prop="fields.supplierProfile1.name"
+          :required="fields.supplierProfile1.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile1.max"
+              :path="fields.supplierProfile1.path"
+              :schema="fields.supplierProfile1.fileSchema"
+              v-model="model[fields.supplierProfile1.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.supplierProfile2.label"
+          :prop="fields.supplierProfile2.name"
+          :required="fields.supplierProfile2.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile2.max"
+              :path="fields.supplierProfile2.path"
+              :schema="fields.supplierProfile2.fileSchema"
+              v-model="model[fields.supplierProfile2.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.supplierProfile3.label"
+          :prop="fields.supplierProfile3.name"
+          :required="fields.supplierProfile3.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile3.max"
+              :path="fields.supplierProfile3.path"
+              :schema="fields.supplierProfile3.fileSchema"
+              v-model="model[fields.supplierProfile3.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.supplierProfile4.label"
+          :prop="fields.supplierProfile4.name"
+          :required="fields.supplierProfile4.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile4.max"
+              :path="fields.supplierProfile4.path"
+              :schema="fields.supplierProfile4.fileSchema"
+              v-model="model[fields.supplierProfile4.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.supplierProfile5.label"
+          :prop="fields.supplierProfile5.name"
+          :required="fields.supplierProfile5.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile5.max"
+              :path="fields.supplierProfile5.path"
+              :schema="fields.supplierProfile5.fileSchema"
+              v-model="model[fields.supplierProfile5.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.supplierProfile6.label"
+          :prop="fields.supplierProfile6.name"
+          :required="fields.supplierProfile6.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile6.max"
+              :path="fields.supplierProfile6.path"
+              :schema="fields.supplierProfile6.fileSchema"
+              v-model="model[fields.supplierProfile6.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+<!--
+        <el-form-item
+          :label="fields.supplierProfile7.label"
+          :prop="fields.supplierProfile7.name"
+          :required="fields.supplierProfile7.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.supplierProfile7.max"
+              :path="fields.supplierProfile7.path"
+              :schema="fields.supplierProfile7.fileSchema"
+              v-model="model[fields.supplierProfile7.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+        -->
+
+
+
         <el-form-item
           :label="fields.supplierStatus.label"
           :prop="fields.supplierStatus.name"
@@ -147,38 +191,6 @@
           </el-col>
         </el-form-item>
 
-
-<!--
-        <el-form-item
-          :label="fields.supplierCreditBalance.label"
-          :prop="fields.supplierCreditBalance.name"
-          :required="fields.supplierCreditBalance.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.supplierCreditBalance.scale" :step="0.1" v-model="model[fields.supplierCreditBalance.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
--->
-        
-
-
-<!--
-        <el-form-item
-          :label="fields.userId.label"
-          :prop="fields.userId.name"
-          :required="fields.userId.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-iam-user-autocomplete-input
-              :fetchFn="fields.userId.fetchFn"
-              :mapperFn="fields.userId.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.userId.name]"
-              mode="single"
-            ></app-iam-user-autocomplete-input>
-          </el-col>
-        </el-form-item>
--->
 
       <el-form-item>
         <div class="form-buttons">
@@ -213,6 +225,14 @@ const { fields } = SuppliersModel;
 const formSchema = new FormSchema([
   fields.id,
   fields.supplierProfile,
+  fields.supplierProfile1,
+  fields.supplierProfile2,
+  fields.supplierProfile3,
+  fields.supplierProfile4,
+  fields.supplierProfile5,
+  fields.supplierProfile6,
+  fields.supplierProfile7,
+
   fields.supplierNames,
   fields.supplierBusinessName,
   fields.supplierEmail,
