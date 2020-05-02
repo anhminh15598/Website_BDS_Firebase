@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "development": "duanbdsteam03",
+    "production": "duanbdsteam03",
+    "admin": "duanbdsteam03"
+  }
+}
