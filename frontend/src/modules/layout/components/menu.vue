@@ -126,7 +126,7 @@
 
 
 
-        
+        <!--
         <el-menu-item
                 :class="classFor('/staff')"
                 :route="{ path: '/staff' }"
@@ -138,7 +138,7 @@
           <app-i18n code="entities.staff.menu"></app-i18n>
         </span>
         </el-menu-item>
-
+        -->
 
           <el-menu-item
                   :class="classFor('/brands')"
@@ -390,6 +390,24 @@
                 :route="{ path: '/suppliers' }"
                 index="/suppliers"
                 v-if="hasPermissionToSuppliers"
+        >
+          <i class="el-icon-fa-circle-o"></i>
+          <span slot="title">
+          <app-i18n code="entities.suppliers.menu"></app-i18n>
+        </span>
+        </el-menu-item>
+      </el-submenu>
+
+
+      <el-submenu index="5">
+        <template slot="title">
+          <span>Quản lý thống kê, báo cáo</span>
+        </template>
+        <el-menu-item
+                :class="classFor('/notice')"
+                  :route="{ path: '/notice' }"
+                  index="/notice"
+                  v-if="hasPermissionToNotice"
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">

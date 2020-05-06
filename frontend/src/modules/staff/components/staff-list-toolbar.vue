@@ -29,7 +29,7 @@
         </el-button>
       </span>
     </el-tooltip>
-<!--
+
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'staff' } }"
       v-if="hasPermissionToAuditLogs"
@@ -51,7 +51,6 @@
         </el-button>
       </span>
     </el-tooltip>
-    -->
   </div>
 </template>
 

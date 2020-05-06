@@ -41,26 +41,6 @@
         </el-form-item>
 
         <el-form-item
-          :label="fields.staffDateOfBirth.label"
-          :prop="fields.staffDateOfBirth.name"
-          :required="fields.staffDateOfBirth.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
-          </el-col>
-        </el-form-item>
-
-        <el-form-item
-          :label="fields.staffPhoneNumber.label"
-          :prop="fields.staffPhoneNumber.name"
-          :required="fields.staffPhoneNumber.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.staffPhoneNumber.name]" />
-          </el-col>
-        </el-form-item>
-
-        <el-form-item
           :label="fields.staffUserId.label"
           :prop="fields.staffUserId.name"
           :required="fields.staffUserId.required"
@@ -76,41 +56,16 @@
           </el-col>
         </el-form-item>
 
-
-
         <el-form-item
-          :label="fields.staffMaritalStatus.label"
-          :prop="fields.staffMaritalStatus.name"
-          :required="fields.staffMaritalStatus.required"
+          :label="fields.staffPhoneNumber.label"
+          :prop="fields.staffPhoneNumber.name"
+          :required="fields.staffPhoneNumber.required"
         >
-
-        
           <el-col :lg="11" :md="16" :sm="24">
-            <el-select placeholder v-model="model[fields.staffMaritalStatus.name]">
-              <el-option :value="undefined">--</el-option>
-              <el-option
-                :key="option.id"
-                :label="option.label"
-                :value="option.id"
-                v-for="option in fields.staffMaritalStatus.options"
-              ></el-option>
-            </el-select>
+            <el-input v-model="model[fields.staffPhoneNumber.name]" />
           </el-col>
         </el-form-item>
 
-        <el-form-item
-          :label="fields.staffCommision.label"
-          :prop="fields.staffCommision.name"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.staffCommision.scale" :step="0.1" v-model="model[fields.staffCommision.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
-        
-        
-        
-
-<!--
         <el-form-item
           :label="fields.staffAbout.label"
           :prop="fields.staffAbout.name"
@@ -177,18 +132,43 @@
           </el-col>
         </el-form-item>
 
-        
--->
+        <el-form-item
+          :label="fields.staffCommision.label"
+          :prop="fields.staffCommision.name"
+          :required="fields.staffCommision.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-input-number :precision="fields.staffCommision.scale" :step="0.1" v-model="model[fields.staffCommision.name]" ></el-input-number>
+          </el-col>
+        </el-form-item>
 
-        
+        <el-form-item
+          :label="fields.staffDateOfBirth.label"
+          :prop="fields.staffDateOfBirth.name"
+          :required="fields.staffDateOfBirth.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
+          </el-col>
+        </el-form-item>
 
-
-
-
-<!--
-        
-
-        
+        <el-form-item
+          :label="fields.staffMaritalStatus.label"
+          :prop="fields.staffMaritalStatus.name"
+          :required="fields.staffMaritalStatus.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-select placeholder v-model="model[fields.staffMaritalStatus.name]">
+              <el-option :value="undefined">--</el-option>
+              <el-option
+                :key="option.id"
+                :label="option.label"
+                :value="option.id"
+                v-for="option in fields.staffMaritalStatus.options"
+              ></el-option>
+            </el-select>
+          </el-col>
+        </el-form-item>
 
         <el-form-item
           :label="fields.staffIdentityCard.label"
@@ -215,7 +195,6 @@
             </el-radio-group>
           </el-col>
         </el-form-item>
-        -->
       <el-form-item>
         <div class="form-buttons">
           <el-button
@@ -256,12 +235,12 @@ const formSchema = new FormSchema([
   fields.staffCustomInfo,
   fields.staffCv,
   fields.staffDocuments,
-  // fields.staffIsAServiceWorker,
-  // fields.staffCommision,
+  fields.staffIsAServiceWorker,
+  fields.staffCommision,
   fields.staffDateOfBirth,
   fields.staffMaritalStatus,
-  // fields.staffIdentityCard,
-  // fields.staffAccessApps,
+  fields.staffIdentityCard,
+  fields.staffAccessApps,
 ]);
 
 export default {

@@ -14,7 +14,7 @@
         :label="fields.staffProfile.label"
         :prop="fields.staffProfile.name"
         align="center"
-        width="120"
+        width="80"
       >
         <template slot-scope="scope">
           <app-list-item-app-avatar :value="presenter(scope.row, 'staffProfile')"></app-list-item-app-avatar>
@@ -29,7 +29,7 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'staffNames') }}</template>
       </el-table-column>
 
-      <el-table-column :label="fields.staffUserId.label" :prop="fields.staffUserId.name" width="220">
+      <el-table-column :label="fields.staffUserId.label" :prop="fields.staffUserId.name">
         <template slot-scope="scope">
           <app-list-item-relation-to-one
             :label="fields.staffUserId.label"
@@ -49,7 +49,6 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'staffPhoneNumber') }}</template>
       </el-table-column>
 
-<!--
       <el-table-column
         :label="fields.staffIsAServiceWorker.label"
         :prop="fields.staffIsAServiceWorker.name"
@@ -58,7 +57,7 @@
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'staffIsAServiceWorker') }}</template>
       </el-table-column>
--->
+
       <el-table-column
         :label="fields.staffCommision.label"
         :prop="fields.staffCommision.name"
@@ -91,7 +90,6 @@
           </div>
         </template>
       </el-table-column>
-      
     </el-table>
 
     <div class="el-pagination-wrapper">

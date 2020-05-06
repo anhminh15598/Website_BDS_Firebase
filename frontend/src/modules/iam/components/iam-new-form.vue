@@ -9,9 +9,7 @@
       class="form"
       ref="form"
     >
-
-      <el-form-item :prop="fields.email.name">
-            <el-col :lg="11" :md="16" :sm="24">
+    <el-form-item :prop="fields.email.name">
             <el-input
               :placeholder="fields.email.label"
               auto-complete="off"
@@ -19,22 +17,29 @@
               type="text"
               v-model="model[fields.email.name]"
             ></el-input>
-            </el-col>
           </el-form-item>
 
-      <el-form-item :prop="fields.password.name">
-              <el-col :lg="11" :md="16" :sm="24">
 
-            <el-input
-              :placeholder="fields.password.label"
-              auto-complete="off"
-              type="password"
-              v-model="model[fields.password.name]"
-            ></el-input>
-                    </el-col>
-
+    <!--
+      <el-form-item
+        :label="fields.emails.label"
+        :prop="fields.emails.name"
+        :required="fields.emails.required"
+        v-if="!single"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-select
+            :no-data-text="i18n('iam.new.emailsHint')"
+            allow-create
+            default-first-option
+            filterable
+            multiple
+            placeholder
+            ref="focus"
+            v-model="model[fields.emails.name]"
+          ></el-select>
+        </el-col>
       </el-form-item>
-
 
       <el-form-item
         :label="fields.email.label"
@@ -46,7 +51,7 @@
           <el-input ref="focus" v-model="model[fields.email.name]" />
         </el-col>
       </el-form-item>
-
+-->
       <div v-if="isSingleEmail">
         <el-form-item
           :label="fields.firstName.label"
@@ -111,6 +116,7 @@
         </el-col>
       </el-form-item>
 
+  
 
       <el-form-item>
         <div class="form-buttons">
@@ -145,7 +151,6 @@ import { i18n } from '@/i18n';
 const { fields } = UserModel;
 const singleFormSchema = new FormSchema([
   fields.email,
-  fields.password,
   fields.firstName,
   fields.lastName,
   fields.phoneNumber,
@@ -155,7 +160,6 @@ const singleFormSchema = new FormSchema([
 
 const multipleFormSchema = new FormSchema([
   fields.emails,
-  fields.password,
   fields.firstName,
   fields.lastName,
   fields.phoneNumber,
@@ -207,11 +211,11 @@ export default {
   },
 
   methods: {
-
     ...mapActions({
+      // doSendEmailConfirmation:
+      //   'auth/doSendEmailConfirmation',
       doRegisterEmailAndPassword: 'auth/doRegisterEmailAndPassword',
-      doSendEmailConfirmation:
-        'auth/doSendEmailConfirmation',
+
     }),
     doReset() {
       this.model = this.formSchema.initialValues();
@@ -221,17 +225,17 @@ export default {
     async doSubmit() {
       try {
         await this.$refs.form.validate();
+        // await this.doSendEmailConfirmation(this.model.email);
       } catch (error) {
         return;
       }
-
+      
       await this.doRegisterEmailAndPassword({
           email: this.model.email,
-          password: this.model.password,
+          password: '123123',
         },
-      ),
-      await fields.doSendEmailConfirmation(this.model.email)
-
+      );
+      
 
       const { id, ...values } = this.formSchema.cast(
         this.model,

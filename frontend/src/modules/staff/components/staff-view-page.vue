@@ -64,29 +64,6 @@
                       </div></el-col>
                   </el-row>
 
-                  
-
-                  <el-row>
-                      <el-col :span="8">
-                          <div class="grid-content">
-                              <app-view-item-text :label="fields.staffCommision.label" :value="presenter(record, 'staffCommision')"></app-view-item-text>
-                          </div></el-col>
-                      <el-col :span="8"><div class="grid-content">
-                          <app-view-item-text :label="fields.staffDateOfBirth.label" :value="presenter(record, 'staffDateOfBirth')"></app-view-item-text>
-                      </div></el-col>
-                      <el-col :span="8"><div class="grid-content">
-                          <app-view-item-text :label="fields.staffMaritalStatus.label" :value="presenter(record, 'staffMaritalStatus')"></app-view-item-text>
-                      </div></el-col>
-                      <el-col :span="8">
-                          <div class="grid-content">
-                              <app-view-item-text :label="fields.staffIdentityCard.label" :value="presenter(record, 'staffIdentityCard')"></app-view-item-text>
-                          </div></el-col>
-                  </el-row>
-
-                  <el-row>
-                      
-                  </el-row>
-<!--
                   <el-row>
                       <el-col :span="8">
                           <div class="grid-content">
@@ -99,18 +76,32 @@
                           <app-view-item-text :label="fields.staffIsAServiceWorker.label" :value="presenter(record, 'staffIsAServiceWorker')"></app-view-item-text>
                       </div></el-col>
                   </el-row>
--->
-<!--
-                      
+
+                  <el-row>
+                      <el-col :span="8">
+                          <div class="grid-content">
+                              <app-view-item-text :label="fields.staffCommision.label" :value="presenter(record, 'staffCommision')"></app-view-item-text>
+                          </div></el-col>
+                      <el-col :span="8"><div class="grid-content">
+                          <app-view-item-text :label="fields.staffDateOfBirth.label" :value="presenter(record, 'staffDateOfBirth')"></app-view-item-text>
+                      </div></el-col>
+                      <el-col :span="8"><div class="grid-content">
+                          <app-view-item-text :label="fields.staffMaritalStatus.label" :value="presenter(record, 'staffMaritalStatus')"></app-view-item-text>
+                      </div></el-col>
+                  </el-row>
+
+                  <el-row>
+                      <el-col :span="8">
+                          <div class="grid-content">
+                              <app-view-item-text :label="fields.staffIdentityCard.label" :value="presenter(record, 'staffIdentityCard')"></app-view-item-text>
+                          </div></el-col>
                       <el-col :span="8"><div class="grid-content">
                           <app-view-item-text :label="fields.staffAccessApps.label" :value="presenter(record, 'staffAccessApps')"></app-view-item-text>
                       </div></el-col>
-
                       <el-col :span="8"><div class="grid-content">
                           <app-view-item-text :label="fields.createdAt.label" :value="presenter(record, 'createdAt')"></app-view-item-text>
                       </div></el-col>
--->
-                 
+                  </el-row>
 
             </div>
         </el-card>

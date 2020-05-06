@@ -15,11 +15,6 @@
         <el-form-item :prop="fields.staffNames.name">
           <el-input :placeholder="fields.staffNames.label" v-model="model[fields.staffNames.name]"/>
         </el-form-item>
-        <el-form-item :prop="fields.staffPhoneNumber.name">
-          <el-input :placeholder="fields.staffPhoneNumber.label" v-model="model[fields.staffPhoneNumber.name]"/>
-        </el-form-item>
-<!--
-
 
         <el-form-item :prop="fields.staffIsAServiceWorker.name">
           <el-select :placeholder="fields.staffIsAServiceWorker.label" v-model="model[fields.staffIsAServiceWorker.name]">
@@ -44,7 +39,6 @@
             ></el-option>
           </el-select>
         </el-form-item>
-        -->
     </el-row>
 
     <div class="filter-buttons">

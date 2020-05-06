@@ -13,6 +13,12 @@ module.exports = class User extends AbstractEntityModel {
       avatars: new types.Files(),
       authenticationUid: new types.String(null, 255),
       roles: new types.StringArray(),
+      staffPhongBan: new types.Enumerator([
+        "phongban1",
+        "phongban2",
+        "phongban3",
+        "phongban4"
+      ]),
       importHash: new types.String(null, 255),
     });
   }

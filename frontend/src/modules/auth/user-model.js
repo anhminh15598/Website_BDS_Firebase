@@ -69,7 +69,7 @@ function label(name) {
 }
 
 const fields = {
-  id: new IdField('id', label('id')),
+  id: new IdField('id', label('id'), { max: 10 }),
   firstName: new StringField(
     'firstName',
     label('firstName'),
@@ -138,12 +138,14 @@ const fields = {
     { max: 1 },
   ),
   emails: new EmailsField('emails', label('emails'), {
-    required: true,
+    // required: true,
   }),
   rolesRequired: new RolesField('roles', label('roles'), {
     // required: true,
   }),
   roles: new RolesField('roles', label('roles')),
+
+
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),

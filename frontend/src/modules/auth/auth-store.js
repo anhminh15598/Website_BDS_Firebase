@@ -273,19 +273,20 @@ export default {
           email,
           password,
         );
-        const currentUser = await service.fetchMe();
-        currentUser.emailVerified =
-          authenticationUser.emailVerified;
 
+        // const currentUser = await service.fetchMe();
+        // currentUser.emailVerified =
+        //   authenticationUser.emailVerified;
         // in background
-        service.reauthenticateWithStorageToken();
+        // service.reauthenticateWithStorageToken();
 
         commit('AUTH_SUCCESS', {
-          currentUser,
+          // currentUser,
           authenticationUser,
         });
 
         routerAsync().push('/');
+
       } catch (error) {
         await service.signout();
         Errors.handle(error);

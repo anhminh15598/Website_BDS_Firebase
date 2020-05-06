@@ -53,11 +53,9 @@ const fields = {
   }),
   staffDateOfBirth: new DateField('staffDateOfBirth', label('staffDateOfBirth'), {}),
   staffMaritalStatus: new EnumeratorField('staffMaritalStatus', label('staffMaritalStatus'), [
-    { id: 'phongban1', label: enumeratorLabel('staffMaritalStatus', 'phongban1') },
-    { id: 'phongban2', label: enumeratorLabel('staffMaritalStatus', 'phongban2') },
-    { id: 'phongban3', label: enumeratorLabel('staffMaritalStatus', 'phongban3') },
-    { id: 'phongban3', label: enumeratorLabel('staffMaritalStatus', 'phongban4') },
-
+    { id: 'Married', label: enumeratorLabel('staffMaritalStatus', 'Married') },
+    { id: 'Single', label: enumeratorLabel('staffMaritalStatus', 'Single') },
+    { id: 'Divorced', label: enumeratorLabel('staffMaritalStatus', 'Divorced') },
   ], {}),
   staffIdentityCard: new StringField('staffIdentityCard', label('staffIdentityCard'), {}),
   staffAccessApps: new EnumeratorField('staffAccessApps', label('staffAccessApps'), [
