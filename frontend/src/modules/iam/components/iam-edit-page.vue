@@ -95,17 +95,19 @@
             <div class="grid-content">
 
               <el-form-item
-                      :label="fields.lastName.label"
-                      :prop="fields.lastName.name"
-                      :required="fields.lastName.required"
-              >
-                <el-col :lg="11" :md="16" :sm="24">
-                  <el-input v-model="model[fields.lastName.name]" />
-                </el-col>
-              </el-form-item>
+          :label="fields.staffDateOfBirth.label"
+          :prop="fields.staffDateOfBirth.name"
+          :required="fields.staffDateOfBirth.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
+          </el-col>
+        </el-form-item>
 
             </div>
           </el-col>
+
+          
 
           <el-col :span="8">
             <div class="grid-content">
@@ -185,6 +187,7 @@ const { fields } = UserModel;
 const formSchema = new FormSchema([
   fields.id,
   fields.email,
+  fields.staffDateOfBirth,
   fields.firstName,
   fields.lastName,
   fields.phoneNumber,

@@ -10,6 +10,8 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
+
         ],
         allowedStorageFolders: ['user'],
       },
@@ -19,6 +21,8 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
+
         ],
       },
       iamImport: {
@@ -27,6 +31,8 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
+
         ],
       },
       iamRead: {

@@ -24,8 +24,7 @@
             <el-input v-model="model[fields.variationName.name]" ref="focus" />
           </el-col>
         </el-form-item>
-
-        <el-form-item
+<!-- <el-form-item
           :label="fields.variationValues.label"
           :prop="fields.variationValues.name"
           :required="fields.variationValues.required"
@@ -33,7 +32,10 @@
           <el-col :lg="11" :md="16" :sm="24">
             <el-input :rows="4" type="textarea" v-model="model[fields.variationValues.name]" />
           </el-col>
-        </el-form-item>
+        </el-form-item> -->
+       
+
+
       <el-form-item>
         <div class="form-buttons">
           <el-button

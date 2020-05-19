@@ -8,52 +8,10 @@
       @submit.native.prevent="doSubmit"
       class="form"
       ref="form"
+      v-if="model"
+
     >
-    <el-form-item :prop="fields.email.name">
-            <el-input
-              :placeholder="fields.email.label"
-              auto-complete="off"
-              ref="focus"
-              type="text"
-              v-model="model[fields.email.name]"
-            ></el-input>
-          </el-form-item>
-
-
-    <!--
-      <el-form-item
-        :label="fields.emails.label"
-        :prop="fields.emails.name"
-        :required="fields.emails.required"
-        v-if="!single"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <el-select
-            :no-data-text="i18n('iam.new.emailsHint')"
-            allow-create
-            default-first-option
-            filterable
-            multiple
-            placeholder
-            ref="focus"
-            v-model="model[fields.emails.name]"
-          ></el-select>
-        </el-col>
-      </el-form-item>
-
-      <el-form-item
-        :label="fields.email.label"
-        :prop="fields.email.name"
-        :required="fields.email.required"
-        v-if="single"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <el-input ref="focus" v-model="model[fields.email.name]" />
-        </el-col>
-      </el-form-item>
--->
-      <div v-if="isSingleEmail">
-        <el-form-item
+     <el-form-item
           :label="fields.firstName.label"
           :prop="fields.firstName.name"
           :required="fields.firstName.required"
@@ -63,17 +21,7 @@
           </el-col>
         </el-form-item>
 
-        <el-form-item
-          :label="fields.lastName.label"
-          :prop="fields.lastName.name"
-          :required="fields.lastName.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.lastName.name]" />
-          </el-col>
-        </el-form-item>
-
-        <el-form-item
+         <el-form-item
           :label="fields.phoneNumber.label"
           :prop="fields.phoneNumber.name"
           :required="fields.phoneNumber.required"
@@ -83,23 +31,28 @@
           </el-col>
         </el-form-item>
 
-        <el-form-item
-          :label="fields.avatarsIam.label"
-          :prop="fields.avatarsIam.name"
-          :required="fields.avatarsIam.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-image-upload
-              :max="fields.avatarsIam.max"
-              :path="fields.avatarsIam.path"
-              :schema="fields.avatarsIam.fileSchema"
-              v-model="model[fields.avatarsIam.name]"
-            ></app-image-upload>
-          </el-col>
-        </el-form-item>
-      </div>
 
-      <el-form-item
+
+    <el-form-item 
+        :label="fields.email.label"
+        :prop="fields.email.name"
+        :required="fields.email.required"
+        v-if="!single">
+        <el-col :lg="11" :md="16" :sm="24">
+            <el-input
+              :placeholder="fields.email.label"
+              auto-complete="off"
+              ref="focus"
+              type="text"
+              v-model="model[fields.email.name]"
+            ></el-input>        
+            </el-col>
+           
+          </el-form-item>
+
+      
+
+          <el-form-item
         :label="fields.rolesRequired.label"
         :prop="fields.rolesRequired.name"
         :required="fields.rolesRequired.required"
@@ -116,13 +69,76 @@
         </el-col>
       </el-form-item>
 
-  
+        <el-form-item
+          :label="fields.staffDateOfBirth.label"
+          :prop="fields.staffDateOfBirth.name"
+          :required="fields.staffDateOfBirth.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
+          </el-col>
+        </el-form-item>
+
+
+
+    
+
+
+      <el-form-item
+            :label="fields.diaChi.label"
+            :prop="fields.diaChi.name"
+            :required="fields.diaChi.required"
+          >
+            <el-col :lg="11" :md="16" :sm="24">
+              <el-input v-model="model[fields.diaChi.name]" />
+            </el-col>
+        </el-form-item>
+
+        <el-form-item
+            :label="fields.phongBan.label"
+            :prop="fields.phongBan.name"
+            :required="fields.phongBan.required"
+          >
+            <el-col :lg="11" :md="16" :sm="24">
+              <el-input v-model="model[fields.phongBan.name]" />
+            </el-col>
+        </el-form-item>
+
+
+
+      <el-form-item
+          :label="fields.avatarsIam.label"
+          :prop="fields.avatarsIam.name"
+          :required="fields.avatarsIam.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-file-upload
+              :max="fields.avatarsIam.max"
+              :path="fields.avatarsIam.path"
+              :schema="fields.avatarsIam.fileSchema"
+              v-model="model[fields.avatarsIam.name]"
+            ></app-file-upload>
+          </el-col>
+        </el-form-item>
+      <div v-if="isSingleEmail">
+      </div>
+
+       
+
+        
+
+        
+
+     
+
+
 
       <el-form-item>
         <div class="form-buttons">
           <el-button
             :disabled="saveLoading"
             @click="doSubmit"
+            v-on:click="signUp"
             icon="el-icon-fa-floppy-o"
             type="primary"
           >
@@ -147,12 +163,19 @@ import { mapGetters, mapActions } from 'vuex';
 import { FormSchema } from '@/shared/form/form-schema';
 import { UserModel } from '@/modules/auth/user-model';
 import { i18n } from '@/i18n';
+import * as firebase from 'firebase/app';
+
+
+
 
 const { fields } = UserModel;
 const singleFormSchema = new FormSchema([
   fields.email,
   fields.firstName,
-  fields.lastName,
+  fields.staffDateOfBirth,
+  // fields.lastName,
+  fields.diaChi,
+  fields.productVariation,
   fields.phoneNumber,
   fields.avatarsIam,
   fields.rolesRequired,
@@ -161,7 +184,10 @@ const singleFormSchema = new FormSchema([
 const multipleFormSchema = new FormSchema([
   fields.emails,
   fields.firstName,
-  fields.lastName,
+  fields.staffDateOfBirth,
+  fields.diaChi,
+  fields.productVariation,
+  // fields.lastName,
   fields.phoneNumber,
   fields.avatarsIam,
   fields.rolesRequired,
@@ -177,6 +203,8 @@ export default {
       rules: this.single
         ? singleFormSchema.rules()
         : multipleFormSchema.rules(),
+        email: fields.email,
+        password: fields.password,
       model: {},
     };
   },
@@ -211,30 +239,40 @@ export default {
   },
 
   methods: {
+    // randomNumber : function(){
+    //   return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+    // },
+
     ...mapActions({
       // doSendEmailConfirmation:
       //   'auth/doSendEmailConfirmation',
-      doRegisterEmailAndPassword: 'auth/doRegisterEmailAndPassword',
+      // createUser: 'auth/createUser',
 
     }),
     doReset() {
       this.model = this.formSchema.initialValues();
       this.$refs.form.resetFields();
     },
+    
+    async signUp(){
+      return firebase.auth().createUserWithEmailAndPassword(this.model.email, '123123');
+      // this.$refs.form.validate();
+      
+    },
 
     async doSubmit() {
       try {
         await this.$refs.form.validate();
-        // await this.doSendEmailConfirmation(this.model.email);
-      } catch (error) {
+      } catch {
         return;
       }
+    // await this.doSendEmailConfirmation(this.model.email);
       
-      await this.doRegisterEmailAndPassword({
-          email: this.model.email,
-          password: '123123',
-        },
-      );
+      // await this.createUser({
+      //     email: this.model.email,
+      //     password: '123123',
+      //   },
+      // );
       
 
       const { id, ...values } = this.formSchema.cast(

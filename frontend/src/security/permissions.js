@@ -10,6 +10,8 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
+
         ],
         allowedStorageFolders: ['user'],
       },
@@ -19,6 +21,7 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
         ],
       },
       iamImport: {
@@ -27,6 +30,8 @@ class Permissions {
           roles.owner,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles,
+
         ],
       },
       iamRead: {
@@ -60,6 +65,8 @@ class Permissions {
           roles.leaveViewer,
           roles.deviceSessionsEditor,
           roles.deviceSessionsViewer,
+          roles,
+
         ],
       },
       auditLogRead: {
@@ -69,6 +76,8 @@ class Permissions {
       settingsEdit: {
         id: 'settingsEdit',
         allowedRoles: [roles.owner],
+        roles,
+
       },
       customersImport: {
         id: 'customersImport',
@@ -2901,6 +2910,7 @@ class Permissions {
           roles.entityEditor,
           roles.priceChangeEditor,
           roles.priceChangeViewer,
+          roles,
 
         ],
       },

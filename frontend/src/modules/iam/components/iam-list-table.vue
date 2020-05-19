@@ -8,7 +8,7 @@
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="selection" width="55"></el-table-column>
 
       <el-table-column
         :label="fields.avatarsIam.label"
@@ -20,11 +20,26 @@
           <app-list-item-app-avatar :value="presenter(scope.row, 'avatarsIam')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
+<!--
+
 
       <el-table-column :label="fields.email.label" :prop="fields.email.name" sortable="custom">
         <template slot-scope="scope">{{ presenter(scope.row, 'email') }}</template>
       </el-table-column>
+      -->
+      
+      <el-table-column :label="fields.firstName.label" :prop="fields.firstName.name">
+        <template slot-scope="scope">{{ presenter(scope.row, 'firstName') }}</template>
+      </el-table-column>
+      <el-table-column :label="fields.phoneNumber.label" :prop="fields.phoneNumber.name">
+        <template slot-scope="scope">{{ presenter(scope.row, 'phoneNumber') }}</template>
+      </el-table-column>
+      <el-table-column :label="fields.email.label" :prop="fields.email.name" sortable="">
+        <template slot-scope="scope">{{ presenter(scope.row, 'email') }}</template>
+      </el-table-column>
 
+
+<!--
       <el-table-column
         :label="fields.fullName.label"
         :prop="fields.fullName.name"
@@ -32,7 +47,28 @@
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'fullName') }}</template>
       </el-table-column>
-
+          <el-table-column
+        :label="fields.disabledAsStatus.label"
+        :prop="fields.disabledAsStatus.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row[fields.disabledAsStatus.name] ? 'danger' : ''"
+          >{{ presenter(scope.row, 'disabledAsStatus') }}</el-tag>
+        </template>
+      </el-table-column>
+       <el-table-column
+        :label="fields.createdAt.label"
+        :prop="fields.createdAt.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">
+          <i class="el-icon-time"></i>
+          <span style="margin-left: 10px">{{ presenter(scope.row, 'createdAt') }}</span>
+        </template>
+      </el-table-column>
+-->
       <el-table-column :label="fields.roles.label" :prop="fields.roles.name">
         <template slot-scope="scope">
           <div :key="roleId" v-for="roleId in scope.row.roles">
@@ -41,6 +77,15 @@
             </el-tooltip>
           </div>
         </template>
+      </el-table-column>
+
+   
+
+      <el-table-column :label="fields.staffDateOfBirth.label" :prop="fields.staffDateOfBirth.name">
+        <template slot-scope="scope">{{ presenter(scope.row, 'staffDateOfBirth') }}</template>
+      </el-table-column>
+      <el-table-column :label="fields.phongBan.label" :prop="fields.phongBan.name" sortable="">
+        <template slot-scope="scope">{{ presenter(scope.row, 'phongBan') }}</template>
       </el-table-column>
 
       <el-table-column
@@ -55,29 +100,30 @@
         </template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.createdAt.label"
-        :prop="fields.createdAt.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">
-          <i class="el-icon-time"></i>
-          <span style="margin-left: 10px">{{ presenter(scope.row, 'createdAt') }}</span>
-        </template>
-      </el-table-column>
+
+      
+      
+
+  
+
+     
 
       <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="120">
         <template slot-scope="scope">
           <div class="table-actions">
+          <!--
             <router-link :to="`/iam/${scope.row.id}`">
               <el-button type="primary" icon="el-icon-view" circle>
               </el-button>
             </router-link>
-
+-->
             <router-link :to="`/iam/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
               <el-button type="info" icon="el-icon-edit" circle>
               </el-button>
             </router-link>
+            
+             
+
           </div>
         </template>
       </el-table-column>

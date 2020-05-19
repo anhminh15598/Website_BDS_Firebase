@@ -20,18 +20,7 @@
           <el-button @click="doSignout" type="text">
             <app-i18n code="auth.signout"></app-i18n>
           </el-button>
-          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
-            <app-i18n code="common.cancel"></app-i18n>
-          </el-button>
         </div>
-        <div class="other-actions">
-            <router-link :to="{ path: '/auth/signin' }">
-              <el-button type="text">
-                <app-i18n code="common.cancel"></app-i18n>
-              </el-button>
-            </router-link>
-          </div>
-        
       </div>
     </div>
   </div>
@@ -45,9 +34,6 @@ const { fields } = UserModel;
 
 export default {
   name: 'app-email-unverified-page',
-
-    props: ['isEditing', 'record', 'saveLoading', 'modal'],
-
 
   data() {
     return {
@@ -78,9 +64,6 @@ export default {
 
     async doSubmit() {
       await this.doSendEmailConfirmation(this.model.email);
-    },
-    doCancel() {
-      this.$emit('cancel');
     },
   },
 };

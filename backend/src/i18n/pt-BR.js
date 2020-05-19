@@ -1,76 +1,80 @@
 const ptBR = {
   app: {
-    title: 'Aplicação'
+    title: 'Ứng dụng'
   },
 
   auth: {
     passwordReset: {
-      error: `Email não encontrado`,
+      error: `Email không được công nhận`,
     },
     emailAddressVerificationEmail: {
-      error: `Email não encontrado`,
+      error: `Email không được công nhận`,
     },
   },
 
   iam: {
     errors: {
-      userAlreadyExists: 'Usuário com este email já existe',
-      userNotFound: 'Usuário não encontrado',
-      disablingHimself: `Você não pode desativar-se`,
-      revokingOwnPermission: `Você não pode revogar sua própria permissão de proprietário`,
+      userAlreadyExists:
+        'Email bị trùng',
+      userNotFound: 'User not found',
+      disablingHimself: `You can't disable yourself`,
+      revokingOwnPermission: `You can't revoke your own owner permission`,
     },
   },
 
   importer: {
     errors: {
-      invalidFileEmpty: 'O arquivo está vazio',
+      invalidFileEmpty: 'The file is empty',
       invalidFileExcel:
-        'Apenas arquivos Excel (.xlsx) são permitidos',
+        'Only excel (.xlsx) files are allowed',
       invalidFileUpload:
-        'Arquivo inválido. Verifique se você está usando a última versão do modelo.',
-      importHashRequired: 'Hash de importação é necessário',
-      importHashExistent: 'Dados já foram importados',
+        'Invalid file. Make sure you are using the last version of the template.',
+      importHashRequired: 'Import hash is required',
+      importHashExistent: 'Data has already been imported',
     },
   },
 
   errors: {
+    forbidden: {
+      message: 'Forbidden',
+    },
     validation: {
-      message: 'Ocorreu um erro',
+      message: 'An error occurred',
     },
   },
 
   emails: {
     invitation: {
-      subject: `Você foi convidado para o app {0}`,
+      subject: `You've been invited to {0}`,
       body: `
-        <p>Olá,</p>
-        <p>Você foi convidado para o app {0}.</p>
-        <p>Clique neste link para registrar-se.</p>
+        <p>Hello,</p>
+        <p>You've been invited to {0}.</p>
+        <p>Follow this link to register.</p>
         <p><a href="{1}">{1}</a></p>
-        <p>Obrigado,</p>
-        <p>Equipe do app {0}</p>
+        <p>Thanks,</p>
+        <p>Your {0} team</p>
       `,
     },
     emailAddressVerification: {
-      subject: `Verifique seu e-mail do app {0}`,
+      subject: `Xác nhận email của bạn cho {0}`,
       body: `
-        <p>Olá,</p>
-        <p>Clique neste link para verificar seu endereço de e-mail.</p>
+        <p>Xin chào,</p>
+        <p>Theo liên kết này để xác minh địa chỉ email của bạn.</p>
         <p><a href='{0}'>{0}</a></p>
-        <p>Se você não solicitou a verificação deste endereço, ignore este e-mail.</p>
-        <p>Obrigado,</p>
-        <p>Equipe do app {1}</p>
+        <p>Nếu bạn không yêu cầu xác minh địa chỉ này, bạn có thể bỏ qua email này.</p>
+        <p>Cảm ơn,</p>
+        <p>Nhóm {1} của bạn</p>
       `,
     },
     passwordReset: {
-      subject: `Redefinir a senha do app {0}`,
+      subject: `Đặt lại mật khẩu của bạn cho {0}`,
       body: `
-        <p>Olá,</p>
-        <p>Clique neste link para redefinir a senha de login no app {0} com sua conta {1}.</p>
+        <p>Hello,</p>
+        <p>Theo liên kết này để đặt lại mật khẩu {0} cho tài khoản {1} của bạn.</p>
         <p><a href='{2}'>{2}</a></p>
-        <p>Se você não solicitou a redefinição da sua senha, ignore este e-mail.</p>
-        <p>Obrigado,</p>
-        <p>Equipe do app {0}</p>
+        <p>Nếu bạn không yêu cầu xác minh địa chỉ này, bạn có thể bỏ qua email này.</p>
+        <p>Cảm ơn,</p>
+        <p>Nhóm {0} của bạn</p>
       `,
     },
   },

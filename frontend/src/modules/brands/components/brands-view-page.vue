@@ -28,15 +28,12 @@
         class="form"
         v-if="record"
       >
-        <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text>
 
         <app-view-item-image :label="fields.brandCover.label" :value="presenter(record, 'brandCover')"></app-view-item-image>
 
         <app-view-item-text :label="fields.brandTitle.label" :value="presenter(record, 'brandTitle')"></app-view-item-text>
 
         <app-view-item-text :label="fields.brandDetails.label" :value="presenter(record, 'brandDetails')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.createdAt.label" :value="presenter(record, 'createdAt')"></app-view-item-text>
 
         <app-view-item-text :label="fields.updatedAt.label" :value="presenter(record, 'updatedAt')"></app-view-item-text>
       </el-form>

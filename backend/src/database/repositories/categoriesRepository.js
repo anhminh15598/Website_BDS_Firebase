@@ -112,7 +112,7 @@ class CategoriesRepository extends AbstractEntityRepository {
   }
 
   async findById(id) {
-    const record = await this.findDocument('categories', id);
+    const record = await this.findDocument('policy', id);
     return this.populate(record);
   }
 
@@ -124,12 +124,12 @@ class CategoriesRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -160,7 +160,7 @@ class CategoriesRepository extends AbstractEntityRepository {
 
     const collection = await admin
       .firestore()
-      .collection(`categories`)
+      .collection(`policy`)
       .get();
 
     const all = this.mapCollection(collection);
@@ -178,12 +178,12 @@ class CategoriesRepository extends AbstractEntityRepository {
 
     if (search) {
       query.appendId('id', search);
-      query.appendIlike('categoryTitle', search);
+      query.appendIlike('policyName', search);
     }
 
     const collection = await admin
       .firestore()
-      .collection(`categories`)
+      .collection(`policy`)
       .get();
 
     const all = this.mapCollection(collection);
@@ -191,7 +191,7 @@ class CategoriesRepository extends AbstractEntityRepository {
 
     return rows.map((record) => ({
       id: record.id,
-      label: record['categoryTitle'],
+      label: record['policyName'],
     }));
   }
 

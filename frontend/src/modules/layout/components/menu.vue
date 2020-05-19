@@ -138,6 +138,8 @@
           <app-i18n code="entities.staff.menu"></app-i18n>
         </span>
         </el-menu-item>
+                          :route="{ path: '/brands/8k8gnt3WEC5bc0YyQNYL' }"
+
         -->
 
           <el-menu-item
@@ -404,14 +406,13 @@
           <span>Quản lý thống kê, báo cáo</span>
         </template>
         <el-menu-item
-                :class="classFor('/notice')"
-                  :route="{ path: '/notice' }"
-                  index="/notice"
-                  v-if="hasPermissionToNotice"
-        >
+                :class="classFor('/iam/import')"
+                  :route="{ path: '/iam/import' }"
+                  index="/iam/import"
+                v-if="hasPermissionToIam">
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-          <app-i18n code="entities.suppliers.menu"></app-i18n>
+          Import
         </span>
         </el-menu-item>
       </el-submenu>

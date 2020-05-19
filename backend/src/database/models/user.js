@@ -6,20 +6,18 @@ module.exports = class User extends AbstractEntityModel {
     super('user', 'user', {
       email: new types.String(null, 255),
       firstName: new types.String(null, 80),
-      lastName: new types.String(null, 175),
-      fullName: new types.String(null, 255),
+      diaChi: new types.String(null, 80),
+      phongBan: new types.String(null, 80),
+      // productVariation: new types.RelationToOne(),
+      // lastName: new types.String(null, 175),
+      // fullName: new types.String(null, 255),
+      staffDateOfBirth: new types.Date(),
       disabled: new types.Boolean(),
       phoneNumber: new types.String(null, 24),
       avatars: new types.Files(),
       authenticationUid: new types.String(null, 255),
       roles: new types.StringArray(),
-      staffPhongBan: new types.Enumerator([
-        "phongban1",
-        "phongban2",
-        "phongban3",
-        "phongban4"
-      ]),
-      importHash: new types.String(null, 255),
+      // importHash: new types.String(null, 255),
     });
   }
 };

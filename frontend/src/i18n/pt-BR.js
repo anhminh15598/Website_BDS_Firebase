@@ -136,7 +136,7 @@ const ptBR = {
         'supplierBusinessName': 'Tên doanh nghiệp',
         'supplierEmail': 'Email',
         'supplierLocation': 'Địa chỉ',
-        'supplierPhoneNumber': 'Số tiền',
+        'supplierPhoneNumber': 'Số điện thoại',
         'supplierPayTerm': 'Trạng thái',
         'supplierPayType': 'Pay Type',
         'supplierStatus': 'Trạng thái',
@@ -144,6 +144,7 @@ const ptBR = {
         'supplierCreditBalance': 'Credit',
         'supplierDocs': 'Các tài liệu liên quan',
         'userId': 'User',
+        'soTien': 'Số tiền',
         createdAt: 'Tạo vào lúc',
         updatedAt: 'Cập nhật vào lúc',
         createdAtRange: 'Tạo vào lúc',
@@ -336,6 +337,7 @@ const ptBR = {
     },
 
     brands: {
+      upload: 'Thêm mới',
       name: 'Sơ đồ tổ chức',
       label: 'Sơ đồ tổ chức',
       menu: 'Sơ đồ tổ chức',
@@ -375,7 +377,7 @@ const ptBR = {
         title: 'Thêm sơ đồ tổ chức',
       },
       view: {
-        title: 'Thêm sơ đồ tổ chức',
+        title: 'Sơ đồ tổ chức',
       },
       importer: {
         title: 'Import sơ đồ tổ chức',
@@ -395,10 +397,10 @@ const ptBR = {
         title: 'Chính sách công ty',
       },
       create: {
-        success: 'Danh mục đã được lưu thành công',
+        success: 'Chính sách được lưu thành công',
       },
       update: {
-        success: 'Danh mục đã được lưu thành công',
+        success: 'Chính sách được lưu thành công',
       },
       destroy: {
         success: 'Xóa chính sách công ty thành công',
@@ -413,6 +415,8 @@ const ptBR = {
         id: 'Id',
         'categoryCover': 'Ảnh',
         'categoryTitle': 'Tên chính sách',
+        'policyImg': 'Ảnh',
+        'policyName': 'Tên chính sách',
         'categoryShortCode': 'Short Code',
         'categoryDetails': 'Chi tiết',
         createdAt: 'Created at',
@@ -3116,13 +3120,17 @@ const ptBR = {
 
   user: {
     fields: {
+      diaChi: 'Địa chỉ',
+      phongBan: 'Phòng ban',
+      productVariation: 'Phòng ban',
+      staffDateOfBirth: 'Ngày sinh',
       id: 'Id',
       authenticationUid: 'Authentication Uid',
       avatars: 'Ảnh',
       email: 'Email',
       emails: 'Email',
       fullName: 'Họ và tên',
-      firstName: 'Tên',
+      firstName: 'Tên người dùng',
       lastName: 'Họ',
       status: 'Trạng thái',
       disabled: 'Khóa',
@@ -3131,7 +3139,7 @@ const ptBR = {
       createdAt: 'Tạo vào lúc',
       updatedAt: 'Cập nhật vào lúc',
       roleUser: 'Role/User',
-      roles: 'Vai trò',
+      roles: 'Chức vụ',
       createdAtRange: 'Tạo vào lúc',
       password: 'Mật khẩu',
       rememberMe: 'Lưu thông tin tài khoản',
@@ -3219,7 +3227,7 @@ const ptBR = {
   },
   errors: {
     backToHome: 'Trở về trang chủ',
-    403: `Xin lỗi, bạn không có quyền truy cập vào trang này`,
+    403: ``,
     404: 'Xin lỗi, trang bạn truy cập không tồn tại',
     500: 'Xin lỗi, máy chủ đang báo lỗi',
     forbidden: {

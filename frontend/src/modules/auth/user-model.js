@@ -11,6 +11,10 @@ import DateTimeRangeField from '@/shared/fields/date-time-range-field';
 import GenericField from '@/shared/fields/generic-field';
 import EnumeratorField from '@/shared/fields/enumerator-field';
 import { GenericModel } from '@/shared/model/generic-model';
+import DateField from '@/shared/fields/date-field';
+import { VariationField } from '@/modules/variation/variation-field';
+
+
 
 class RolesField extends StringArrayField {
   constructor(name, label, config) {
@@ -69,7 +73,7 @@ function label(name) {
 }
 
 const fields = {
-  id: new IdField('id', label('id'), { max: 10 }),
+  id: new IdField('id', label('id')),
   firstName: new StringField(
     'firstName',
     label('firstName'),
@@ -84,6 +88,16 @@ const fields = {
   lastName: new StringField('lastName', label('lastName'), {
     max: 175,
   }),
+  diaChi: new StringField('diaChi', label('diaChi'), {
+    max: 175,
+  }),
+  phongBan: new StringField('phongBan', label('phongBan'), {
+    max: 175,
+  }),
+
+
+  productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),
+
   password: new StringField('password', label('password'), {
     required: true,
   }),
@@ -92,6 +106,8 @@ const fields = {
     required: true,
     max: 255,
   }),
+  staffDateOfBirth: new DateField('staffDateOfBirth', label('staffDateOfBirth'), {}),
+
   role: new EnumeratorField(
     'role',
     label('role'),
@@ -138,14 +154,12 @@ const fields = {
     { max: 1 },
   ),
   emails: new EmailsField('emails', label('emails'), {
-    // required: true,
+    required: true,
   }),
   rolesRequired: new RolesField('roles', label('roles'), {
-    // required: true,
+    required: true,
   }),
   roles: new RolesField('roles', label('roles')),
-
-
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),
@@ -175,4 +189,5 @@ export class UserModel extends GenericModel {
   static get fields() {
     return fields;
   }
+
 }

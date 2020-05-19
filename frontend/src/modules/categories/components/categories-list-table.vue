@@ -17,7 +17,7 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-image :value="presenter(scope.row, 'categoryCover')"></app-list-item-image>
+          <app-list-item-image :value="presenter(scope.row, 'policyImg')"></app-list-item-image>
         </template>
       </el-table-column>
 
@@ -26,7 +26,7 @@
         :prop="fields.categoryTitle.name"
         width="200"
         sortable="custom">
-        <template slot-scope="scope">{{ presenter(scope.row, 'categoryTitle') }}</template>
+        <template slot-scope="scope">{{ presenter(scope.row, 'policyName') }}</template>
       </el-table-column>
 
 

@@ -5,8 +5,5 @@ const { fields } = UserModel;
 export default [
   fields.email,
   fields.firstName,
-  fields.lastName,
-  fields.phoneNumber,
-  fields.avatarsIam,
   fields.roles,
 ];

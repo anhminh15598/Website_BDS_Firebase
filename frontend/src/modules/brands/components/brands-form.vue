@@ -68,7 +68,7 @@ import { BrandsModel } from '@/modules/brands/brands-model';
 const { fields } = BrandsModel;
 const formSchema = new FormSchema([
   fields.id,
-  fields.brandCover,
+  // fields.brandCover,
   fields.brandTitle,
   fields.brandDetails,
 ]);

@@ -16,8 +16,17 @@ const fields = {
     "max": 1,
     "required": true,
   }),
+  policyImg: new ImagesField('policyImg', label('policyImg'), 'categories/categoryCover', {
+    "max": 1,
+    "required": true,
+  }),
   categoryTitle: new StringField('categoryTitle',
     label('categoryTitle'), {
+    "required": true,
+    matches: /^[a-zA-Z_0-9]/,
+  }),
+  policyName: new StringField('policyName',
+    label('policyName'), {
     "required": true,
     matches: /^[a-zA-Z_0-9]/,
   }),

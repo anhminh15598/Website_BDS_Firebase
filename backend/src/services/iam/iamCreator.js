@@ -1,6 +1,6 @@
 const assert = require('assert');
 const InvitationEmail = require('../../emails/invitationEmail');
-const ValidationError = require('../../errors/validationError');
+// const ValidationError = require('../../errors/validationError');
 const EmailSender = require('../shared/email/emailSender');
 const UserRepository = require('../../database/repositories/userRepository');
 
@@ -75,12 +75,12 @@ module.exports = class IamCreator {
         { batch: this.batch },
       )) > 0;
 
-    if (exists) {
-      throw new ValidationError(
-        this.language,
-        'iam.errors.userAlreadyExists',
-      );
-    }
+    // if (exists) {
+    //   throw new ValidationError(
+    //     this.language,
+    //     'iam.errors.userAlreadyExists',
+    //   );
+    // }
 
     await UserRepository.create(
       {

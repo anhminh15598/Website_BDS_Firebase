@@ -7,7 +7,6 @@
     :rules="rules"
     :inline="true"
     @submit.native.prevent="doFilter"
-    class="filter"
     ref="form"
   >
     <el-row>

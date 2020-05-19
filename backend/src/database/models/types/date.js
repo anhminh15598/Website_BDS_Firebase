@@ -9,7 +9,7 @@ module.exports = class Date {
     }
 
     assert(lodash.isString(data));
-    assert(moment(data, 'YYYY-MM-DD').isValid());
+    assert(moment(data, 'DD-MM-YYYY').isValid());
   }
 
   cast(data) {

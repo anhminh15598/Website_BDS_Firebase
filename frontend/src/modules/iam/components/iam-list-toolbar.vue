@@ -50,7 +50,7 @@
     <el-tooltip
       :content="disableButtonTooltip"
       :disabled="!disableButtonTooltip"
-      v-if="hasPermissionToEdit"
+      v-if="hasPermissionToEdit" 
     >
       <span>
         <el-button
@@ -66,7 +66,7 @@
     </el-tooltip>
 
 
-<!--
+
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'user' } }"
       v-if="hasPermissionToAuditLogs"
@@ -88,7 +88,7 @@
         </el-button>
       </span>
     </el-tooltip>
-    -->
+    
   </div>
 </template>
 

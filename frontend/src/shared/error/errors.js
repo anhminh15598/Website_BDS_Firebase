@@ -46,7 +46,8 @@ export default class Errors {
     }
 
     if (selectErrorCode(error) === 403) {
-      routerAsync().push('/403');
+      // routerAsync().push('/403');
+      routerAsync().push('');
       return;
     }
 

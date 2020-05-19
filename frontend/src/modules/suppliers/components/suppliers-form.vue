@@ -32,12 +32,17 @@
           :required="fields.supplierLocation.required"
         >
           <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.supplierLocation.name]" />
+            <el-input v-model="model[fields1]" />
           </el-col>
         </el-form-item>
-
+<div v-if="field1" class="alert alert-info">
+    Current Value: {{field1}}
+</div>
+<div>
+<place-autocomplete-field v-model="field1" placeholder="Enter an an address, zipcode, or location" label="Address" name="field1" api-key="AIzaSyAlTiEvDLrAg9RFKFNPh9qnaKfJ2bYbcAg"></place-autocomplete-field>
+</div>
         
-
+<!--
         <el-form-item
           :label="fields.supplierPhoneNumber.label"
           :prop="fields.supplierPhoneNumber.name"
@@ -45,6 +50,16 @@
         >
           <el-col :lg="11" :md="16" :sm="24">
             <el-input v-model="model[fields.supplierPhoneNumber.name]" />
+          </el-col>
+        </el-form-item>
+-->
+        <el-form-item
+          :label="fields.soTien.label"
+          :prop="fields.soTien.name"
+          :required="fields.soTien.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-input v-model="model[fields.soTien.name]" />
           </el-col>
         </el-form-item>
 
@@ -220,6 +235,10 @@
 import { mapGetters } from 'vuex';
 import { FormSchema } from '@/shared/form/form-schema';
 import { SuppliersModel } from '@/modules/suppliers/suppliers-model';
+import Vue from 'vue';
+import VuePlaceAutocomplete from 'vue-place-autocomplete';
+
+Vue.use(VuePlaceAutocomplete);
 
 const { fields } = SuppliersModel;
 const formSchema = new FormSchema([

@@ -63,6 +63,14 @@ export default class AuthService {
     return firebase.auth().sendPasswordResetEmail(email);
   }
 
+  static async createUser(
+    email,
+    password,
+  ) {
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  }
+
+
   static async registerWithEmailAndPassword(
     email,
     password,
@@ -73,6 +81,7 @@ export default class AuthService {
     this.sendEmailVerification(credentials.user);
     return credentials.user;
   }
+
 
   static async signinWithSocial(
     provider,
