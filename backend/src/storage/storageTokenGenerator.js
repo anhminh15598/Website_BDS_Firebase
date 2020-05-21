@@ -21,7 +21,9 @@ module.exports = class StorageTokenGenerator {
 
     return AuthFirebaseService.createCustomToken(
       this.currentUser.authenticationUid,
-      metadata,
+      metadata[allowedStorageFolder] = true,
+      // metadata,
+
     );
   }
 };

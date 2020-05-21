@@ -29,11 +29,11 @@ module.exports = class PermissionChecker {
     );
   }
 
-  // validateHasStorageFolder(folder) {
-  //   if (!this.hasStorageFolder(folder)) {
-  //     throw new ForbiddenError(this.language);
-  //   }
-  // }
+  validateHasStorageFolder(folder) {
+    if (!this.hasStorageFolder(folder)) {
+      throw new ForbiddenError(this.language);
+    }
+  }
   validateHasStorageFolder(folder) {
     if (!this.hasStorageFolder(folder)) {
       return console.log("Loi validateHasStorageFolder");
@@ -56,13 +56,13 @@ module.exports = class PermissionChecker {
   allowedStorageFolders() {
     let allowedStorageFolders = [];
 
-    // Permissions.asArray.forEach((permission) => {
-    //   if (this.has(permission)) {
-    //     allowedStorageFolders = allowedStorageFolders.concat(
-    //       permission.allowedStorageFolders || [],
-    //     );
-    //   }
-    // });
+    Permissions.asArray.forEach((permission) => {
+      if (this.has(permission)) {
+        allowedStorageFolders = allowedStorageFolders.concat(
+          permission.allowedStorageFolders || [],
+        );
+      }
+    });
 
     return [...new Set(allowedStorageFolders)];
   }

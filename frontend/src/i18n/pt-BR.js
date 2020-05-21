@@ -238,7 +238,7 @@ const ptBR = {
 
         },
         'staffAccessApps': {
-          'Enabled': 'Đã bật',
+          'Enabled': 'Kích hoạt',
           'Disabled': 'Khóa',
         },
       },
@@ -3104,10 +3104,10 @@ const ptBR = {
       activity: 'Hoạt động',
     },
     importer: {
-      title: 'Import tài khoản',
+      title: 'Import',
       fileName: 'users_import_template',
       hint:
-        'Files/Images các cột phải là URL của các tệp được phân tách bằng dấu cách. Mối quan hệ phải là ID của các hồ sơ được tham chiếu cách nhau bởi khoảng trắng. Vai trò phải là id vai trò cách nhau bởi không gian.',
+        'Files/Images các cột phải là URL của các tệp được phân tách bằng dấu cách.',
     },
     errors: {
       userAlreadyExists:
@@ -3120,6 +3120,8 @@ const ptBR = {
 
   user: {
     fields: {
+      maSo: 'Mã số',
+      nhom: 'Nhóm',
       diaChi: 'Địa chỉ',
       phongBan: 'Phòng ban',
       productVariation: 'Phòng ban',
@@ -3242,7 +3244,7 @@ const ptBR = {
   /* eslint-disable */
   validation: {
     mixed: {
-      default: '${path} không có hiệu lực',
+      default: '${path} không hợp lệ',
       required: '${path} không được bỏ trống',
       oneOf:
         '${path} phải là một trong các giá trị sau: ${values}',

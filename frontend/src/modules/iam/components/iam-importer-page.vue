@@ -11,13 +11,22 @@
         <app-i18n code="iam.importer.title"></app-i18n>
       </el-breadcrumb-item>
     </el-breadcrumb>
+    
 
     <div class="app-content-page">
       <h1 class="app-content-title">
         <app-i18n code="iam.importer.title"></app-i18n>
       </h1>
-
+      
+      
       <app-importer storePath="iam/importer"></app-importer>
+
+
+<h1 class="app-content-title">
+      </h1>
+      <app-importer storePath="staff/importer"></app-importer>
+
+      
     </div>
   </div>
 </template>

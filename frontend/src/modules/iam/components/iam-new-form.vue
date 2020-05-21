@@ -11,6 +11,16 @@
       v-if="model"
 
     >
+
+    <el-form-item
+            :label="fields.maSo.label"
+            :prop="fields.maSo.name"
+            :required="fields.maSo.required"
+          >
+            <el-col :lg="11" :md="16" :sm="24">
+              <el-input v-model="model[fields.maSo.name]" />
+            </el-col>
+        </el-form-item>
      <el-form-item
           :label="fields.firstName.label"
           :prop="fields.firstName.name"
@@ -32,42 +42,40 @@
         </el-form-item>
 
 
-
-    <el-form-item 
-        :label="fields.email.label"
-        :prop="fields.email.name"
-        :required="fields.email.required"
-        v-if="!single">
-        <el-col :lg="11" :md="16" :sm="24">
-            <el-input
-              :placeholder="fields.email.label"
-              auto-complete="off"
-              ref="focus"
-              type="text"
-              v-model="model[fields.email.name]"
-            ></el-input>        
-            </el-col>
-           
-          </el-form-item>
-
       
 
+        <el-form-item 
+            :label="fields.email.label"
+            :prop="fields.email.name"
+            :required="fields.email.required"
+            v-if="!single">
+            <el-col :lg="11" :md="16" :sm="24">
+                <el-input
+                  :placeholder="fields.email.label"
+                  auto-complete="off"
+                  ref="focus"
+                  type="text"
+                  v-model="model[fields.email.name]"
+                ></el-input>        
+                </el-col>
+          </el-form-item>
+
           <el-form-item
-        :label="fields.rolesRequired.label"
-        :prop="fields.rolesRequired.name"
-        :required="fields.rolesRequired.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <el-select multiple placeholder v-model="model[fields.rolesRequired.name]">
-            <el-option
-              :key="option.value"
-              :label="option.label"
-              :value="option.value"
-              v-for="option in fields.rolesRequired.options"
-            ></el-option>
-          </el-select>
-        </el-col>
-      </el-form-item>
+            :label="fields.rolesRequired.label"
+            :prop="fields.rolesRequired.name"
+            :required="fields.rolesRequired.required"
+            >
+            <el-col :lg="11" :md="16" :sm="24">
+              <el-select multiple placeholder v-model="model[fields.rolesRequired.name]">
+                <el-option
+                  :key="option.value"
+                  :label="option.label"
+                  :value="option.value"
+                  v-for="option in fields.rolesRequired.options"
+                ></el-option>
+              </el-select>
+            </el-col>
+          </el-form-item>
 
         <el-form-item
           :label="fields.staffDateOfBirth.label"
@@ -91,6 +99,16 @@
           >
             <el-col :lg="11" :md="16" :sm="24">
               <el-input v-model="model[fields.diaChi.name]" />
+            </el-col>
+        </el-form-item>
+
+      <el-form-item
+            :label="fields.nhom.label"
+            :prop="fields.nhom.name"
+            :required="fields.nhom.required"
+          >
+            <el-col :lg="11" :md="16" :sm="24">
+              <el-input v-model="model[fields.nhom.name]" />
             </el-col>
         </el-form-item>
 
@@ -120,8 +138,7 @@
             ></app-file-upload>
           </el-col>
         </el-form-item>
-      <div v-if="isSingleEmail">
-      </div>
+      
 
        
 
@@ -170,24 +187,26 @@ import * as firebase from 'firebase/app';
 
 const { fields } = UserModel;
 const singleFormSchema = new FormSchema([
+  fields.maSo,
   fields.email,
   fields.firstName,
   fields.staffDateOfBirth,
-  // fields.lastName,
   fields.diaChi,
-  fields.productVariation,
+  fields.nhom,
+  fields.phongBan,
   fields.phoneNumber,
   fields.avatarsIam,
   fields.rolesRequired,
 ]);
 
 const multipleFormSchema = new FormSchema([
-  fields.emails,
+  fields.maSo,
+  fields.email,
   fields.firstName,
   fields.staffDateOfBirth,
   fields.diaChi,
-  fields.productVariation,
-  // fields.lastName,
+  fields.nhom,
+  fields.phongBan,
   fields.phoneNumber,
   fields.avatarsIam,
   fields.rolesRequired,

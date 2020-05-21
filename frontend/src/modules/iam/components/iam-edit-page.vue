@@ -31,7 +31,7 @@
       >
 
         <el-row>
-          <el-col :span="8">
+         <el-col :span="8">
             <div class="grid-content">
 
               <el-form-item :label="fields.id.label" :prop="fields.id.name">
@@ -39,7 +39,18 @@
                   <el-input disabled v-model="model[fields.id.name]" />
                 </el-col>
               </el-form-item>
-
+            </div>
+          </el-col>
+        </el-row>
+         
+      <el-row>
+         <el-col :span="8">
+            <div class="grid-content">
+              <el-form-item :label="fields.maSo.label" :prop="fields.maSo.name">
+                <el-col :lg="11" :md="16" :sm="24">
+                  <el-input disabled v-model="model[fields.maSo.name]" />
+                </el-col>
+              </el-form-item>
             </div>
           </el-col>
 
@@ -54,6 +65,7 @@
 
             </div>
           </el-col>
+         
 
           <el-col :span="8">
             <div class="grid-content">
@@ -72,12 +84,53 @@
           </el-col>
 
         </el-row>
+        <el-row>
+          <el-col :span="8">
+            <div class="grid-content">
+              <el-form-item
+                      :label="fields.nhom.label"
+                      :prop="fields.nhom.name"
+                      :required="fields.nhom.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <el-input v-model="model[fields.nhom.name]" />
+                </el-col>
+              </el-form-item>
+            </div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid-content">
+              <el-form-item
+                      :label="fields.phongBan.label"
+                      :prop="fields.phongBan.name"
+                      :required="fields.phongBan.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <el-input v-model="model[fields.phongBan.name]" />
+                </el-col>
+              </el-form-item>
+            </div>
+          </el-col>
+          <el-col :span="8">
+            <div class="grid-content">
+              <el-form-item
+                      :label="fields.diaChi.label"
+                      :prop="fields.diaChi.name"
+                      :required="fields.diaChi.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <el-input v-model="model[fields.diaChi.name]" />
+                </el-col>
+              </el-form-item>
+            </div>
+          </el-col>
+        </el-row>
+        
 
 
         <el-row>
           <el-col :span="8">
             <div class="grid-content">
-
               <el-form-item
                       :label="fields.firstName.label"
                       :prop="fields.firstName.name"
@@ -87,22 +140,21 @@
                   <el-input v-model="model[fields.firstName.name]" />
                 </el-col>
               </el-form-item>
-
             </div>
           </el-col>
 
           <el-col :span="8">
             <div class="grid-content">
 
-              <el-form-item
-          :label="fields.staffDateOfBirth.label"
-          :prop="fields.staffDateOfBirth.name"
-          :required="fields.staffDateOfBirth.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
-          </el-col>
-        </el-form-item>
+            <el-form-item
+              :label="fields.staffDateOfBirth.label"
+              :prop="fields.staffDateOfBirth.name"
+              :required="fields.staffDateOfBirth.required"
+            >
+              <el-col :lg="11" :md="16" :sm="24">
+                <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
+              </el-col>
+            </el-form-item>
 
             </div>
           </el-col>
@@ -133,6 +185,7 @@
           </el-col>
 
         </el-row>
+
 
         <el-form-item
           :label="fields.avatarsIam.label"
@@ -187,12 +240,14 @@ const { fields } = UserModel;
 const formSchema = new FormSchema([
   fields.id,
   fields.email,
-  fields.staffDateOfBirth,
   fields.firstName,
-  fields.lastName,
+  fields.staffDateOfBirth,
+  fields.diaChi,
+  fields.nhom,
+  fields.phongBan,
   fields.phoneNumber,
   fields.avatarsIam,
-  fields.roles,
+  fields.rolesRequired,
 ]);
 
 export default {

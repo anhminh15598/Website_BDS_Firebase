@@ -3,12 +3,11 @@ const AbstractEntityModel = require('./abstractEntityModel');
 
 module.exports = class Brands extends AbstractEntityModel {
   constructor() {
-    super('ogChart', 'ogChart', {
+    super('brands', 'brands', {
       brandCover: new types.Files(),
-      ogChartImg: new types.Files(),
-      // brandTitle: new types.String(null, null),
-      // brandDetails: new types.String(null, 250),
-      // importHash: new types.String(null, 255),
+      brandTitle: new types.String(null, null),
+      brandDetails: new types.String(null, 250),
+      importHash: new types.String(null, 255),
     });
   }
 };

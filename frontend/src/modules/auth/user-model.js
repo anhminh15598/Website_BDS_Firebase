@@ -12,7 +12,7 @@ import GenericField from '@/shared/fields/generic-field';
 import EnumeratorField from '@/shared/fields/enumerator-field';
 import { GenericModel } from '@/shared/model/generic-model';
 import DateField from '@/shared/fields/date-field';
-import { VariationField } from '@/modules/variation/variation-field';
+// import { VariationField } from '@/modules/variation/variation-field';
 
 
 
@@ -79,6 +79,7 @@ const fields = {
     label('firstName'),
     {
       max: 80,
+      required: true,
     },
   ),
   authenticationUid: new StringField(
@@ -87,26 +88,40 @@ const fields = {
   ),
   lastName: new StringField('lastName', label('lastName'), {
     max: 175,
+    required: true,
   }),
   diaChi: new StringField('diaChi', label('diaChi'), {
     max: 175,
+    required: true,
   }),
   phongBan: new StringField('phongBan', label('phongBan'), {
     max: 175,
+    required: true,
+  }),
+  nhom: new StringField('nhom', label('nhom'), {
+    max: 175,
+    required: true,
+  }),
+  maSo: new StringField('maSo', label('maSo'), {
+    max: 175,
+    required: true,
   }),
 
 
-  productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),
+  // productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),
 
   password: new StringField('password', label('password'), {
-    required: true,
+    // required: true,
   }),
   fullName: new StringField('fullName', label('fullName')),
   email: new StringField('email', label('email'), {
+    matches: /^\S+@\S+$/,
     required: true,
     max: 255,
   }),
-  staffDateOfBirth: new DateField('staffDateOfBirth', label('staffDateOfBirth'), {}),
+  staffDateOfBirth: new DateField('staffDateOfBirth', label('staffDateOfBirth'), {
+    required: true,
+  }),
 
   role: new EnumeratorField(
     'role',
@@ -137,6 +152,7 @@ const fields = {
     'phoneNumber',
     label('phoneNumber'),
     {
+      required: true,
       matches: /^[0-9]/,
       max: 24,
     },
@@ -145,7 +161,11 @@ const fields = {
     'avatars',
     label('avatars'),
     'user/avatars/iam',
-    { max: 1 },
+    {
+      max: 1,
+      required: true,
+    },
+
   ),
   avatarsProfile: new ImagesField(
     'avatars',

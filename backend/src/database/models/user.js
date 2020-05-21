@@ -8,6 +8,8 @@ module.exports = class User extends AbstractEntityModel {
       firstName: new types.String(null, 80),
       diaChi: new types.String(null, 80),
       phongBan: new types.String(null, 80),
+      nhom: new types.String(null, 80),
+      maSo: new types.String(null, 80),
       // productVariation: new types.RelationToOne(),
       // lastName: new types.String(null, 175),
       // fullName: new types.String(null, 255),

@@ -75,12 +75,12 @@ module.exports = class IamCreator {
         { batch: this.batch },
       )) > 0;
 
-    // if (exists) {
-    //   throw new ValidationError(
-    //     this.language,
-    //     'iam.errors.userAlreadyExists',
-    //   );
-    // }
+    if (exists) {
+      throw new ValidationError(
+        this.language,
+        'iam.errors.userAlreadyExists',
+      );
+    }
 
     await UserRepository.create(
       {

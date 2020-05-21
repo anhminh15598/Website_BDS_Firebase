@@ -27,14 +27,31 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'email') }}</template>
       </el-table-column>
       -->
-      
-      <el-table-column :label="fields.firstName.label" :prop="fields.firstName.name">
+      <el-table-column :label="fields.maSo.label" :prop="fields.maSo.name" width="70px">
+        <template slot-scope="scope">{{ presenter(scope.row, 'maSo') }}</template>
+      </el-table-column> 
+
+      <el-table-column
+        :label="fields.disabledAsStatus.label"
+        :prop="fields.disabledAsStatus.name"
+        width="100px"
+      >
+        <template slot-scope="scope">
+          <el-tag
+            :type="scope.row[fields.disabledAsStatus.name] ? 'danger' : ''"
+          >{{ presenter(scope.row, 'disabledAsStatus') }}</el-tag>
+        </template>
+      </el-table-column>
+
+      <el-table-column :label="fields.firstName.label" :prop="fields.firstName.name" width="100px">
         <template slot-scope="scope">{{ presenter(scope.row, 'firstName') }}</template>
       </el-table-column>
-      <el-table-column :label="fields.phoneNumber.label" :prop="fields.phoneNumber.name">
+
+      <el-table-column :label="fields.phoneNumber.label" :prop="fields.phoneNumber.name" width="110px">
         <template slot-scope="scope">{{ presenter(scope.row, 'phoneNumber') }}</template>
       </el-table-column>
-      <el-table-column :label="fields.email.label" :prop="fields.email.name" sortable="">
+
+      <el-table-column :label="fields.email.label" :prop="fields.email.name" width="120px">
         <template slot-scope="scope">{{ presenter(scope.row, 'email') }}</template>
       </el-table-column>
 
@@ -80,25 +97,20 @@
       </el-table-column>
 
    
-
-      <el-table-column :label="fields.staffDateOfBirth.label" :prop="fields.staffDateOfBirth.name">
+      <el-table-column :label="fields.diaChi.label" :prop="fields.diaChi.name" width="100px">
+        <template slot-scope="scope">{{ presenter(scope.row, 'diaChi') }}</template>
+      </el-table-column>
+      <el-table-column :label="fields.nhom.label" :prop="fields.nhom.name" width="100px">
+        <template slot-scope="scope">{{ presenter(scope.row, 'nhom') }}</template>
+      </el-table-column>
+      <el-table-column :label="fields.staffDateOfBirth.label" :prop="fields.staffDateOfBirth.name" width="100px">
         <template slot-scope="scope">{{ presenter(scope.row, 'staffDateOfBirth') }}</template>
       </el-table-column>
-      <el-table-column :label="fields.phongBan.label" :prop="fields.phongBan.name" sortable="">
+      <el-table-column :label="fields.phongBan.label" :prop="fields.phongBan.name" width="100px">
         <template slot-scope="scope">{{ presenter(scope.row, 'phongBan') }}</template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.disabledAsStatus.label"
-        :prop="fields.disabledAsStatus.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">
-          <el-tag
-            :type="scope.row[fields.disabledAsStatus.name] ? 'danger' : ''"
-          >{{ presenter(scope.row, 'disabledAsStatus') }}</el-tag>
-        </template>
-      </el-table-column>
+      
 
 
       
@@ -108,7 +120,7 @@
 
      
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="120">
+      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="60">
         <template slot-scope="scope">
           <div class="table-actions">
           <!--
