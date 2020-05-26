@@ -262,22 +262,6 @@ export default {
       }
     },
 
-
-    async docreateUser(
-      { email, password }
-    ) {
-      try {
-        await service.createUser(email, password);
-        const crUser = await service.fetchMe();
-        crUser.emailVerified =
-          (await service.createUser(email, password)).emailVerified;
-        service.reauthenticateWithStorageToken();
-      } catch (error) {
-        console.log(error);
-        // Errors.handle(error);
-      }
-    },
-
     async doRegisterEmailAndPassword(
       { commit },
       { email, password },
@@ -289,19 +273,20 @@ export default {
           email,
           password,
         );
-        const currentUser = await service.fetchMe();
-        currentUser.emailVerified =
-          authenticationUser.emailVerified;
 
+        // const currentUser = await service.fetchMe();
+        // currentUser.emailVerified =
+        //   authenticationUser.emailVerified;
         // in background
-        service.reauthenticateWithStorageToken();
+        // service.reauthenticateWithStorageToken();
 
         commit('AUTH_SUCCESS', {
-          currentUser,
+          // currentUser,
           authenticationUser,
         });
 
         routerAsync().push('/');
+
       } catch (error) {
         await service.signout();
         Errors.handle(error);
@@ -328,8 +313,9 @@ export default {
         if (credentials && credentials.user) {
           authenticationUser = credentials.user;
           currentUser = await service.fetchMe();
-          currentUser.emailVerified =
-            authenticationUser.emailVerified;
+          currentUser.emailVerified = true;
+          // currentUser.emailVerified =
+          //   authenticationUser.emailVerified;
         }
 
         // in background

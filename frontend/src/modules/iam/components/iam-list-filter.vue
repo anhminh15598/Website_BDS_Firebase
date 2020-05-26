@@ -21,10 +21,52 @@
 <!--        </el-form-item>-->
 <!--      -->
 
+        <el-form-item :prop="fields.email.name">
+          <el-input :placeholder="fields.email.label" v-model="model[fields.email.name]"/>
+        </el-form-item>
 
+
+        <el-form-item :prop="fields.fullName.name">
+          <el-input :placeholder="fields.fullName.label" v-model="model[fields.fullName.name]"/>
+        </el-form-item>
+
+
+        <el-form-item :prop="fields.status.name">
+          <el-select :placeholder="fields.status.label" v-model="model[fields.status.name]">
+            <el-option :value="undefined">--</el-option>
+            <el-option
+              :key="option.id"
+              :label="option.label"
+              :value="option.id"
+              v-for="option in fields.status.options"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+
+
+        <el-form-item  :prop="fields.role.name">
+          <el-select :placeholder="fields.role.label" v-model="model[fields.role.name]">
+            <el-option :value="undefined">--</el-option>
+            <el-option
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+              v-for="option in fields.role.options"
+            ></el-option>
+          </el-select>
+        </el-form-item>
 
     </el-row>
 
+    <div class="filter-buttons">
+      <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary" round>
+        <app-i18n code="common.search"></app-i18n>
+      </el-button>
+
+      <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo" type="info" round>
+        <app-i18n code="common.reset"></app-i18n>
+      </el-button>
+    </div>
   </el-form>
     </el-card>
 </template>

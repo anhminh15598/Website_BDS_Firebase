@@ -33,25 +33,26 @@
         <!--<el-menu-item-group title="">-->
         <!--
                 <el-menu-item-group title="Quản lý">
-      -->
+        -->
         <el-menu-item
-                :class="classFor('/iam')"
-                :route="{ path: '/iam' }"
-                index="/iam"
-                v-if="hasPermissionToIam">
+          :class="classFor('/iam')"
+          :route="{ path: '/iam' }"
+          index="/iam"
+          v-if="hasPermissionToIam"
+        >
           <i class="el-icon-fa-user"></i>
           <span slot="title">
-          <app-i18n code="iam.menu"></app-i18n>
-        </span>
+            <app-i18n code="iam.menu"></app-i18n>
+          </span>
         </el-menu-item>
-                <!--
+        <!--
 
       </el-menu-item-group>
-      -->
-      <!--
+        -->
+        <!--
       <el-menu-item-group title="Dự án">
-      -->
-      <!--
+        -->
+        <!--
         <el-menu-item
                 :class="classFor('/customers')"
                 :route="{ path: '/customers' }"
@@ -63,24 +64,32 @@
           <app-i18n code="entities.customers.menu"></app-i18n>
         </span>
         </el-menu-item>
--->
-        
+        -->
+
         <!--
       </el-menu-item-group>
--->
-      
+        -->
       </el-submenu>
-
-
-      
 
       <el-submenu index="/inventory">
         <template slot="title">
           <span>Thông tin</span>
         </template>
 
+        <el-menu-item
+          :class="classFor('/units')"
+          :route="{ path: '/units' }"
+          index="/units"
+          v-if="hasPermissionToUnits"
+        >
+          <i class="el-icon-fa-filter"></i>
+          <span slot="title">
+            <app-i18n code="entities.units.menu"></app-i18n>
+          </span>
+        </el-menu-item>
 
         <!--
+    
         <el-menu-item-group title="Products">
           <el-menu-item
                   :class="classFor('/products')"
@@ -119,12 +128,11 @@
           </el-menu-item>
 
         </el-menu-item-group>
+            
         -->
         <!--
         <el-menu-item-group title="Người dùng">
         -->
-
-
 
         <!--
         <el-menu-item
@@ -138,50 +146,38 @@
           <app-i18n code="entities.staff.menu"></app-i18n>
         </span>
         </el-menu-item>
-                          :route="{ path: '/brands/8k8gnt3WEC5bc0YyQNYL' }"
-
         -->
 
-          <el-menu-item
-                  :class="classFor('/brands')"
-                  :route="{ path: '/brands' }"
-                  index="/brands"
-                  v-if="hasPermissionToBrands"
-          >
-            <i class="el-icon-fa-adjust"></i>
-            <span slot="title">
-          <app-i18n code="entities.brands.menu"></app-i18n>
-        </span>
-          </el-menu-item>
+        <el-menu-item
+          :class="classFor('/brands')"
+          :route="{ path: '/brands' }"
+          index="/brands"
+          v-if="hasPermissionToBrands"
+        >
+          <i class="el-icon-fa-adjust"></i>
+          <span slot="title">
+            <app-i18n code="entities.brands.menu"></app-i18n>
+          </span>
+        </el-menu-item>
 
-          <el-menu-item
-                  :class="classFor('/categories')"
-                  :route="{ path: '/categories' }"
-                  index="/categories"
-                  v-if="hasPermissionToCategories"
-          >
-            <i class="el-icon-fa-bandcamp"></i>
-            <span slot="title">
-          <app-i18n code="entities.categories.menu"></app-i18n>
-        </span>
-          </el-menu-item>
-<!--
-          <el-menu-item
-                  :class="classFor('/units')"
-                  :route="{ path: '/units' }"
-                  index="/units"
-                  v-if="hasPermissionToUnits"
-          >
-            <i class="el-icon-fa-filter"></i>
-            <span slot="title">
-          <app-i18n code="entities.units.menu"></app-i18n>
-        </span>
-          </el-menu-item>
--->
-<!--
+        <el-menu-item
+          :class="classFor('/categories')"
+          :route="{ path: '/categories' }"
+          index="/categories"
+          v-if="hasPermissionToCategories"
+        >
+          <i class="el-icon-fa-bandcamp"></i>
+          <span slot="title">
+            <app-i18n code="entities.categories.menu"></app-i18n>
+          </span>
+        </el-menu-item>
+
+        <!--
+        -->
+        <!--
         </el-menu-item-group>
         -->
-      <!--
+        <!--
         <el-menu-item-group title="Reports">
           <el-menu-item
                   :class="classFor('/stock-adjustments')"
@@ -285,12 +281,9 @@
 
         </el-menu-item-group>
         -->
-
       </el-submenu>
 
-
-
-    <!--
+      <!--
 
       <el-submenu index="3">
         <template slot="title">
@@ -378,53 +371,41 @@
         </el-menu-item-group>
 
       </el-submenu>
-        -->
-
-
-
+      -->
 
       <el-submenu index="4">
         <template slot="title">
           <span>Quản lý dự án bất động sản</span>
         </template>
         <el-menu-item
-                :class="classFor('/suppliers')"
-                :route="{ path: '/suppliers' }"
-                index="/suppliers"
-                v-if="hasPermissionToSuppliers"
+          :class="classFor('/suppliers')"
+          :route="{ path: '/suppliers' }"
+          index="/suppliers"
+          v-if="hasPermissionToSuppliers"
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-          <app-i18n code="entities.suppliers.menu"></app-i18n>
-        </span>
+            <app-i18n code="entities.suppliers.menu"></app-i18n>
+          </span>
         </el-menu-item>
       </el-submenu>
-
 
       <el-submenu index="5">
         <template slot="title">
           <span>Quản lý thống kê, báo cáo</span>
         </template>
         <el-menu-item
-                :class="classFor('/iam/import')"
-                  :route="{ path: '/iam/import' }"
-                  index="/iam/import"
-                v-if="hasPermissionToIam">
+          :class="classFor('/iam/import')"
+          :route="{ path: '/iam/import' }"
+          index="/iam/import"
+          v-if="hasPermissionToIam"
+        >
           <i class="el-icon-fa-circle-o"></i>
-          <span slot="title">
-          Import
-        </span>
+          <span slot="title">Import</span>
         </el-menu-item>
       </el-submenu>
 
-
-
-
-
-
-
-
-<!--
+      <!--
       <el-submenu index="4">
         <template slot="title">
           <span>Settings</span>
@@ -666,8 +647,7 @@
         </el-menu-item>
 
       </el-submenu>
--->
-
+      -->
     </el-menu>
   </el-aside>
 </template>
@@ -743,10 +723,12 @@ export default {
     },
 
     hasPermissionToCustomers() {
-      return new CustomersPermissions(this.currentUser).read;
+      return new CustomersPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToSuppliers() {
-      return new SuppliersPermissions(this.currentUser).read;
+      return new SuppliersPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToStaff() {
       return new StaffPermissions(this.currentUser).read;
@@ -758,13 +740,16 @@ export default {
       return new BrandsPermissions(this.currentUser).read;
     },
     hasPermissionToCategories() {
-      return new CategoriesPermissions(this.currentUser).read;
+      return new CategoriesPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToExpenses() {
       return new ExpensesPermissions(this.currentUser).read;
     },
     hasPermissionToExpenseCategory() {
-      return new ExpenseCategoryPermissions(this.currentUser).read;
+      return new ExpenseCategoryPermissions(
+        this.currentUser,
+      ).read;
     },
     hasPermissionToAssets() {
       return new AssetsPermissions(this.currentUser).read;
@@ -779,13 +764,16 @@ export default {
       return new SalesPermissions(this.currentUser).read;
     },
     hasPermissionToPurchases() {
-      return new PurchasesPermissions(this.currentUser).read;
+      return new PurchasesPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToReturns() {
       return new ReturnsPermissions(this.currentUser).read;
     },
     hasPermissionToStockAdjustments() {
-      return new StockAdjustmentsPermissions(this.currentUser).read;
+      return new StockAdjustmentsPermissions(
+        this.currentUser,
+      ).read;
     },
     hasPermissionToUnits() {
       return new UnitsPermissions(this.currentUser).read;
@@ -803,16 +791,20 @@ export default {
       return new LeavePermissions(this.currentUser).read;
     },
     hasPermissionToLeaveType() {
-      return new LeaveTypePermissions(this.currentUser).read;
+      return new LeaveTypePermissions(this.currentUser)
+        .read;
     },
     hasPermissionToAllowanceAndDeduction() {
-      return new AllowanceAndDeductionPermissions(this.currentUser).read;
+      return new AllowanceAndDeductionPermissions(
+        this.currentUser,
+      ).read;
     },
     hasPermissionToPayroll() {
       return new PayrollPermissions(this.currentUser).read;
     },
     hasPermissionToAttendance() {
-      return new AttendancePermissions(this.currentUser).read;
+      return new AttendancePermissions(this.currentUser)
+        .read;
     },
     hasPermissionToTaxClass() {
       return new TaxClassPermissions(this.currentUser).read;
@@ -821,10 +813,12 @@ export default {
       return new TodoPermissions(this.currentUser).read;
     },
     hasPermissionToDocuments() {
-      return new DocumentsPermissions(this.currentUser).read;
+      return new DocumentsPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToDocumentTypes() {
-      return new DocumentTypesPermissions(this.currentUser).read;
+      return new DocumentTypesPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToMemos() {
       return new MemosPermissions(this.currentUser).read;
@@ -839,34 +833,43 @@ export default {
       return new StallPermissions(this.currentUser).read;
     },
     hasPermissionToVariation() {
-      return new VariationPermissions(this.currentUser).read;
+      return new VariationPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToProductLogs() {
-      return new ProductLogsPermissions(this.currentUser).read;
+      return new ProductLogsPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToStockTransfer() {
-      return new StockTransferPermissions(this.currentUser).read;
+      return new StockTransferPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToDeviceSessions() {
-      return new DeviceSessionsPermissions(this.currentUser).read;
+      return new DeviceSessionsPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToProductCount() {
-      return new ProductCountPermissions(this.currentUser).read;
+      return new ProductCountPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToProductValue() {
-      return new ProductValuePermissions(this.currentUser).read;
+      return new ProductValuePermissions(this.currentUser)
+        .read;
     },
     hasPermissionToRegister() {
       return new RegisterPermissions(this.currentUser).read;
     },
     hasPermissionToCommissions() {
-      return new CommissionsPermissions(this.currentUser).read;
+      return new CommissionsPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToTransactions() {
-      return new TransactionsPermissions(this.currentUser).read;
+      return new TransactionsPermissions(this.currentUser)
+        .read;
     },
     hasPermissionToPriceChange() {
-      return new PriceChangePermissions(this.currentUser).read;
+      return new PriceChangePermissions(this.currentUser)
+        .read;
     },
 
     asideWidth() {
@@ -897,10 +900,12 @@ export default {
       }
 
       const routePath = this.$route.path;
-      const active = routePath === path || routePath.startsWith(path + '/');
+      const active =
+        routePath === path ||
+        routePath.startsWith(path + '/');
 
       return {
-        active
+        active,
       };
     },
   },

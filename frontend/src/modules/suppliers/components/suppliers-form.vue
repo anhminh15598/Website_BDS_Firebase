@@ -32,11 +32,12 @@
           :required="fields.supplierLocation.required"
         >
           <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields1]" />
+            <el-input v-model="model[fields.supplierLocation.name]" />
           </el-col>
         </el-form-item>
+
         
-<!--
+
         <el-form-item
           :label="fields.supplierPhoneNumber.label"
           :prop="fields.supplierPhoneNumber.name"
@@ -44,16 +45,6 @@
         >
           <el-col :lg="11" :md="16" :sm="24">
             <el-input v-model="model[fields.supplierPhoneNumber.name]" />
-          </el-col>
-        </el-form-item>
--->
-        <el-form-item
-          :label="fields.soTien.label"
-          :prop="fields.soTien.name"
-          :required="fields.soTien.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.soTien.name]" />
           </el-col>
         </el-form-item>
 

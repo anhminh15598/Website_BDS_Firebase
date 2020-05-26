@@ -57,9 +57,7 @@ const fields = {
     "max": 1
   }),
   supplierNames: new StringField('supplierNames', label('supplierNames'), {
-    "required": true,
-    matches: /^[a-zA-Z_0-9]/,
-
+    "required": true
   }),
   supplierBusinessName: new StringField('supplierBusinessName', label('supplierBusinessName'), {
     "required": true
@@ -67,16 +65,8 @@ const fields = {
   supplierEmail: new StringField('supplierEmail', label('supplierEmail'), {
     "required": true
   }),
-  supplierLocation: new StringField('supplierLocation', label('supplierLocation'), {
-    matches: /^[a-zA-Z_0-9]/,
-  }),
+  supplierLocation: new StringField('supplierLocation', label('supplierLocation'), {}),
   supplierPhoneNumber: new StringField('supplierPhoneNumber', label('supplierPhoneNumber'), {}),
-  soTien: new StringField('soTien',
-    label('soTien'), {
-    "required": true,
-    matches: /^[a-zA-Z_0-9]/,
-  }),
-
   supplierPayTerm: new EnumeratorField('supplierPayTerm', label('supplierPayTerm'), [
     { id: 'daily', label: enumeratorLabel('supplierPayTerm', 'daily') },
     { id: 'monthly', label: enumeratorLabel('supplierPayTerm', 'monthly') },

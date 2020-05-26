@@ -2,10 +2,10 @@
   <div class="app-page-toolbar">
     <router-link :to="{ path: `/brands/${record.id}/edit` }" v-if="record && hasPermissionToEdit">
       <el-button icon="el-icon-fa-edit" type="primary">
-        <app-i18n code="entities.brands.upload"></app-i18n>
+        <app-i18n code="common.edit"></app-i18n>
       </el-button>
     </router-link>
-<!--
+
     <el-button
       :disabled="destroyLoading"
       @click="doDestroyWithConfirm"
@@ -24,7 +24,6 @@
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>
-    -->
   </div>
 </template>
 

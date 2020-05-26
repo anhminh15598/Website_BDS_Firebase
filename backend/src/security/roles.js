@@ -1,6 +1,11 @@
 class Roles {
   static get values() {
     return {
+      admin: 'Admin',
+      giamDoc: 'Giám đốc',
+      truongPhong: 'Trưởng phòng',
+      phoPhong: 'Phó phòng',
+      nhanVien: 'Nhân viên',
       owner: 'owner',
       editor: 'editor',
       viewer: 'viewer',

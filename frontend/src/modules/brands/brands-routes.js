@@ -19,7 +19,7 @@ export default [
     children: [
       {
         name: 'brands',
-        path: '/brands/',
+        path: '/brands',
         component: BrandsListPage,
         meta: {
           auth: true,

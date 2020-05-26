@@ -12,7 +12,9 @@ import GenericField from '@/shared/fields/generic-field';
 import EnumeratorField from '@/shared/fields/enumerator-field';
 import { GenericModel } from '@/shared/model/generic-model';
 import DateField from '@/shared/fields/date-field';
-// import { VariationField } from '@/modules/variation/variation-field';
+import { VariationField } from '@/modules/variation/variation-field';
+import { UnitsField } from '@/modules/units/units-field';
+
 
 
 
@@ -79,7 +81,7 @@ const fields = {
     label('firstName'),
     {
       max: 80,
-      required: true,
+
     },
   ),
   authenticationUid: new StringField(
@@ -88,39 +90,37 @@ const fields = {
   ),
   lastName: new StringField('lastName', label('lastName'), {
     max: 175,
-    required: true,
+
   }),
   diaChi: new StringField('diaChi', label('diaChi'), {
     max: 175,
-    required: true,
+
   }),
-  phongBan: new StringField('phongBan', label('phongBan'), {
-    max: 175,
-    required: true,
-  }),
-  nhom: new StringField('nhom', label('nhom'), {
-    max: 175,
-    required: true,
-  }),
+
+
   maSo: new StringField('maSo', label('maSo'), {
     max: 175,
-    required: true,
+
   }),
 
 
-  // productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),
+  productUnit: UnitsField.relationToOne('productUnit', label('productUnit'), {
+    // "required": true
+  }),
+  productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),
+
 
   password: new StringField('password', label('password'), {
-    // required: true,
+
   }),
   fullName: new StringField('fullName', label('fullName')),
   email: new StringField('email', label('email'), {
     matches: /^\S+@\S+$/,
-    required: true,
+
     max: 255,
   }),
   staffDateOfBirth: new DateField('staffDateOfBirth', label('staffDateOfBirth'), {
-    required: true,
+
   }),
 
   role: new EnumeratorField(
@@ -152,8 +152,8 @@ const fields = {
     'phoneNumber',
     label('phoneNumber'),
     {
-      required: true,
-      matches: /^[0-9]/,
+
+      matches: /^\d+$/,
       max: 24,
     },
   ),
@@ -163,7 +163,6 @@ const fields = {
     'user/avatars/iam',
     {
       max: 1,
-      required: true,
     },
 
   ),
@@ -174,10 +173,10 @@ const fields = {
     { max: 1 },
   ),
   emails: new EmailsField('emails', label('emails'), {
-    required: true,
+
   }),
   rolesRequired: new RolesField('roles', label('roles'), {
-    required: true,
+
   }),
   roles: new RolesField('roles', label('roles')),
   createdAt: new DateTimeField(

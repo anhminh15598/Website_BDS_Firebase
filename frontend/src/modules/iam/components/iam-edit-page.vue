@@ -88,27 +88,39 @@
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-                      :label="fields.nhom.label"
-                      :prop="fields.nhom.name"
-                      :required="fields.nhom.required"
-              >
-                <el-col :lg="11" :md="16" :sm="24">
-                  <el-input v-model="model[fields.nhom.name]" />
-                </el-col>
-              </el-form-item>
+          :label="fields.productVariation.label"
+          :prop="fields.productVariation.name"
+          :required="fields.productVariation.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-variation-autocomplete-input
+              :fetchFn="fields.productVariation.fetchFn"
+              :mapperFn="fields.productVariation.mapperFn"
+              :showCreate="!modal"
+              v-model="model[fields.productVariation.name]"
+              mode="single"
+            ></app-variation-autocomplete-input>
+          </el-col>
+        </el-form-item>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-                      :label="fields.phongBan.label"
-                      :prop="fields.phongBan.name"
-                      :required="fields.phongBan.required"
-              >
-                <el-col :lg="11" :md="16" :sm="24">
-                  <el-input v-model="model[fields.phongBan.name]" />
-                </el-col>
-              </el-form-item>
+          :label="fields.productUnit.label"
+          :prop="fields.productUnit.name"
+          :required="fields.productUnit.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <app-units-autocomplete-input
+              :fetchFn="fields.productUnit.fetchFn"
+              :mapperFn="fields.productUnit.mapperFn"
+              :showCreate="!modal"
+              v-model="model[fields.productUnit.name]"
+              mode="single"
+            ></app-units-autocomplete-input>
+          </el-col>
+        </el-form-item>
             </div>
           </el-col>
           <el-col :span="8">
@@ -239,12 +251,13 @@ import { i18n } from '@/i18n';
 const { fields } = UserModel;
 const formSchema = new FormSchema([
   fields.id,
+  fields.maSo,
   fields.email,
   fields.firstName,
   fields.staffDateOfBirth,
   fields.diaChi,
-  fields.nhom,
-  fields.phongBan,
+  fields.productVariation,
+  fields.productUnit,
   fields.phoneNumber,
   fields.avatarsIam,
   fields.rolesRequired,

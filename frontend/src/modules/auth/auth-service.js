@@ -67,7 +67,11 @@ export default class AuthService {
   //   email,
   //   password,
   // ) {
-  //   return firebase.auth().createUserWithEmailAndPassword(email, password);
+  //   const credentials = await firebase
+  //     .auth()
+  //     .createUserWithEmailAndPassword(email, password);
+  //   // this.sendEmailVerification(credentials.user);
+  //   return credentials.user;
   // }
 
 
@@ -78,10 +82,9 @@ export default class AuthService {
     const credentials = await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password);
-    this.sendEmailVerification(credentials.user);
+    // this.sendEmailVerification(credentials.user);
     return credentials.user;
   }
-
 
   static async signinWithSocial(
     provider,
@@ -131,6 +134,7 @@ export default class AuthService {
     );
     return response.data;
   }
+
 
   static async reauthenticateWithStorageToken() {
     try {
