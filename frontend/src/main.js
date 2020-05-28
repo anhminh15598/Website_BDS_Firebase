@@ -13,7 +13,7 @@ import ProgressBar from '@/shared/progress-bar/progress-bar';
 import { i18n } from '@/i18n';
 import PortalVue from 'portal-vue';
 
-(async function () {
+(async function() {
   document.title = i18n('app.title');
   ProgressBar.start();
   await SettingsService.fetchAndApply();

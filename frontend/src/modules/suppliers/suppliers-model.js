@@ -128,7 +128,7 @@ const fields = {
     'supplierLocation',
     label('supplierLocation'),
     {
-      //   matches: /^[a-zA-Z_0-9]/,
+      // required: true,
     },
   ),
   supplierPhoneNumber: new StringField(
@@ -138,7 +138,7 @@ const fields = {
   ),
   soTien: new StringField('soTien', label('soTien'), {
     required: true,
-    matches: /^[a-zA-Z_0-9]/,
+    matches: /^[0-9]+$/,
   }),
 
   supplierPayTerm: new EnumeratorField(

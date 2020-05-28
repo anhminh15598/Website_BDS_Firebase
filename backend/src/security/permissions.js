@@ -8,6 +8,7 @@ class Permissions {
         id: 'iamEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.iamSecurityReviewer,
           roles.editor,
         ],
@@ -17,33 +18,41 @@ class Permissions {
         id: 'iamCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles.admin,
         ],
       },
       iamImport: {
         id: 'iamImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.iamSecurityReviewer,
           roles.editor,
+          roles.admin,
         ],
       },
       iamRead: {
         id: 'iamRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.iamSecurityReviewer,
           roles.editor,
           roles.viewer,
+          roles.admin,
         ],
       },
       iamUserAutocomplete: {
         id: 'iamUserAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
+          roles.admin,
 
           roles.customersEditor,
           roles.customersViewer,
@@ -65,25 +74,30 @@ class Permissions {
       },
       auditLogRead: {
         id: 'auditLogRead',
-        allowedRoles: [roles.owner, roles.auditLogViewer, roles.viewer],
+        allowedRoles: [roles.owner,
+        roles.admin, roles.auditLogViewer, roles.viewer],
       },
       settingsEdit: {
         id: 'settingsEdit',
-        allowedRoles: [roles.owner],
+        allowedRoles: [roles.owner,
+        roles.admin, roles.admin,],
       },
       customersImport: {
         id: 'customersImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.customersEditor,
+          roles.admin,
         ],
       },
       customersCreate: {
         id: 'customersCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.customersEditor,
@@ -94,6 +108,7 @@ class Permissions {
         id: 'customersEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.customersEditor,
@@ -104,6 +119,7 @@ class Permissions {
         id: 'customersDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.customersEditor,
@@ -114,6 +130,7 @@ class Permissions {
         id: 'customersRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -125,6 +142,7 @@ class Permissions {
         id: 'customersAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -139,6 +157,7 @@ class Permissions {
         id: 'suppliersImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.suppliersEditor,
@@ -148,6 +167,7 @@ class Permissions {
         id: 'suppliersCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.suppliersEditor,
@@ -158,6 +178,7 @@ class Permissions {
         id: 'suppliersEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.suppliersEditor,
@@ -168,6 +189,7 @@ class Permissions {
         id: 'suppliersDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.suppliersEditor,
@@ -178,6 +200,7 @@ class Permissions {
         id: 'suppliersRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -189,6 +212,7 @@ class Permissions {
         id: 'suppliersAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -203,6 +227,7 @@ class Permissions {
         id: 'staffImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.staffEditor,
@@ -212,6 +237,7 @@ class Permissions {
         id: 'staffCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.staffEditor,
@@ -222,6 +248,7 @@ class Permissions {
         id: 'staffEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.staffEditor,
@@ -232,6 +259,7 @@ class Permissions {
         id: 'staffDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.staffEditor,
@@ -242,6 +270,7 @@ class Permissions {
         id: 'staffRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -253,6 +282,7 @@ class Permissions {
         id: 'staffAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -285,6 +315,7 @@ class Permissions {
         id: 'productsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productsEditor,
@@ -294,6 +325,7 @@ class Permissions {
         id: 'productsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productsEditor,
@@ -304,6 +336,7 @@ class Permissions {
         id: 'productsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productsEditor,
@@ -314,6 +347,7 @@ class Permissions {
         id: 'productsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productsEditor,
@@ -324,6 +358,7 @@ class Permissions {
         id: 'productsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -335,6 +370,7 @@ class Permissions {
         id: 'productsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -363,6 +399,7 @@ class Permissions {
         id: 'brandsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.brandsEditor,
@@ -372,6 +409,7 @@ class Permissions {
         id: 'brandsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.brandsEditor,
@@ -382,6 +420,7 @@ class Permissions {
         id: 'brandsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.brandsEditor,
@@ -392,6 +431,7 @@ class Permissions {
         id: 'brandsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.brandsEditor,
@@ -402,6 +442,7 @@ class Permissions {
         id: 'brandsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -413,6 +454,7 @@ class Permissions {
         id: 'brandsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -427,6 +469,7 @@ class Permissions {
         id: 'categoriesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.categoriesEditor,
@@ -436,6 +479,7 @@ class Permissions {
         id: 'categoriesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.categoriesEditor,
@@ -446,6 +490,7 @@ class Permissions {
         id: 'categoriesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.categoriesEditor,
@@ -456,6 +501,7 @@ class Permissions {
         id: 'categoriesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.categoriesEditor,
@@ -466,6 +512,7 @@ class Permissions {
         id: 'categoriesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -477,6 +524,7 @@ class Permissions {
         id: 'categoriesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -491,6 +539,7 @@ class Permissions {
         id: 'expensesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expensesEditor,
@@ -500,6 +549,7 @@ class Permissions {
         id: 'expensesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expensesEditor,
@@ -510,6 +560,7 @@ class Permissions {
         id: 'expensesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expensesEditor,
@@ -520,6 +571,7 @@ class Permissions {
         id: 'expensesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expensesEditor,
@@ -530,6 +582,7 @@ class Permissions {
         id: 'expensesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -541,6 +594,7 @@ class Permissions {
         id: 'expensesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -557,6 +611,7 @@ class Permissions {
         id: 'expenseCategoryImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expenseCategoryEditor,
@@ -566,6 +621,7 @@ class Permissions {
         id: 'expenseCategoryCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expenseCategoryEditor,
@@ -576,6 +632,7 @@ class Permissions {
         id: 'expenseCategoryEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expenseCategoryEditor,
@@ -586,6 +643,7 @@ class Permissions {
         id: 'expenseCategoryDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.expenseCategoryEditor,
@@ -596,6 +654,7 @@ class Permissions {
         id: 'expenseCategoryRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -607,6 +666,7 @@ class Permissions {
         id: 'expenseCategoryAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -620,6 +680,7 @@ class Permissions {
         id: 'assetsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.assetsEditor,
@@ -629,6 +690,7 @@ class Permissions {
         id: 'assetsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.assetsEditor,
@@ -639,6 +701,7 @@ class Permissions {
         id: 'assetsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.assetsEditor,
@@ -649,6 +712,7 @@ class Permissions {
         id: 'assetsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.assetsEditor,
@@ -659,6 +723,7 @@ class Permissions {
         id: 'assetsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -670,6 +735,7 @@ class Permissions {
         id: 'assetsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -683,6 +749,7 @@ class Permissions {
         id: 'devicesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.devicesEditor,
@@ -692,6 +759,7 @@ class Permissions {
         id: 'devicesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.devicesEditor,
@@ -702,6 +770,7 @@ class Permissions {
         id: 'devicesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.devicesEditor,
@@ -712,6 +781,7 @@ class Permissions {
         id: 'devicesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.devicesEditor,
@@ -722,6 +792,7 @@ class Permissions {
         id: 'devicesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -733,6 +804,7 @@ class Permissions {
         id: 'devicesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -751,6 +823,7 @@ class Permissions {
         id: 'noticeImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.noticeEditor,
@@ -760,6 +833,7 @@ class Permissions {
         id: 'noticeCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.noticeEditor,
@@ -770,6 +844,7 @@ class Permissions {
         id: 'noticeEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.noticeEditor,
@@ -780,6 +855,7 @@ class Permissions {
         id: 'noticeDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.noticeEditor,
@@ -790,6 +866,7 @@ class Permissions {
         id: 'noticeRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -801,6 +878,7 @@ class Permissions {
         id: 'noticeAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -814,6 +892,7 @@ class Permissions {
         id: 'salesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.salesEditor,
@@ -823,6 +902,7 @@ class Permissions {
         id: 'salesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.salesEditor,
@@ -833,6 +913,7 @@ class Permissions {
         id: 'salesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.salesEditor,
@@ -843,6 +924,7 @@ class Permissions {
         id: 'salesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.salesEditor,
@@ -853,6 +935,7 @@ class Permissions {
         id: 'salesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -864,6 +947,7 @@ class Permissions {
         id: 'salesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -884,6 +968,7 @@ class Permissions {
         id: 'purchasesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.purchasesEditor,
@@ -893,6 +978,7 @@ class Permissions {
         id: 'purchasesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.purchasesEditor,
@@ -903,6 +989,7 @@ class Permissions {
         id: 'purchasesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.purchasesEditor,
@@ -913,6 +1000,7 @@ class Permissions {
         id: 'purchasesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.purchasesEditor,
@@ -923,6 +1011,7 @@ class Permissions {
         id: 'purchasesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -934,6 +1023,7 @@ class Permissions {
         id: 'purchasesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -948,6 +1038,7 @@ class Permissions {
         id: 'returnsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.returnsEditor,
@@ -957,6 +1048,7 @@ class Permissions {
         id: 'returnsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.returnsEditor,
@@ -967,6 +1059,7 @@ class Permissions {
         id: 'returnsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.returnsEditor,
@@ -977,6 +1070,7 @@ class Permissions {
         id: 'returnsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.returnsEditor,
@@ -987,6 +1081,7 @@ class Permissions {
         id: 'returnsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -998,6 +1093,7 @@ class Permissions {
         id: 'returnsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1014,6 +1110,7 @@ class Permissions {
         id: 'stockAdjustmentsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockAdjustmentsEditor,
@@ -1023,6 +1120,7 @@ class Permissions {
         id: 'stockAdjustmentsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockAdjustmentsEditor,
@@ -1033,6 +1131,7 @@ class Permissions {
         id: 'stockAdjustmentsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockAdjustmentsEditor,
@@ -1043,6 +1142,7 @@ class Permissions {
         id: 'stockAdjustmentsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockAdjustmentsEditor,
@@ -1053,6 +1153,7 @@ class Permissions {
         id: 'stockAdjustmentsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1064,6 +1165,7 @@ class Permissions {
         id: 'stockAdjustmentsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1078,6 +1180,7 @@ class Permissions {
         id: 'unitsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.unitsEditor,
@@ -1087,6 +1190,7 @@ class Permissions {
         id: 'unitsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.unitsEditor,
@@ -1097,6 +1201,7 @@ class Permissions {
         id: 'unitsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.unitsEditor,
@@ -1107,6 +1212,7 @@ class Permissions {
         id: 'unitsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.unitsEditor,
@@ -1117,6 +1223,7 @@ class Permissions {
         id: 'unitsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1128,6 +1235,7 @@ class Permissions {
         id: 'unitsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1142,6 +1250,7 @@ class Permissions {
         id: 'giftCardImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.giftCardEditor,
@@ -1151,6 +1260,7 @@ class Permissions {
         id: 'giftCardCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.giftCardEditor,
@@ -1161,6 +1271,7 @@ class Permissions {
         id: 'giftCardEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.giftCardEditor,
@@ -1171,6 +1282,7 @@ class Permissions {
         id: 'giftCardDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.giftCardEditor,
@@ -1181,6 +1293,7 @@ class Permissions {
         id: 'giftCardRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1192,6 +1305,7 @@ class Permissions {
         id: 'giftCardAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1206,6 +1320,7 @@ class Permissions {
         id: 'couponImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.couponEditor,
@@ -1215,6 +1330,7 @@ class Permissions {
         id: 'couponCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.couponEditor,
@@ -1225,6 +1341,7 @@ class Permissions {
         id: 'couponEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.couponEditor,
@@ -1235,6 +1352,7 @@ class Permissions {
         id: 'couponDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.couponEditor,
@@ -1245,6 +1363,7 @@ class Permissions {
         id: 'couponRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1256,6 +1375,7 @@ class Permissions {
         id: 'couponAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1270,6 +1390,7 @@ class Permissions {
         id: 'damagesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.damagesEditor,
@@ -1279,6 +1400,7 @@ class Permissions {
         id: 'damagesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.damagesEditor,
@@ -1289,6 +1411,7 @@ class Permissions {
         id: 'damagesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.damagesEditor,
@@ -1299,6 +1422,7 @@ class Permissions {
         id: 'damagesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.damagesEditor,
@@ -1309,6 +1433,7 @@ class Permissions {
         id: 'damagesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1320,6 +1445,7 @@ class Permissions {
         id: 'damagesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1336,6 +1462,7 @@ class Permissions {
         id: 'leaveImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveEditor,
@@ -1345,6 +1472,7 @@ class Permissions {
         id: 'leaveCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveEditor,
@@ -1355,6 +1483,7 @@ class Permissions {
         id: 'leaveEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveEditor,
@@ -1365,6 +1494,7 @@ class Permissions {
         id: 'leaveDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveEditor,
@@ -1375,6 +1505,7 @@ class Permissions {
         id: 'leaveRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1386,6 +1517,7 @@ class Permissions {
         id: 'leaveAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1399,6 +1531,7 @@ class Permissions {
         id: 'leaveTypeImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveTypeEditor,
@@ -1408,6 +1541,7 @@ class Permissions {
         id: 'leaveTypeCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveTypeEditor,
@@ -1418,6 +1552,7 @@ class Permissions {
         id: 'leaveTypeEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveTypeEditor,
@@ -1428,6 +1563,7 @@ class Permissions {
         id: 'leaveTypeDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.leaveTypeEditor,
@@ -1438,6 +1574,7 @@ class Permissions {
         id: 'leaveTypeRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1449,6 +1586,7 @@ class Permissions {
         id: 'leaveTypeAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1463,6 +1601,7 @@ class Permissions {
         id: 'allowanceAndDeductionImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.allowanceAndDeductionEditor,
@@ -1472,6 +1611,7 @@ class Permissions {
         id: 'allowanceAndDeductionCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.allowanceAndDeductionEditor,
@@ -1482,6 +1622,7 @@ class Permissions {
         id: 'allowanceAndDeductionEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.allowanceAndDeductionEditor,
@@ -1492,6 +1633,7 @@ class Permissions {
         id: 'allowanceAndDeductionDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.allowanceAndDeductionEditor,
@@ -1502,6 +1644,7 @@ class Permissions {
         id: 'allowanceAndDeductionRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1513,6 +1656,7 @@ class Permissions {
         id: 'allowanceAndDeductionAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1527,6 +1671,7 @@ class Permissions {
         id: 'payrollImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.payrollEditor,
@@ -1536,6 +1681,7 @@ class Permissions {
         id: 'payrollCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.payrollEditor,
@@ -1546,6 +1692,7 @@ class Permissions {
         id: 'payrollEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.payrollEditor,
@@ -1556,6 +1703,7 @@ class Permissions {
         id: 'payrollDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.payrollEditor,
@@ -1566,6 +1714,7 @@ class Permissions {
         id: 'payrollRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1577,6 +1726,7 @@ class Permissions {
         id: 'payrollAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1590,6 +1740,7 @@ class Permissions {
         id: 'attendanceImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.attendanceEditor,
@@ -1599,6 +1750,7 @@ class Permissions {
         id: 'attendanceCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.attendanceEditor,
@@ -1609,6 +1761,7 @@ class Permissions {
         id: 'attendanceEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.attendanceEditor,
@@ -1619,6 +1772,7 @@ class Permissions {
         id: 'attendanceDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.attendanceEditor,
@@ -1629,6 +1783,7 @@ class Permissions {
         id: 'attendanceRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1640,6 +1795,7 @@ class Permissions {
         id: 'attendanceAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1653,6 +1809,7 @@ class Permissions {
         id: 'taxClassImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.taxClassEditor,
@@ -1662,6 +1819,7 @@ class Permissions {
         id: 'taxClassCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.taxClassEditor,
@@ -1672,6 +1830,7 @@ class Permissions {
         id: 'taxClassEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.taxClassEditor,
@@ -1682,6 +1841,7 @@ class Permissions {
         id: 'taxClassDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.taxClassEditor,
@@ -1692,6 +1852,7 @@ class Permissions {
         id: 'taxClassRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1703,6 +1864,7 @@ class Permissions {
         id: 'taxClassAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1717,6 +1879,7 @@ class Permissions {
         id: 'todoImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.todoEditor,
@@ -1726,6 +1889,7 @@ class Permissions {
         id: 'todoCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.todoEditor,
@@ -1736,6 +1900,7 @@ class Permissions {
         id: 'todoEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.todoEditor,
@@ -1746,6 +1911,7 @@ class Permissions {
         id: 'todoDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.todoEditor,
@@ -1756,6 +1922,7 @@ class Permissions {
         id: 'todoRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1767,6 +1934,7 @@ class Permissions {
         id: 'todoAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1780,6 +1948,7 @@ class Permissions {
         id: 'documentsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentsEditor,
@@ -1789,6 +1958,7 @@ class Permissions {
         id: 'documentsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentsEditor,
@@ -1799,6 +1969,7 @@ class Permissions {
         id: 'documentsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentsEditor,
@@ -1809,6 +1980,7 @@ class Permissions {
         id: 'documentsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentsEditor,
@@ -1819,6 +1991,7 @@ class Permissions {
         id: 'documentsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1830,6 +2003,7 @@ class Permissions {
         id: 'documentsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1843,6 +2017,7 @@ class Permissions {
         id: 'paymentMethodsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.paymentMethodsEditor,
@@ -1852,6 +2027,7 @@ class Permissions {
         id: 'paymentMethodsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.paymentMethodsEditor,
@@ -1862,6 +2038,7 @@ class Permissions {
         id: 'paymentMethodsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.paymentMethodsEditor,
@@ -1872,6 +2049,7 @@ class Permissions {
         id: 'paymentMethodsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.paymentMethodsEditor,
@@ -1882,6 +2060,7 @@ class Permissions {
         id: 'paymentMethodsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1893,6 +2072,7 @@ class Permissions {
         id: 'paymentMethodsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1907,6 +2087,7 @@ class Permissions {
         id: 'documentTypesImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentTypesEditor,
@@ -1916,6 +2097,7 @@ class Permissions {
         id: 'documentTypesCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentTypesEditor,
@@ -1926,6 +2108,7 @@ class Permissions {
         id: 'documentTypesEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentTypesEditor,
@@ -1936,6 +2119,7 @@ class Permissions {
         id: 'documentTypesDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.documentTypesEditor,
@@ -1946,6 +2130,7 @@ class Permissions {
         id: 'documentTypesRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1957,6 +2142,7 @@ class Permissions {
         id: 'documentTypesAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -1971,6 +2157,7 @@ class Permissions {
         id: 'memosImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.memosEditor,
@@ -1980,6 +2167,7 @@ class Permissions {
         id: 'memosCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.memosEditor,
@@ -1990,6 +2178,7 @@ class Permissions {
         id: 'memosEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.memosEditor,
@@ -2000,6 +2189,7 @@ class Permissions {
         id: 'memosDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.memosEditor,
@@ -2010,6 +2200,7 @@ class Permissions {
         id: 'memosRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2021,6 +2212,7 @@ class Permissions {
         id: 'memosAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2034,6 +2226,7 @@ class Permissions {
         id: 'currencyImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.currencyEditor,
@@ -2043,6 +2236,7 @@ class Permissions {
         id: 'currencyCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.currencyEditor,
@@ -2053,6 +2247,7 @@ class Permissions {
         id: 'currencyEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.currencyEditor,
@@ -2063,6 +2258,7 @@ class Permissions {
         id: 'currencyDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.currencyEditor,
@@ -2073,6 +2269,7 @@ class Permissions {
         id: 'currencyRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2084,6 +2281,7 @@ class Permissions {
         id: 'currencyAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2098,6 +2296,7 @@ class Permissions {
         id: 'holidayImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.holidayEditor,
@@ -2107,6 +2306,7 @@ class Permissions {
         id: 'holidayCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.holidayEditor,
@@ -2117,6 +2317,7 @@ class Permissions {
         id: 'holidayEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.holidayEditor,
@@ -2127,6 +2328,7 @@ class Permissions {
         id: 'holidayDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.holidayEditor,
@@ -2137,6 +2339,7 @@ class Permissions {
         id: 'holidayRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2148,6 +2351,7 @@ class Permissions {
         id: 'holidayAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2161,6 +2365,7 @@ class Permissions {
         id: 'stallImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stallEditor,
@@ -2170,6 +2375,7 @@ class Permissions {
         id: 'stallCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stallEditor,
@@ -2180,6 +2386,7 @@ class Permissions {
         id: 'stallEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stallEditor,
@@ -2190,6 +2397,7 @@ class Permissions {
         id: 'stallDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stallEditor,
@@ -2200,6 +2408,7 @@ class Permissions {
         id: 'stallRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2211,6 +2420,7 @@ class Permissions {
         id: 'stallAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2269,6 +2479,7 @@ class Permissions {
         id: 'variationImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.variationEditor,
@@ -2278,6 +2489,7 @@ class Permissions {
         id: 'variationCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.variationEditor,
@@ -2288,6 +2500,7 @@ class Permissions {
         id: 'variationEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.variationEditor,
@@ -2298,6 +2511,7 @@ class Permissions {
         id: 'variationDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.variationEditor,
@@ -2308,6 +2522,7 @@ class Permissions {
         id: 'variationRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2319,6 +2534,7 @@ class Permissions {
         id: 'variationAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2333,6 +2549,7 @@ class Permissions {
         id: 'productLogsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productLogsEditor,
@@ -2342,6 +2559,7 @@ class Permissions {
         id: 'productLogsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productLogsEditor,
@@ -2352,6 +2570,7 @@ class Permissions {
         id: 'productLogsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productLogsEditor,
@@ -2362,6 +2581,7 @@ class Permissions {
         id: 'productLogsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productLogsEditor,
@@ -2372,6 +2592,7 @@ class Permissions {
         id: 'productLogsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2383,6 +2604,7 @@ class Permissions {
         id: 'productLogsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2396,6 +2618,7 @@ class Permissions {
         id: 'stockTransferImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockTransferEditor,
@@ -2405,6 +2628,7 @@ class Permissions {
         id: 'stockTransferCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockTransferEditor,
@@ -2415,6 +2639,7 @@ class Permissions {
         id: 'stockTransferEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockTransferEditor,
@@ -2425,6 +2650,7 @@ class Permissions {
         id: 'stockTransferDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.stockTransferEditor,
@@ -2435,6 +2661,7 @@ class Permissions {
         id: 'stockTransferRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2446,6 +2673,7 @@ class Permissions {
         id: 'stockTransferAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2460,6 +2688,7 @@ class Permissions {
         id: 'deviceSessionsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.deviceSessionsEditor,
@@ -2469,6 +2698,7 @@ class Permissions {
         id: 'deviceSessionsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.deviceSessionsEditor,
@@ -2479,6 +2709,7 @@ class Permissions {
         id: 'deviceSessionsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.deviceSessionsEditor,
@@ -2489,6 +2720,7 @@ class Permissions {
         id: 'deviceSessionsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.deviceSessionsEditor,
@@ -2499,6 +2731,7 @@ class Permissions {
         id: 'deviceSessionsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2510,6 +2743,7 @@ class Permissions {
         id: 'deviceSessionsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2526,6 +2760,7 @@ class Permissions {
         id: 'productCountImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productCountEditor,
@@ -2535,6 +2770,7 @@ class Permissions {
         id: 'productCountCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productCountEditor,
@@ -2545,6 +2781,7 @@ class Permissions {
         id: 'productCountEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productCountEditor,
@@ -2555,6 +2792,7 @@ class Permissions {
         id: 'productCountDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productCountEditor,
@@ -2565,6 +2803,7 @@ class Permissions {
         id: 'productCountRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2576,6 +2815,7 @@ class Permissions {
         id: 'productCountAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2590,6 +2830,7 @@ class Permissions {
         id: 'productValueImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productValueEditor,
@@ -2599,6 +2840,7 @@ class Permissions {
         id: 'productValueCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productValueEditor,
@@ -2609,6 +2851,7 @@ class Permissions {
         id: 'productValueEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productValueEditor,
@@ -2619,6 +2862,7 @@ class Permissions {
         id: 'productValueDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.productValueEditor,
@@ -2629,6 +2873,7 @@ class Permissions {
         id: 'productValueRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2640,6 +2885,7 @@ class Permissions {
         id: 'productValueAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2654,6 +2900,7 @@ class Permissions {
         id: 'registerImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.registerEditor,
@@ -2663,6 +2910,7 @@ class Permissions {
         id: 'registerCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.registerEditor,
@@ -2673,6 +2921,7 @@ class Permissions {
         id: 'registerEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.registerEditor,
@@ -2683,6 +2932,7 @@ class Permissions {
         id: 'registerDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.registerEditor,
@@ -2693,6 +2943,7 @@ class Permissions {
         id: 'registerRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2704,6 +2955,7 @@ class Permissions {
         id: 'registerAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2720,6 +2972,7 @@ class Permissions {
         id: 'commissionsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.commissionsEditor,
@@ -2729,6 +2982,7 @@ class Permissions {
         id: 'commissionsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.commissionsEditor,
@@ -2739,6 +2993,7 @@ class Permissions {
         id: 'commissionsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.commissionsEditor,
@@ -2749,6 +3004,7 @@ class Permissions {
         id: 'commissionsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.commissionsEditor,
@@ -2759,6 +3015,7 @@ class Permissions {
         id: 'commissionsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2770,6 +3027,7 @@ class Permissions {
         id: 'commissionsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2784,6 +3042,7 @@ class Permissions {
         id: 'transactionsImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.transactionsEditor,
@@ -2793,6 +3052,7 @@ class Permissions {
         id: 'transactionsCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.transactionsEditor,
@@ -2803,6 +3063,7 @@ class Permissions {
         id: 'transactionsEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.transactionsEditor,
@@ -2813,6 +3074,7 @@ class Permissions {
         id: 'transactionsDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.transactionsEditor,
@@ -2823,6 +3085,7 @@ class Permissions {
         id: 'transactionsRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2834,6 +3097,7 @@ class Permissions {
         id: 'transactionsAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2847,6 +3111,7 @@ class Permissions {
         id: 'priceChangeImport',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.priceChangeEditor,
@@ -2856,6 +3121,7 @@ class Permissions {
         id: 'priceChangeCreate',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.priceChangeEditor,
@@ -2866,6 +3132,7 @@ class Permissions {
         id: 'priceChangeEdit',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.priceChangeEditor,
@@ -2876,6 +3143,7 @@ class Permissions {
         id: 'priceChangeDestroy',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.entityEditor,
           roles.priceChangeEditor,
@@ -2886,6 +3154,7 @@ class Permissions {
         id: 'priceChangeRead',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,
@@ -2897,6 +3166,7 @@ class Permissions {
         id: 'priceChangeAutocomplete',
         allowedRoles: [
           roles.owner,
+          roles.admin,
           roles.editor,
           roles.viewer,
           roles.entityEditor,

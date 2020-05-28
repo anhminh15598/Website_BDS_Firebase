@@ -102,7 +102,7 @@ class SuppliersRepository extends AbstractEntityRepository {
     return (await chain.get()).size;
   }
 
-  async refreshTwoWayRelations(record, options) {}
+  async refreshTwoWayRelations(record, options) { }
 
   async destroyFromRelations(id, options) {
     await this.destroyRelationToOne(
@@ -126,12 +126,12 @@ class SuppliersRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -158,12 +158,21 @@ class SuppliersRepository extends AbstractEntityRepository {
         );
       }
 
+      if (filter.soTien) {
+        query.appendIlike(
+          'soTien',
+          filter.soTien,
+        );
+      }
+
       if (filter.supplierPhoneNumber) {
         query.appendIlike(
           'supplierPhoneNumber',
           filter.supplierPhoneNumber,
         );
       }
+
+
       if (filter.supplierLocation) {
         query.appendIlike(
           'supplierLocation',

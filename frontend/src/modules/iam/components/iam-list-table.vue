@@ -1,14 +1,14 @@
 <template>
   <div>
     <el-table
-       stripe
+      stripe
       :data="rows"
       @sort-change="doChangeSort"
       ref="table"
       row-key="id"
       v-loading="loading"
     >
-        <el-table-column type="selection" width="55"></el-table-column>
+      <el-table-column type="selection" width="55"></el-table-column>
 
       <el-table-column
         :label="fields.avatarsIam.label"
@@ -20,7 +20,7 @@
           <app-list-item-app-avatar :value="presenter(scope.row, 'avatarsIam')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
-<!--
+      <!--
 
 
       <el-table-column :label="fields.email.label" :prop="fields.email.name" sortable="custom">
@@ -29,7 +29,7 @@
       -->
       <el-table-column :label="fields.maSo.label" :prop="fields.maSo.name" width="70px">
         <template slot-scope="scope">{{ presenter(scope.row, 'maSo') }}</template>
-      </el-table-column> 
+      </el-table-column>
 
       <el-table-column
         :label="fields.disabledAsStatus.label"
@@ -47,7 +47,11 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'firstName') }}</template>
       </el-table-column>
 
-      <el-table-column :label="fields.phoneNumber.label" :prop="fields.phoneNumber.name" width="110px">
+      <el-table-column
+        :label="fields.phoneNumber.label"
+        :prop="fields.phoneNumber.name"
+        width="110px"
+      >
         <template slot-scope="scope">{{ presenter(scope.row, 'phoneNumber') }}</template>
       </el-table-column>
 
@@ -55,8 +59,7 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'email') }}</template>
       </el-table-column>
 
-
-<!--
+      <!--
       <el-table-column
         :label="fields.fullName.label"
         :prop="fields.fullName.name"
@@ -85,7 +88,7 @@
           <span style="margin-left: 10px">{{ presenter(scope.row, 'createdAt') }}</span>
         </template>
       </el-table-column>
--->
+
       <el-table-column :label="fields.roles.label" :prop="fields.roles.name">
         <template slot-scope="scope">
           <div :key="roleId" v-for="roleId in scope.row.roles">
@@ -96,46 +99,68 @@
         </template>
       </el-table-column>
 
-   
+      <el-table-column :label="fields.productVariation.label" :prop="fields.productVariation.name">
+        <template slot-scope="scope">
+          <app-list-item-relation-to-one
+            :label="fields.productVariation.label"
+            :permission="fields.productVariation.readPermission"
+            :url="fields.productVariation.viewUrl"
+            :value="presenter(scope.row, 'productVariation')"
+          ></app-list-item-relation-to-one>
+        </template>
+      </el-table-column>
+
+      <el-table-column :label="fields.productUnit.label" :prop="fields.productUnit.name">
+        <template slot-scope="scope">
+          <app-list-item-relation-to-one
+            :label="fields.productUnit.label"
+            :permission="fields.productUnit.readPermission"
+            :url="fields.productUnit.viewUrl"
+            :value="presenter(scope.row, 'productUnit')"
+          ></app-list-item-relation-to-one>
+        </template>
+      </el-table-column>
+      -->
+
+      <el-table-column
+        :label="fields.productVariation.label"
+        :prop="fields.productVariation.name"
+        width="100px"
+      >
+        <template slot-scope="scope">{{ presenter(scope.row, 'productVariation') }}</template>
+      </el-table-column>
+      <el-table-column
+        :label="fields.productUnit.label"
+        :prop="fields.productUnit.name"
+        width="100px"
+      >
+        <template slot-scope="scope">{{ presenter(scope.row, 'productUnit') }}</template>
+      </el-table-column>
+
       <el-table-column :label="fields.diaChi.label" :prop="fields.diaChi.name" width="100px">
         <template slot-scope="scope">{{ presenter(scope.row, 'diaChi') }}</template>
       </el-table-column>
-      <el-table-column :label="fields.nhom.label" :prop="fields.nhom.name" width="100px">
-        <template slot-scope="scope">{{ presenter(scope.row, 'nhom') }}</template>
-      </el-table-column>
-      <el-table-column :label="fields.staffDateOfBirth.label" :prop="fields.staffDateOfBirth.name" width="100px">
+
+      <el-table-column
+        :label="fields.staffDateOfBirth.label"
+        :prop="fields.staffDateOfBirth.name"
+        width="100px"
+      >
         <template slot-scope="scope">{{ presenter(scope.row, 'staffDateOfBirth') }}</template>
       </el-table-column>
-      <el-table-column :label="fields.phongBan.label" :prop="fields.phongBan.name" width="100px">
-        <template slot-scope="scope">{{ presenter(scope.row, 'phongBan') }}</template>
-      </el-table-column>
-
-      
-
-
-      
-      
-
-  
-
-     
 
       <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="60">
         <template slot-scope="scope">
           <div class="table-actions">
-          <!--
+            <!--
             <router-link :to="`/iam/${scope.row.id}`">
               <el-button type="primary" icon="el-icon-view" circle>
               </el-button>
             </router-link>
--->
+            -->
             <router-link :to="`/iam/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
-              <el-button type="info" icon="el-icon-edit" circle>
-              </el-button>
+              <el-button type="info" icon="el-icon-edit" circle></el-button>
             </router-link>
-            
-             
-
           </div>
         </template>
       </el-table-column>
@@ -159,13 +184,13 @@ import { UserModel } from '@/modules/auth/user-model';
 import { mapGetters, mapActions } from 'vuex';
 import { IamPermissions } from '@/modules/iam/iam-permissions';
 import Roles from '@/security/roles';
-import AppListItemAppAvatar from "../../../shared/list/list-item-avatar";
+import AppListItemAppAvatar from '../../../shared/list/list-item-avatar';
 
 const { fields } = UserModel;
 
 export default {
   name: 'app-iam-list-table',
-  components: {AppListItemAppAvatar},
+  components: { AppListItemAppAvatar },
   mounted() {
     this.doMountTable(this.$refs.table);
   },

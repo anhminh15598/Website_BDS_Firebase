@@ -3,7 +3,7 @@ const assert = require('assert');
 const String = require('./string');
 
 module.exports = class StringArray {
-  constructor() { }
+  constructor() {}
 
   validate(data) {
     if (!data) {

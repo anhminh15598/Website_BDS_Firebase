@@ -1,5 +1,5 @@
 const assert = require('assert');
-// const ForbiddenError = require('../../errors/forbiddenError');
+const ForbiddenError = require('../../errors/forbiddenError');
 const Permissions = require('../../security/permissions');
 
 module.exports = class PermissionChecker {
@@ -8,14 +8,9 @@ module.exports = class PermissionChecker {
     this.currentUser = currentUser;
   }
 
-  // validateHas(permission) {
-  //   if (!this.has(permission)) {
-  //     throw new ForbiddenError(this.language);
-  //   }
-  // }
   validateHas(permission) {
     if (!this.has(permission)) {
-      console.log("loi validateHas")
+      throw new ForbiddenError(this.language);
     }
   }
 
@@ -32,11 +27,6 @@ module.exports = class PermissionChecker {
   validateHasStorageFolder(folder) {
     if (!this.hasStorageFolder(folder)) {
       throw new ForbiddenError(this.language);
-    }
-  }
-  validateHasStorageFolder(folder) {
-    if (!this.hasStorageFolder(folder)) {
-      return console.log("Loi validateHasStorageFolder");
     }
   }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link :to="{ path: '/brands/ZgKBS1tu9Ab0XyFtuyRu/edit' }" v-if="hasPermissionToCreate">
+    <router-link :to="{ path: '/brands/8k8gnt3WEC5bc0YyQNYL/edit' }" v-if="hasPermissionToCreate">
       <el-button icon="el-icon-fa-plus" type="primary" round>
         <app-i18n code="common.new"></app-i18n>
       </el-button>

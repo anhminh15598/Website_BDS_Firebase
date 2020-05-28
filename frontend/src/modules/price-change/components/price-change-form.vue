@@ -15,115 +15,123 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.priceChangeRef.label"
-          :prop="fields.priceChangeRef.name"
-          :required="fields.priceChangeRef.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.priceChangeRef.name]" ref="focus" />
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeRef.label"
+        :prop="fields.priceChangeRef.name"
+        :required="fields.priceChangeRef.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input v-model="model[fields.priceChangeRef.name]" ref="focus" />
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeType.label"
-          :prop="fields.priceChangeType.name"
-          :required="fields.priceChangeType.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-radio-group v-model="model[fields.priceChangeType.name]">
-              <el-radio
-                :key="option.id"
-                :label="option.id"
-                v-for="option of fields.priceChangeType.options"
-              >{{option.label}}</el-radio>
-            </el-radio-group>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeType.label"
+        :prop="fields.priceChangeType.name"
+        :required="fields.priceChangeType.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-radio-group v-model="model[fields.priceChangeType.name]">
+            <el-radio
+              :key="option.id"
+              :label="option.id"
+              v-for="option of fields.priceChangeType.options"
+            >{{option.label}}</el-radio>
+          </el-radio-group>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeBefore.label"
-          :prop="fields.priceChangeBefore.name"
-          :required="fields.priceChangeBefore.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.priceChangeBefore.scale" :step="0.1" v-model="model[fields.priceChangeBefore.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeBefore.label"
+        :prop="fields.priceChangeBefore.name"
+        :required="fields.priceChangeBefore.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.priceChangeBefore.scale"
+            :step="0.1"
+            v-model="model[fields.priceChangeBefore.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeAfter.label"
-          :prop="fields.priceChangeAfter.name"
-          :required="fields.priceChangeAfter.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.priceChangeAfter.scale" :step="0.1" v-model="model[fields.priceChangeAfter.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeAfter.label"
+        :prop="fields.priceChangeAfter.name"
+        :required="fields.priceChangeAfter.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.priceChangeAfter.scale"
+            :step="0.1"
+            v-model="model[fields.priceChangeAfter.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeProduct.label"
-          :prop="fields.priceChangeProduct.name"
-          :required="fields.priceChangeProduct.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-products-autocomplete-input
-              :fetchFn="fields.priceChangeProduct.fetchFn"
-              :mapperFn="fields.priceChangeProduct.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.priceChangeProduct.name]"
-              mode="single"
-            ></app-products-autocomplete-input>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeProduct.label"
+        :prop="fields.priceChangeProduct.name"
+        :required="fields.priceChangeProduct.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-products-autocomplete-input
+            :fetchFn="fields.priceChangeProduct.fetchFn"
+            :mapperFn="fields.priceChangeProduct.mapperFn"
+            :showCreate="!modal"
+            v-model="model[fields.priceChangeProduct.name]"
+            mode="single"
+          ></app-products-autocomplete-input>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeStall.label"
-          :prop="fields.priceChangeStall.name"
-          :required="fields.priceChangeStall.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-stall-autocomplete-input
-              :fetchFn="fields.priceChangeStall.fetchFn"
-              :mapperFn="fields.priceChangeStall.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.priceChangeStall.name]"
-              mode="single"
-            ></app-stall-autocomplete-input>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeStall.label"
+        :prop="fields.priceChangeStall.name"
+        :required="fields.priceChangeStall.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-stall-autocomplete-input
+            :fetchFn="fields.priceChangeStall.fetchFn"
+            :mapperFn="fields.priceChangeStall.mapperFn"
+            :showCreate="!modal"
+            v-model="model[fields.priceChangeStall.name]"
+            mode="single"
+          ></app-stall-autocomplete-input>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeSession.label"
-          :prop="fields.priceChangeSession.name"
-          :required="fields.priceChangeSession.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-device-sessions-autocomplete-input
-              :fetchFn="fields.priceChangeSession.fetchFn"
-              :mapperFn="fields.priceChangeSession.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.priceChangeSession.name]"
-              mode="single"
-            ></app-device-sessions-autocomplete-input>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeSession.label"
+        :prop="fields.priceChangeSession.name"
+        :required="fields.priceChangeSession.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-device-sessions-autocomplete-input
+            :fetchFn="fields.priceChangeSession.fetchFn"
+            :mapperFn="fields.priceChangeSession.mapperFn"
+            :showCreate="!modal"
+            v-model="model[fields.priceChangeSession.name]"
+            mode="single"
+          ></app-device-sessions-autocomplete-input>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.priceChangeStatus.label"
-          :prop="fields.priceChangeStatus.name"
-          :required="fields.priceChangeStatus.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-radio-group v-model="model[fields.priceChangeStatus.name]">
-              <el-radio
-                :key="option.id"
-                :label="option.id"
-                v-for="option of fields.priceChangeStatus.options"
-              >{{option.label}}</el-radio>
-            </el-radio-group>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.priceChangeStatus.label"
+        :prop="fields.priceChangeStatus.name"
+        :required="fields.priceChangeStatus.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-radio-group v-model="model[fields.priceChangeStatus.name]">
+            <el-radio
+              :key="option.id"
+              :label="option.id"
+              v-for="option of fields.priceChangeStatus.options"
+            >{{option.label}}</el-radio>
+          </el-radio-group>
+        </el-col>
+      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button

@@ -10,16 +10,9 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item
-        :label="fields.id.label"
-        :prop="fields.id.name"
-        v-if="isEditing"
-      >
+      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            :disabled="true"
-            v-model="model[fields.id.name]"
-          />
+          <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
 
@@ -29,9 +22,7 @@
         :required="fields.supplierNames.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            v-model="model[fields.supplierNames.name]"
-          />
+          <el-input v-model="model[fields.supplierNames.name]" />
         </el-col>
       </el-form-item>
 
@@ -46,7 +37,7 @@
             v-gmaps-searchbox:myProperty.name.formatted_address.geometry="
               vm
             "
-            placeholder=""
+            placeholder
           />
         </el-col>
       </el-form-item>
@@ -61,7 +52,7 @@
             <el-input v-model="model[fields.supplierPhoneNumber.name]" />
           </el-col>
         </el-form-item>
--->
+      -->
       <el-form-item
         :label="fields.soTien.label"
         :prop="fields.soTien.name"
@@ -191,7 +182,7 @@
             ></app-file-upload>
           </el-col>
         </el-form-item>
-        -->
+      -->
 
       <el-form-item
         :label="fields.supplierStatus.label"
@@ -199,10 +190,7 @@
         :required="fields.supplierStatus.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-select
-            placeholder
-            v-model="model[fields.supplierStatus.name]"
-          >
+          <el-select placeholder v-model="model[fields.supplierStatus.name]">
             <el-option
               :key="option.id"
               :label="option.label"
@@ -225,19 +213,11 @@
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doReset"
-            icon="el-icon-fa-undo"
-          >
+          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
             <app-i18n code="common.reset"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doCancel"
-            icon="el-icon-fa-close"
-          >
+          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>
@@ -270,14 +250,14 @@ const formSchema = new FormSchema([
   fields.supplierProfile5,
   fields.supplierProfile6,
   fields.supplierProfile7,
-
   fields.supplierNames,
   //   fields.supplierBusinessName,
   //   fields.supplierEmail,
   fields.supplierLocation,
   fields.supplierLong,
   fields.supplierLat,
-
+  fields.soTien,
+  fields.supplierStatus,
   //   fields.supplierPhoneNumber,
   //   fields.supplierPayTerm,
   //   fields.supplierPayType,

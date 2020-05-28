@@ -5,29 +5,29 @@
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
-<!--
+    <!--
    <router-link :to="{ path: '/iam/import' }" v-if="hasPermissionToImport">
      <el-button icon="el-icon-fa-upload" type="primary">
        <app-i18n code="common.import"></app-i18n>
      </el-button>
    </router-link>
--->
-<!--    <el-tooltip-->
-<!--      :content="removeButtonTooltip"-->
-<!--      :disabled="!removeButtonTooltip"-->
-<!--      v-if="hasPermissionToEdit"-->
-<!--    >-->
-<!--      <span>-->
-<!--        <el-button-->
-<!--          :disabled="removeButtonDisabled"-->
-<!--          @click="doRemoveAllSelected()"-->
-<!--          icon="el-icon-fa-times"-->
-<!--          type="primary"-->
-<!--        >-->
-<!--          <app-i18n code="common.remove"></app-i18n>-->
-<!--        </el-button>-->
-<!--      </span>-->
-<!--    </el-tooltip>-->
+    -->
+    <!--    <el-tooltip-->
+    <!--      :content="removeButtonTooltip"-->
+    <!--      :disabled="!removeButtonTooltip"-->
+    <!--      v-if="hasPermissionToEdit"-->
+    <!--    >-->
+    <!--      <span>-->
+    <!--        <el-button-->
+    <!--          :disabled="removeButtonDisabled"-->
+    <!--          @click="doRemoveAllSelected()"-->
+    <!--          icon="el-icon-fa-times"-->
+    <!--          type="primary"-->
+    <!--        >-->
+    <!--          <app-i18n code="common.remove"></app-i18n>-->
+    <!--        </el-button>-->
+    <!--      </span>-->
+    <!--    </el-tooltip>-->
 
     <el-tooltip
       :content="enableButtonTooltip"
@@ -50,7 +50,7 @@
     <el-tooltip
       :content="disableButtonTooltip"
       :disabled="!disableButtonTooltip"
-      v-if="hasPermissionToEdit" 
+      v-if="hasPermissionToEdit"
     >
       <span>
         <el-button
@@ -65,8 +65,7 @@
       </span>
     </el-tooltip>
 
-
-
+    <!--
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'user' } }"
       v-if="hasPermissionToAuditLogs"
@@ -75,7 +74,7 @@
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>
-
+    -->
     <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
       <span>
         <el-button
@@ -88,7 +87,6 @@
         </el-button>
       </span>
     </el-tooltip>
-    
   </div>
 </template>
 

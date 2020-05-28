@@ -23,7 +23,7 @@ module.exports = class AuthFirebaseService {
     try {
       serviceAccount = require(`../../service-accounts/${
         config.env
-      }.json`);
+        }.json`);
     } catch (error) {
       if (config.env === 'test') {
         return;
@@ -36,7 +36,7 @@ module.exports = class AuthFirebaseService {
       credential: admin.credential.cert(serviceAccount),
       databaseURL: `https://${
         serviceAccount.project_id
-      }.firebaseio.com`,
+        }.firebaseio.com`,
     });
   }
 
