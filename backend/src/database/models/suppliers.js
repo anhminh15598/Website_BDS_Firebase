@@ -3,7 +3,7 @@ const AbstractEntityModel = require('./abstractEntityModel');
 
 module.exports = class Suppliers extends AbstractEntityModel {
   constructor() {
-    super('suppliers', 'supplier', {
+    super('suppliers', 'suppliers', {
       supplierProfile: new types.Files(),
       supplierProfile1: new types.Files(),
       supplierProfile2: new types.Files(),
@@ -18,7 +18,7 @@ module.exports = class Suppliers extends AbstractEntityModel {
       supplierLocation: new types.String(null, null),
       supplierPhoneNumber: new types.String(null, null),
       soTien: new types.String(null, null),
-      supplierLong: new types.String(null, null),
+      supplierLong: new types.String(),
       supplierLat: new types.String(null, null),
 
       // supplierPayTerm: new types.Enumerator([

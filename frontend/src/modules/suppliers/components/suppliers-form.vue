@@ -41,18 +41,13 @@
         :required="fields.supplierLocation.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <!--  <el-input v-model="model[field]" /> -->
-
-          <vue-google-autocomplete
-            ref="address"
-            id="map"
-            classname="el-input__inner"
-            placeholder="Please type your address"
-            v-on:placechanged="getAddressData"
-            v-on:error="handleError"
-            country="vn"
-          >
-          </vue-google-autocomplete>
+          <input
+            class="el-input__inner"
+            v-gmaps-searchbox:myProperty.name.formatted_address.geometry="
+              vm
+            "
+            placeholder=""
+          />
         </el-col>
       </el-form-item>
 
@@ -208,7 +203,6 @@
             placeholder
             v-model="model[fields.supplierStatus.name]"
           >
-            <el-option :value="undefined">--</el-option>
             <el-option
               :key="option.id"
               :label="option.label"
@@ -254,13 +248,17 @@
 
 <script>
 import Vue from 'vue';
-import VueGoogleAutocomplete from 'vue-google-autocomplete';
 
+import VueGmaps from 'vue-gmaps';
+Vue.use(VueGmaps, {
+  key: 'AIzaSyCB_p9Sx8SklsSYWf0rMYGfZAQsElYUMGY',
+  libraries: 'places',
+  v: 3.38,
+});
 import { mapGetters } from 'vuex';
 import { FormSchema } from '@/shared/form/form-schema';
 import { SuppliersModel } from '@/modules/suppliers/suppliers-model';
 
-Vue.use(VueGoogleAutocomplete);
 const { fields } = SuppliersModel;
 const formSchema = new FormSchema([
   fields.id,
@@ -294,15 +292,21 @@ export default {
 
   props: ['isEditing', 'record', 'saveLoading', 'modal'],
 
-  components: { VueGoogleAutocomplete },
+  //   components: { VueGoogleAutocomplete },
 
   data() {
     return {
       rules: formSchema.rules(),
       model: null,
-      address: null,
       long: null,
       lat: null,
+      vm: {
+        myProperty: {
+          name: '',
+          formatted_address: {},
+          geometry: {},
+        },
+      },
     };
   },
 
@@ -310,10 +314,6 @@ export default {
     this.model = formSchema.initialValues(
       this.record || {},
     );
-  },
-
-  mounted() {
-    this.$refs.address.focus();
   },
 
   computed: {
@@ -328,21 +328,6 @@ export default {
   },
 
   methods: {
-    getAddressData(addressData) {
-      console.log(addressData);
-      this.model.supplierLocation =
-        addressData.street_number +
-        ' ' +
-        addressData.route +
-        ', ' +
-        addressData.administrative_area_level_1;
-      this.model.supplierLong = addressData.longitude;
-      this.model.supplierLat = addressData.latitude;
-      console.log(this.model.supplierLocation);
-    },
-    handleError(error) {
-      console.log(error);
-    },
     doReset() {
       this.model = formSchema.initialValues(this.record);
     },
@@ -357,9 +342,12 @@ export default {
       } catch (error) {
         return;
       }
+      this.model.supplierLocation = this.vm.myProperty.formatted_address;
+      this.model.supplierLong = this.vm.myProperty.geometry.location.lng();
+      this.model.supplierLat = this.vm.myProperty.geometry.location.lat();
 
       const { id, ...values } = formSchema.cast(this.model);
-      console.log(id, values);
+      //   console.log(id, values);
 
       return this.$emit('submit', {
         id,

@@ -19,7 +19,9 @@ class SuppliersRepository extends AbstractEntityRepository {
       'set',
       admin
         .firestore()
-        .doc(`${new Suppliers().collectionName}/${record.id}`),
+        .doc(
+          `${new Suppliers().collectionName}/${record.id}`,
+        ),
       record,
       options,
     );
@@ -48,7 +50,9 @@ class SuppliersRepository extends AbstractEntityRepository {
       'update',
       admin
         .firestore()
-        .doc(`${new Suppliers().collectionName}/${record.id}`),
+        .doc(
+          `${new Suppliers().collectionName}/${record.id}`,
+        ),
       record,
       options,
     );
@@ -98,9 +102,7 @@ class SuppliersRepository extends AbstractEntityRepository {
     return (await chain.get()).size;
   }
 
-  async refreshTwoWayRelations(record, options) {
-
-  }
+  async refreshTwoWayRelations(record, options) {}
 
   async destroyFromRelations(id, options) {
     await this.destroyRelationToOne(
@@ -124,12 +126,12 @@ class SuppliersRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-        requestedAttributes: null,
-        filter: null,
-        limit: 0,
-        offset: 0,
-        orderBy: null,
-      },
+      requestedAttributes: null,
+      filter: null,
+      limit: 0,
+      offset: 0,
+      orderBy: null,
+    },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -143,23 +145,44 @@ class SuppliersRepository extends AbstractEntityRepository {
       }
 
       if (filter.supplierNames) {
-        query.appendIlike('supplierNames', filter.supplierNames);
+        query.appendIlike(
+          'supplierNames',
+          filter.supplierNames,
+        );
       }
 
       if (filter.supplierBusinessName) {
-        query.appendIlike('supplierBusinessName', filter.supplierBusinessName);
+        query.appendIlike(
+          'supplierBusinessName',
+          filter.supplierBusinessName,
+        );
       }
 
       if (filter.supplierPhoneNumber) {
-        query.appendIlike('supplierPhoneNumber', filter.supplierPhoneNumber);
+        query.appendIlike(
+          'supplierPhoneNumber',
+          filter.supplierPhoneNumber,
+        );
+      }
+      if (filter.supplierLocation) {
+        query.appendIlike(
+          'supplierLocation',
+          filter.supplierLocation,
+        );
       }
 
       if (filter.supplierPayTerm) {
-        query.appendEqual('supplierPayTerm', filter.supplierPayTerm);
+        query.appendEqual(
+          'supplierPayTerm',
+          filter.supplierPayTerm,
+        );
       }
 
       if (filter.supplierStatus) {
-        query.appendEqual('supplierStatus', filter.supplierStatus);
+        query.appendEqual(
+          'supplierStatus',
+          filter.supplierStatus,
+        );
       }
 
       if (filter.createdAtRange) {
