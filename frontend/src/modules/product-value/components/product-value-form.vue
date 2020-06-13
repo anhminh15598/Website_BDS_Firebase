@@ -15,15 +15,20 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.value.label"
-          :prop="fields.value.name"
-          :required="fields.value.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.value.scale" :step="0.1" v-model="model[fields.value.name]" ref="focus" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.value.label"
+        :prop="fields.value.name"
+        :required="fields.value.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.value.scale"
+            :step="0.1"
+            v-model="model[fields.value.name]"
+            ref="focus"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button

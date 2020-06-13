@@ -12,29 +12,50 @@
         :prop="fields.timestamp.name"
         sortable="custom"
       >
-        <template slot-scope="scope">{{ presenter(scope.row, 'timestamp') }}</template>
+        <template slot-scope="scope">{{
+          presenter(scope.row, 'timestamp')
+        }}</template>
       </el-table-column>
       <el-table-column
         :label="fields.createdByEmail.label"
         :prop="fields.createdByEmail.name"
         sortable="custom"
       >
-        <template slot-scope="scope">{{ presenter(scope.row, 'createdByEmail') }}</template>
+        <template slot-scope="scope">{{
+          presenter(scope.row, 'createdByEmail')
+        }}</template>
       </el-table-column>
       <el-table-column
         :label="fields.entityName.label"
         :prop="fields.entityName.name"
         sortable="custom"
       >
-        <template slot-scope="scope">{{ presenter(scope.row, 'entityName') }}</template>
+        <template slot-scope="scope">{{
+          presenter(scope.row, 'entityName')
+        }}</template>
       </el-table-column>
-      <el-table-column :label="fields.action.label" :prop="fields.action.name" sortable="custom">
-        <template slot-scope="scope">{{ presenter(scope.row, 'action') }}</template>
+      <el-table-column
+        :label="fields.action.label"
+        :prop="fields.action.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">{{
+          presenter(scope.row, 'action')
+        }}</template>
       </el-table-column>
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="120">
+      <el-table-column
+        :fixed="isMobile ? undefined : 'right'"
+        align="center"
+        width="120"
+      >
         <template slot-scope="scope">
-          <el-button @click="view(scope.row[fields.values.name])" type="primary" icon="el-icon-view"  circle >
+          <el-button
+            @click="view(scope.row[fields.values.name])"
+            type="primary"
+            icon="el-icon-view"
+            circle
+          >
           </el-button>
         </template>
       </el-table-column>
@@ -103,5 +124,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

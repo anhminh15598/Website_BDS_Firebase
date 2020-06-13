@@ -86,7 +86,8 @@ export default {
 
   methods: {
     ...mapActions({
-      doRegisterEmailAndPassword: 'auth/doRegisterEmailAndPassword',
+      doRegisterEmailAndPassword:
+        'auth/doRegisterEmailAndPassword',
     }),
 
     async doSubmit() {
@@ -97,10 +98,9 @@ export default {
       }
 
       await this.doRegisterEmailAndPassword({
-          email: this.model.email,
-          password: this.model.password,
-        },
-      );
+        email: this.model.email,
+        password: this.model.password,
+      });
     },
   },
 };

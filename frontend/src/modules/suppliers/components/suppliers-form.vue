@@ -10,9 +10,16 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
+      <el-form-item
+        :label="fields.id.label"
+        :prop="fields.id.name"
+        v-if="isEditing"
+      >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :disabled="true" v-model="model[fields.id.name]" />
+          <el-input
+            :disabled="true"
+            v-model="model[fields.id.name]"
+          />
         </el-col>
       </el-form-item>
 
@@ -22,7 +29,9 @@
         :required="fields.supplierNames.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input v-model="model[fields.supplierNames.name]" />
+          <el-input
+            v-model="model[fields.supplierNames.name]"
+          />
         </el-col>
       </el-form-item>
 
@@ -33,6 +42,7 @@
       >
         <el-col :lg="11" :md="16" :sm="24">
           <input
+            v-model="model[fields.supplierLocation.name]"
             class="el-input__inner"
             v-gmaps-searchbox:myProperty.name.formatted_address.geometry="
               vm
@@ -59,7 +69,11 @@
         :required="fields.soTien.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input v-model="model[fields.soTien.name]" />
+          <vue-numeric
+            class="el-input__inner"
+            separator=","
+            v-model="model[fields.soTien.name]"
+          ></vue-numeric>
         </el-col>
       </el-form-item>
 
@@ -190,7 +204,10 @@
         :required="fields.supplierStatus.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-select placeholder v-model="model[fields.supplierStatus.name]">
+          <el-select
+            placeholder
+            v-model="model[fields.supplierStatus.name]"
+          >
             <el-option
               :key="option.id"
               :label="option.label"
@@ -213,11 +230,19 @@
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
+          <el-button
+            :disabled="saveLoading"
+            @click="doReset"
+            icon="el-icon-fa-undo"
+          >
             <app-i18n code="common.reset"></app-i18n>
           </el-button>
 
-          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
+          <el-button
+            :disabled="saveLoading"
+            @click="doCancel"
+            icon="el-icon-fa-close"
+          >
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>
@@ -228,6 +253,8 @@
 
 <script>
 import Vue from 'vue';
+import VueNumeric from 'vue-numeric';
+Vue.use(VueNumeric);
 
 import VueGmaps from 'vue-gmaps';
 Vue.use(VueGmaps, {

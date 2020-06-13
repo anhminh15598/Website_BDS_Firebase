@@ -1,9 +1,7 @@
 <template>
   <div v-if="!isBlank">
-    <router-link :to="urlWithId" v-if="hasPermissionToRead">
-      <strong>{{ display }}</strong>
-    </router-link>
-    <strong v-if="!hasPermissionToRead">{{ display }}</strong>
+    <span>{{ display }}</span>
+    <span v-if="!hasPermissionToRead">{{ display }}</span>
   </div>
 </template>
 

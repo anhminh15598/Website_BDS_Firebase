@@ -1,6 +1,6 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link :to="{ path: `/stall/${record.id}/edit` }" v-if="record && hasPermissionToEdit">
+    <!-- <router-link :to="{ path: `/stall/${record.id}/edit` }" v-if="record && hasPermissionToEdit">
       <el-button icon="el-icon-fa-edit" type="primary" round>
         <app-i18n code="common.edit"></app-i18n>
       </el-button>
@@ -13,7 +13,7 @@
       <el-button icon="el-icon-fa-history" round>
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
-    </router-link>
+    </router-link>-->
   </div>
 </template>
 

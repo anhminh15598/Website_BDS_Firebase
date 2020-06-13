@@ -1,17 +1,17 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link :to="{ path: '/brands/8k8gnt3WEC5bc0YyQNYL/edit' }" v-if="hasPermissionToCreate">
+    <router-link :to="{ path: '/brands/ZgKBS1tu9Ab0XyFtuyRu/edit' }" v-if="hasPermissionToCreate">
       <el-button icon="el-icon-fa-plus" type="primary" round>
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
 
-<!--    <router-link :to="{ path: '/brands/import' }" v-if="hasPermissionToImport">-->
-<!--      <el-button icon="el-icon-fa-upload" type="primary" round>-->
-<!--        <app-i18n code="common.import"></app-i18n>-->
-<!--      </el-button>-->
-<!--    </router-link>-->
-<!--
+    <!--    <router-link :to="{ path: '/brands/import' }" v-if="hasPermissionToImport">-->
+    <!--      <el-button icon="el-icon-fa-upload" type="primary" round>-->
+    <!--        <app-i18n code="common.import"></app-i18n>-->
+    <!--      </el-button>-->
+    <!--    </router-link>-->
+    <!--
     <el-tooltip
       :content="destroyButtonTooltip"
       :disabled="!destroyButtonTooltip"
@@ -29,28 +29,28 @@
         </el-button>
       </span>
     </el-tooltip>
--->
-<!--    <router-link-->
-<!--      :to="{ path: '/audit-logs', query: { entityNames: 'brands' } }"-->
-<!--      v-if="hasPermissionToAuditLogs"-->
-<!--    >-->
-<!--      <el-button icon="el-icon-fa-history" round>-->
-<!--        <app-i18n code="auditLog.menu"></app-i18n>-->
-<!--      </el-button>-->
-<!--    </router-link>-->
+    -->
+    <!--    <router-link-->
+    <!--      :to="{ path: '/audit-logs', query: { entityNames: 'brands' } }"-->
+    <!--      v-if="hasPermissionToAuditLogs"-->
+    <!--    >-->
+    <!--      <el-button icon="el-icon-fa-history" round>-->
+    <!--        <app-i18n code="auditLog.menu"></app-i18n>-->
+    <!--      </el-button>-->
+    <!--    </router-link>-->
 
-<!--    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">-->
-<!--      <span>-->
-<!--        <el-button-->
-<!--          :disabled="exportButtonDisabled"-->
-<!--          @click="doExport()"-->
-<!--          round-->
-<!--          icon="el-icon-fa-file-excel-o"-->
-<!--        >-->
-<!--          <app-i18n code="common.export"></app-i18n>-->
-<!--        </el-button>-->
-<!--      </span>-->
-<!--    </el-tooltip>-->
+    <!--    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">-->
+    <!--      <span>-->
+    <!--        <el-button-->
+    <!--          :disabled="exportButtonDisabled"-->
+    <!--          @click="doExport()"-->
+    <!--          round-->
+    <!--          icon="el-icon-fa-file-excel-o"-->
+    <!--        >-->
+    <!--          <app-i18n code="common.export"></app-i18n>-->
+    <!--        </el-button>-->
+    <!--      </span>-->
+    <!--    </el-tooltip>-->
   </div>
 </template>
 

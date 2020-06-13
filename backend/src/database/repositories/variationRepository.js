@@ -9,10 +9,6 @@ class VariationRepository extends AbstractEntityRepository {
     const record = {
       id: this.newId(),
       ...new Variation().cast(data),
-      createdBy: this.getCurrentUser(options).id,
-      createdAt: this.serverTimestamp(),
-      updatedBy: this.getCurrentUser(options).id,
-      updatedAt: this.serverTimestamp(),
     };
 
     await AbstractEntityRepository.executeOrAddToBatch(
@@ -37,11 +33,89 @@ class VariationRepository extends AbstractEntityRepository {
   }
 
   async update(id, data, options) {
+    data = new Variation().cast(data);
+    const year = data.year;
+
     const record = {
       id,
-      ...new Variation().cast(data),
-      updatedBy: this.getCurrentUser(options).id,
-      updatedAt: this.serverTimestamp(),
+      [year]: {
+        quy01: data.quy01 || 0,
+        quy02: data.quy02 || 0,
+        quy03: data.quy03 || 0,
+        quy04: data.quy04 || 0,
+        thang01: data.thang01 || 0,
+        thang02: data.thang02 || 0,
+        thang03: data.thang03 || 0,
+        thang04: data.thang04 || 0,
+        thang05: data.thang05 || 0,
+        thang06: data.thang06 || 0,
+        thang07: data.thang07 || 0,
+        thang08: data.thang08 || 0,
+        thang09: data.thang09 || 0,
+        thang10: data.thang10 || 0,
+        thang11: data.thang11 || 0,
+        thang12: data.thang12 || 0,
+        tuan01: data.tuan01 || 0,
+        tuan02: data.tuan02 || 0,
+        tuan03: data.tuan03 || 0,
+        tuan04: data.tuan04 || 0,
+        tuan05: data.tuan05 || 0,
+        tuan06: data.tuan06 || 0,
+        tuan07: data.tuan07 || 0,
+        tuan08: data.tuan08 || 0,
+        tuan09: data.tuan09 || 0,
+        tuan10: data.tuan10 || 0,
+        tuan11: data.tuan11 || 0,
+        tuan12: data.tuan12 || 0,
+        tuan13: data.tuan13 || 0,
+        tuan14: data.tuan14 || 0,
+        tuan15: data.tuan15 || 0,
+        tuan16: data.tuan16 || 0,
+        tuan17: data.tuan17 || 0,
+        tuan18: data.tuan18 || 0,
+        tuan19: data.tuan19 || 0,
+        tuan20: data.tuan20 || 0,
+        tuan21: data.tuan21 || 0,
+        tuan22: data.tuan22 || 0,
+        tuan23: data.tuan23 || 0,
+        tuan24: data.tuan24 || 0,
+        tuan25: data.tuan25 || 0,
+        tuan26: data.tuan26 || 0,
+        tuan27: data.tuan27 || 0,
+        tuan28: data.tuan28 || 0,
+        tuan29: data.tuan29 || 0,
+        tuan30: data.tuan30 || 0,
+        tuan31: data.tuan31 || 0,
+        tuan32: data.tuan32 || 0,
+        tuan33: data.tuan33 || 0,
+        tuan34: data.tuan34 || 0,
+        tuan35: data.tuan35 || 0,
+        tuan36: data.tuan36 || 0,
+        tuan37: data.tuan37 || 0,
+        tuan38: data.tuan38 || 0,
+        tuan39: data.tuan39 || 0,
+        tuan40: data.tuan40 || 0,
+        tuan41: data.tuan41 || 0,
+        tuan42: data.tuan42 || 0,
+        tuan43: data.tuan43 || 0,
+        tuan44: data.tuan44 || 0,
+        tuan45: data.tuan45 || 0,
+        tuan46: data.tuan46 || 0,
+        tuan47: data.tuan47 || 0,
+        tuan48: data.tuan48 || 0,
+        tuan49: data.tuan49 || 0,
+        tuan50: data.tuan50 || 0,
+        tuan51: data.tuan51 || 0,
+        tuan52: data.tuan52 || 0,
+        tuan53: data.tuan53 || 0,
+        tuan54: data.tuan54 || 0,
+        tuan55: data.tuan55 || 0,
+        tuan56: data.tuan56 || 0,
+        tuan57: data.tuan57 || 0,
+        tuan58: data.tuan58 || 0,
+        tuan59: data.tuan59 || 0,
+        tuan60: data.tuan60 || 0,
+      } || null,
     };
 
     await AbstractEntityRepository.executeOrAddToBatch(
@@ -124,12 +198,12 @@ class VariationRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -201,8 +275,6 @@ class VariationRepository extends AbstractEntityRepository {
     if (!record) {
       return record;
     }
-
-
 
     return record;
   }

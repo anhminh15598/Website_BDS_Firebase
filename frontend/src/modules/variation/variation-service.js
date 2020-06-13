@@ -2,13 +2,14 @@ import authAxios from '@/shared/axios/auth-axios';
 
 export class VariationService {
   static async update(id, data) {
+    const dataID = id;
     const body = {
-      id,
-      data,
+      id: id.id,
+      data: dataID,
     };
 
     const response = await authAxios.put(
-      `/variation/${id}`,
+      `/variation/${data.id}`,
       body,
     );
 

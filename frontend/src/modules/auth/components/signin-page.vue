@@ -42,12 +42,12 @@
               style="margin-bottom: 16px; display: flex; align-items: baseline; justify-content: space-between;"
             >
               <el-checkbox v-model="model[fields.rememberMe.name]">{{ fields.rememberMe.label }}</el-checkbox>
-
+              <!-- 
               <router-link :to="{ path: '/auth/forgot-password' }">
                 <el-button type="text">
                   <app-i18n code="auth.forgotPassword"></app-i18n>
                 </el-button>
-              </router-link>
+              </router-link>-->
             </div>
           </div>
 
@@ -59,41 +59,41 @@
 
           <div class="app-divider" style="margin: 24px 0"></div>
 
-<!--          <div class="social-buttons">-->
-<!--            <el-tooltip content="Facebook" effect="dark" placement="top">-->
-<!--              <div-->
-<!--                @click="doSigninSocial({ provider: 'facebook', rememberMe: model.rememberMe })"-->
-<!--                class="social-icon raw-icon el-icon-fa-facebook-official"-->
-<!--                style="color: #3B5998"-->
-<!--              ></div>-->
-<!--            </el-tooltip>-->
+          <!-- <div class="social-buttons">-->
+          <!--            <el-tooltip content="Facebook" effect="dark" placement="top">-->
+          <!--              <div-->
+          <!--                @click="doSigninSocial({ provider: 'facebook', rememberMe: model.rememberMe })"-->
+          <!--                class="social-icon raw-icon el-icon-fa-facebook-official"-->
+          <!--                style="color: #3B5998"-->
+          <!--              ></div>-->
+          <!--            </el-tooltip>-->
 
-<!--            <el-tooltip content="Google" effect="dark" placement="top">-->
-<!--              <div-->
-<!--                @click="doSigninSocial({ provider: 'google', rememberMe: model.rememberMe })"-->
-<!--                class="social-icon raw-icon el-icon-fa-google"-->
-<!--                style="color: #DB4437"-->
-<!--              ></div>-->
-<!--            </el-tooltip>-->
+          <!--            <el-tooltip content="Google" effect="dark" placement="top">-->
+          <!--              <div-->
+          <!--                @click="doSigninSocial({ provider: 'google', rememberMe: model.rememberMe })"-->
+          <!--                class="social-icon raw-icon el-icon-fa-google"-->
+          <!--                style="color: #DB4437"-->
+          <!--              ></div>-->
+          <!--            </el-tooltip>-->
 
-<!--            <el-tooltip content="Twitter" effect="dark" placement="top">-->
-<!--              <div-->
-<!--                @click="doSigninSocial({ provider: 'twitter', rememberMe: model.rememberMe })"-->
-<!--                class="social-icon raw-icon el-icon-fa-twitter"-->
-<!--                style="color: #1DA1F2"-->
-<!--              ></div>-->
-<!--            </el-tooltip>-->
-<!--          </div>-->
+          <!--            <el-tooltip content="Twitter" effect="dark" placement="top">-->
+          <!--              <div-->
+          <!--                @click="doSigninSocial({ provider: 'twitter', rememberMe: model.rememberMe })"-->
+          <!--                class="social-icon raw-icon el-icon-fa-twitter"-->
+          <!--                style="color: #1DA1F2"-->
+          <!--              ></div>-->
+          <!--            </el-tooltip>-->
+          <!--          </div> -->
 
-          <div class="other-actions">
+          <!-- <div class="other-actions">
             <router-link :to="{ path: '/auth/signup' }">
               <el-button type="text">
                 <app-i18n code="auth.createAnAccount"></app-i18n>
               </el-button>
             </router-link>
-          </div>
+          </div>-->
 
-          <app-i18n-flags></app-i18n-flags>
+          <!-- <app-i18n-flags></app-i18n-flags> -->
         </el-form>
       </div>
     </div>

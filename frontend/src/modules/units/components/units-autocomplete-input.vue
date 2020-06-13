@@ -1,7 +1,21 @@
 <template>
   <div style="display: flex">
-    <app-autocomplete-one-input :fetchFn="fetchFn" v-if="mode !== 'multiple'" v-model="model"></app-autocomplete-one-input>
-    <app-autocomplete-many-input :fetchFn="fetchFn" v-if="mode === 'multiple'" v-model="model"></app-autocomplete-many-input>
+    <!-- <app-autocomplete-one-input
+      :fetchFn="fetchFn"
+      v-if="mode === 'single'"
+      v-model="model"
+    ></app-autocomplete-one-input> -->
+    <app-autocomplete-one-input
+      :fetchFn="fetchFn"
+      v-if="mode === 'single'"
+      v-model="model"
+    ></app-autocomplete-one-input>
+    <!-- <app-autocomplete-one-input
+      :fetchFn="fetchFn"
+      v-if="mode === 'single'"
+      v-model="model"
+    ></app-autocomplete-one-input> -->
+
     <el-button
       @click="doOpenModal()"
       icon="el-icon-plus"
@@ -56,13 +70,14 @@ export default {
       },
 
       set: function(value) {
+        console.log(value.productStall);
+
         this.$emit('input', value);
       },
     },
 
     hasPermissionToCreate() {
-      return new UnitsPermissions(this.currentUser)
-        .create;
+      return new UnitsPermissions(this.currentUser).create;
     },
   },
 

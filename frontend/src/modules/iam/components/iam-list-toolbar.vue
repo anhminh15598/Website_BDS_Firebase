@@ -11,24 +11,24 @@
        <app-i18n code="common.import"></app-i18n>
      </el-button>
    </router-link>
+    
+    <el-tooltip
+      :content="removeButtonTooltip"
+      :disabled="!removeButtonTooltip"
+      v-if="hasPermissionToEdit"
+    >
+      <span>
+        <el-button
+          :disabled="removeButtonDisabled"
+          @click="doRemoveAllSelected()"
+          icon="el-icon-fa-times"
+          type="primary"
+        >
+          <app-i18n code="common.remove"></app-i18n>
+        </el-button>
+      </span>
+    </el-tooltip>
     -->
-    <!--    <el-tooltip-->
-    <!--      :content="removeButtonTooltip"-->
-    <!--      :disabled="!removeButtonTooltip"-->
-    <!--      v-if="hasPermissionToEdit"-->
-    <!--    >-->
-    <!--      <span>-->
-    <!--        <el-button-->
-    <!--          :disabled="removeButtonDisabled"-->
-    <!--          @click="doRemoveAllSelected()"-->
-    <!--          icon="el-icon-fa-times"-->
-    <!--          type="primary"-->
-    <!--        >-->
-    <!--          <app-i18n code="common.remove"></app-i18n>-->
-    <!--        </el-button>-->
-    <!--      </span>-->
-    <!--    </el-tooltip>-->
-
     <el-tooltip
       :content="enableButtonTooltip"
       :disabled="!enableButtonTooltip"

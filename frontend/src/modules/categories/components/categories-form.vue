@@ -15,31 +15,31 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-        <el-form-item
-          :label="fields.policyImg.label"
-          :prop="fields.policyImg.name"
-          :required="fields.policyImg.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-image-upload
-              :max="fields.policyImg.max"
-              :path="fields.policyImg.path"
-              :schema="fields.policyImg.fileSchema"
-              v-model="model[fields.policyImg.name]"
-            ></app-image-upload>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.policyImg.label"
+        :prop="fields.policyImg.name"
+        :required="fields.policyImg.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-image-upload
+            :max="fields.policyImg.max"
+            :path="fields.policyImg.path"
+            :schema="fields.policyImg.fileSchema"
+            v-model="model[fields.policyImg.name]"
+          ></app-image-upload>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.policyName.label"
-          :prop="fields.policyName.name"
-          :required="fields.policyName.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.policyName.name]" />
-          </el-col>
-        </el-form-item>
-        
+      <el-form-item
+        :label="fields.policyName.label"
+        :prop="fields.policyName.name"
+        :required="fields.policyName.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input v-model="model[fields.policyName.name]" />
+        </el-col>
+      </el-form-item>
+
       <el-form-item>
         <div class="form-buttons">
           <el-button

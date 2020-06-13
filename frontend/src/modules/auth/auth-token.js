@@ -10,7 +10,6 @@ export class AuthToken {
         .auth()
         .currentUser.getIdToken(true);
     }
-
     return null;
   }
 }

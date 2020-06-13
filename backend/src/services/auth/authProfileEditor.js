@@ -21,12 +21,12 @@ module.exports = class AuthProfileEditor {
       await this._loadUser();
       await this._updateAtDatabase();
 
-      await UserRepository.commitBatch(this.batch);
+      // await UserRepository.commitBatch(this.batch);
     } catch (error) {
       throw error;
     }
 
-    await this._updateAtAuthentication();
+    // await this._updateAtAuthentication();
   }
 
   async _loadUser() {

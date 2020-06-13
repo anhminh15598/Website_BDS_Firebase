@@ -1,6 +1,6 @@
 <template>
-  <el-card class="box-card" style="margin-bottom: 30px">
   <el-form
+    style="border-bottom: 2px solid #ebeef5;"
     :label-position="labelPosition"
     :label-width="labelWidthFilter"
     :model="model"
@@ -9,46 +9,7 @@
     @submit.native.prevent="doFilter"
     class="filter"
     ref="form"
-  >
-    <el-row>
-      
-        <el-form-item :prop="fields.unitsTitle.name">
-          <el-input :placeholder="fields.unitsTitle.label" v-model="model[fields.unitsTitle.name]"/>
-        </el-form-item>
-      
-
-      
-        <el-form-item :prop="fields.unitsCode.name">
-          <el-input :placeholder="fields.unitsCode.label" v-model="model[fields.unitsCode.name]"/>
-        </el-form-item>
-      
-
-      
-        <el-form-item :prop="fields.unitsType.name">
-          <el-select :placeholder="fields.unitsType.label" v-model="model[fields.unitsType.name]">
-            <el-option :value="undefined">--</el-option>
-            <el-option
-              :key="option.id"
-              :label="option.label"
-              :value="option.id"
-              v-for="option in fields.unitsType.options"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      
-    </el-row>
-
-    <div class="filter-buttons">
-      <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary" round>
-        <app-i18n code="common.search"></app-i18n>
-      </el-button>
-
-      <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo" round>
-        <app-i18n code="common.reset"></app-i18n>
-      </el-button>
-    </div>
-  </el-form>
-  </el-card>
+  ></el-form>
 </template>
 
 <script>
@@ -76,10 +37,10 @@ export default {
 
   computed: {
     ...mapGetters({
-      labelPosition: 'layout/labelPosition',
-      labelWidthFilter: 'layout/labelWidthFilter',
-      loading: 'units/list/loading',
-      filter: 'units/list/filter',
+      // labelPosition: 'layout/labelPosition',
+      // labelWidthFilter: 'layout/labelWidthFilter',
+      // loading: 'units/list/loading',
+      // filter: 'units/list/filter',
     }),
 
     fields() {
@@ -125,5 +86,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

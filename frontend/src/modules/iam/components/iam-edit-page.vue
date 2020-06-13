@@ -29,11 +29,9 @@
         ref="form"
         v-if="model"
       >
-
         <el-row>
-         <el-col :span="8">
+          <el-col :span="8">
             <div class="grid-content">
-
               <el-form-item :label="fields.id.label" :prop="fields.id.name">
                 <el-col :lg="11" :md="16" :sm="24">
                   <el-input disabled v-model="model[fields.id.name]" />
@@ -42,9 +40,9 @@
             </div>
           </el-col>
         </el-row>
-         
-      <el-row>
-         <el-col :span="8">
+
+        <el-row>
+          <el-col :span="8">
             <div class="grid-content">
               <el-form-item :label="fields.maSo.label" :prop="fields.maSo.name">
                 <el-col :lg="11" :md="16" :sm="24">
@@ -56,79 +54,71 @@
 
           <el-col :span="8">
             <div class="grid-content">
-
               <el-form-item :label="fields.email.label" :prop="fields.email.name">
                 <el-col :lg="11" :md="16" :sm="24">
                   <el-input disabled v-model="model[fields.email.name]" />
                 </el-col>
               </el-form-item>
-
             </div>
           </el-col>
-         
 
           <el-col :span="8">
             <div class="grid-content">
-
               <el-form-item
-                      :label="fields.phoneNumber.label"
-                      :prop="fields.phoneNumber.name"
-                      :required="fields.phoneNumber.required"
+                :label="fields.phoneNumber.label"
+                :prop="fields.phoneNumber.name"
+                :required="fields.phoneNumber.required"
               >
                 <el-col :lg="11" :md="16" :sm="24">
                   <el-input prefix-icon="el-icon-fa-plus" v-model="model[fields.phoneNumber.name]" />
                 </el-col>
               </el-form-item>
-
             </div>
           </el-col>
-
         </el-row>
         <el-row>
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-          :label="fields.productVariation.label"
-          :prop="fields.productVariation.name"
-          :required="fields.productVariation.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-variation-autocomplete-input
-              :fetchFn="fields.productVariation.fetchFn"
-              :mapperFn="fields.productVariation.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.productVariation.name]"
-              mode="single"
-            ></app-variation-autocomplete-input>
-          </el-col>
-        </el-form-item>
+                :label="fields.productUnit.label"
+                :prop="fields.productUnit.name"
+                :required="fields.productUnit.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <app-units-autocomplete-input
+                    :fetchFn="fields.productUnit.fetchFn"
+                    :mapperFn="fields.productUnit.mapperFn"
+                    v-model="model[fields.productUnit.name]"
+                    mode="single"
+                  ></app-units-autocomplete-input>
+                </el-col>
+              </el-form-item>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-          :label="fields.productUnit.label"
-          :prop="fields.productUnit.name"
-          :required="fields.productUnit.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-units-autocomplete-input
-              :fetchFn="fields.productUnit.fetchFn"
-              :mapperFn="fields.productUnit.mapperFn"
-              :showCreate="!modal"
-              v-model="model[fields.productUnit.name]"
-              mode="single"
-            ></app-units-autocomplete-input>
-          </el-col>
-        </el-form-item>
+                :label="fields.iamTeam.label"
+                :prop="fields.iamTeam.name"
+                :required="fields.iamTeam.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <app-stall-autocomplete-input
+                    :fetchFn="fields.iamTeam.fetchFn"
+                    :mapperFn="fields.iamTeam.mapperFn"
+                    v-model="model[fields.iamTeam.name]"
+                    mode="single"
+                  ></app-stall-autocomplete-input>
+                </el-col>
+              </el-form-item>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-                      :label="fields.diaChi.label"
-                      :prop="fields.diaChi.name"
-                      :required="fields.diaChi.required"
+                :label="fields.diaChi.label"
+                :prop="fields.diaChi.name"
+                :required="fields.diaChi.required"
               >
                 <el-col :lg="11" :md="16" :sm="24">
                   <el-input v-model="model[fields.diaChi.name]" />
@@ -137,19 +127,17 @@
             </div>
           </el-col>
         </el-row>
-        
-
 
         <el-row>
           <el-col :span="8">
             <div class="grid-content">
               <el-form-item
-                      :label="fields.firstName.label"
-                      :prop="fields.firstName.name"
-                      :required="fields.firstName.required"
+                :label="fields.fullName.label"
+                :prop="fields.fullName.name"
+                :required="fields.fullName.required"
               >
                 <el-col :lg="11" :md="16" :sm="24">
-                  <el-input v-model="model[fields.firstName.name]" />
+                  <el-input v-model="model[fields.fullName.name]" />
                 </el-col>
               </el-form-item>
             </div>
@@ -157,47 +145,43 @@
 
           <el-col :span="8">
             <div class="grid-content">
-
-            <el-form-item
-              :label="fields.staffDateOfBirth.label"
-              :prop="fields.staffDateOfBirth.name"
-              :required="fields.staffDateOfBirth.required"
-            >
-              <el-col :lg="11" :md="16" :sm="24">
-                <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
-              </el-col>
-            </el-form-item>
-
+              <el-form-item
+                :label="fields.staffDateOfBirth.label"
+                :prop="fields.staffDateOfBirth.name"
+                :required="fields.staffDateOfBirth.required"
+              >
+                <el-col :lg="11" :md="16" :sm="24">
+                  <el-date-picker
+                    placeholder
+                    type="date"
+                    v-model="model[fields.staffDateOfBirth.name]"
+                  ></el-date-picker>
+                </el-col>
+              </el-form-item>
             </div>
           </el-col>
 
-          
-
           <el-col :span="8">
             <div class="grid-content">
-
               <el-form-item
-                      :label="fields.roles.label"
-                      :prop="fields.roles.name"
-                      :required="fields.roles.required"
+                :label="fields.roles.label"
+                :prop="fields.roles.name"
+                :required="fields.roles.required"
               >
                 <el-col :lg="11" :md="16" :sm="24">
                   <el-select multiple placeholder v-model="model[fields.roles.name]">
                     <el-option
-                            :key="option.value"
-                            :label="option.label"
-                            :value="option.value"
-                            v-for="option in fields.roles.options"
+                      :key="option.value"
+                      :label="option.label"
+                      :value="option.value"
+                      v-for="option in fields.roles.options"
                     ></el-option>
                   </el-select>
                 </el-col>
               </el-form-item>
-
             </div>
           </el-col>
-
         </el-row>
-
 
         <el-form-item
           :label="fields.avatarsIam.label"
@@ -253,10 +237,10 @@ const formSchema = new FormSchema([
   fields.id,
   fields.maSo,
   fields.email,
-  fields.firstName,
+  fields.fullName,
   fields.staffDateOfBirth,
   fields.diaChi,
-  fields.productVariation,
+  fields.iamTeam,
   fields.productUnit,
   fields.phoneNumber,
   fields.avatarsIam,
@@ -324,10 +308,10 @@ export default {
 </script>
 
 <style>
-  .el-row {
-    margin-bottom: 20px;
-  }
-  .el-col {
-    border-radius: 4px;
-  }
+.el-row {
+  margin-bottom: 20px;
+}
+.el-col {
+  border-radius: 4px;
+}
 </style>

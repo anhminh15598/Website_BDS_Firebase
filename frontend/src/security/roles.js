@@ -4,11 +4,14 @@ import _values from 'lodash/values';
 class Roles {
   static get values() {
     return {
-      admin: 'Admin',
-      giamDoc: 'Giám đốc',
-      truongPhong: 'Trưởng phòng',
-      phoPhong: 'Phó phòng',
-      nhanVien: 'Nhân viên',
+      giamDoc: 'Giám Đốc',
+      phoGiamDoc: 'Phó Giám Đốc',
+      truongPhong: 'Trưởng Phòng',
+      phoPhong: 'Phó Phòng',
+      nhanVien: 'Nhân Viên',
+
+      // admin: 'Admin',
+
       // owner: 'owner',
       // editor: 'editor',
       // iamSecurityReviewer: 'iamSecurityReviewer',

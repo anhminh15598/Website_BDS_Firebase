@@ -3,9 +3,9 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import { setLocale as setYupLocale } from 'yup';
 import ptBR from '@/i18n/pt-BR';
-import en from '@/i18n/en';
-import elementUIEn from 'element-ui/lib/locale/lang/en';
-import elementUIPtBR from 'element-ui/lib/locale/lang/pt-br';
+// import en from '@/i18n/en';
+// import elementUIEn from 'element-ui/lib/locale/lang/en';
+import elementUIPtBR from 'element-ui/lib/locale/lang/vi';
 
 let currentLanguageCode = null;
 
@@ -17,14 +17,13 @@ const languages = {
     dictionary: ptBR,
     elementUI: elementUIPtBR,
   },
-  en: {
-    id: 'en',
-    label: 'English',
-    flag: '/images/flags/24/United-States.png',
-    dictionary: en,
-    elementUI: elementUIEn,
-  },
-
+  // en: {
+  //   id: 'en',
+  //   label: 'English',
+  //   flag: '/images/flags/24/United-States.png',
+  //   dictionary: en,
+  //   elementUI: elementUIEn,
+  // },
 };
 
 function init() {
@@ -43,7 +42,7 @@ function format(message, args) {
   }
 
   try {
-    return message.replace(/{(\d+)}/g, function (
+    return message.replace(/{(\d+)}/g, function(
       match,
       number,
     ) {

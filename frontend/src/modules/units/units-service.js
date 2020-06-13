@@ -1,6 +1,20 @@
 import authAxios from '@/shared/axios/auth-axios';
 
 export class UnitsService {
+  static async update2(id, data) {
+    const dataID = id;
+    const body = {
+      id: id.id,
+      data: dataID,
+    };
+
+    const response = await authAxios.put(
+      `/units/${data.id}`,
+      body,
+    );
+
+    return response.data;
+  }
   static async update(id, data) {
     const body = {
       id,
@@ -32,10 +46,7 @@ export class UnitsService {
       data,
     };
 
-    const response = await authAxios.post(
-      `/units`,
-      body,
-    );
+    const response = await authAxios.post(`/units`, body);
 
     return response.data;
   }
@@ -86,6 +97,7 @@ export class UnitsService {
         params,
       },
     );
+    // await console.log(response.data);
 
     return response.data;
   }

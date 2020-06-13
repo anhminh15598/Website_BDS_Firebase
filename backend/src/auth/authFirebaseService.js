@@ -78,73 +78,73 @@ module.exports = class AuthFirebaseService {
     });
   }
 
-  static async sendEmailAddressVerificationEmail(
-    language,
-    email,
-  ) {
-    if (!EmailSender.isConfigured) {
-      throw new Error(
-        `Email provider is not configured. Please configure it at backend/config/<environment>/email.json.`,
-      );
-    }
+  // static async sendEmailAddressVerificationEmail(
+  //   language,
+  //   email,
+  // ) {
+  //   if (!EmailSender.isConfigured) {
+  //     throw new Error(
+  //       `Email provider is not configured. Please configure it at backend/config/<environment>/email.json.`,
+  //     );
+  //   }
 
-    let link;
-    try {
-      link = await admin
-        .auth()
-        .generateEmailVerificationLink(
-          email,
-          this._actionCodeSettings,
-        );
-    } catch (error) {
-      throw new ValidationError(
-        language,
-        'auth.emailAddressVerificationEmail.error',
-      );
-    }
+  //   let link;
+  //   try {
+  //     link = await admin
+  //       .auth()
+  //       .generateEmailVerificationLink(
+  //         email,
+  //         this._actionCodeSettings,
+  //       );
+  //   } catch (error) {
+  //     throw new ValidationError(
+  //       language,
+  //       'auth.emailAddressVerificationEmail.error',
+  //     );
+  //   }
 
-    const emailAddressVerificationEmail = new EmailAddressVerificationEmail(
-      language,
-      email,
-      link,
-    );
+  //   const emailAddressVerificationEmail = new EmailAddressVerificationEmail(
+  //     language,
+  //     email,
+  //     link,
+  //   );
 
-    return new EmailSender(
-      emailAddressVerificationEmail,
-    ).send();
-  }
+  //   return new EmailSender(
+  //     emailAddressVerificationEmail,
+  //   ).send();
+  // }
 
-  static async sendPasswordResetEmail(language, email) {
-    if (!EmailSender.isConfigured) {
-      throw new Error(
-        `Email provider is not configured. Please configure it at backend/config/<environment>/email.json.`,
-      );
-    }
+  // static async sendPasswordResetEmail(language, email) {
+  //   if (!EmailSender.isConfigured) {
+  //     throw new Error(
+  //       `Email provider is not configured. Please configure it at backend/config/<environment>/email.json.`,
+  //     );
+  //   }
 
-    let link;
+  //   let link;
 
-    try {
-      link = await admin
-        .auth()
-        .generatePasswordResetLink(
-          email,
-          this._actionCodeSettings,
-        );
-    } catch (error) {
-      throw new ValidationError(
-        language,
-        'auth.passwordReset.error',
-      );
-    }
+  //   try {
+  //     link = await admin
+  //       .auth()
+  //       .generatePasswordResetLink(
+  //         email,
+  //         this._actionCodeSettings,
+  //       );
+  //   } catch (error) {
+  //     throw new ValidationError(
+  //       language,
+  //       'auth.passwordReset.error',
+  //     );
+  //   }
 
-    const passwordResetEmail = new PasswordResetEmail(
-      language,
-      email,
-      link,
-    );
+  //   const passwordResetEmail = new PasswordResetEmail(
+  //     language,
+  //     email,
+  //     link,
+  //   );
 
-    return new EmailSender(passwordResetEmail).send();
-  }
+  //   return new EmailSender(passwordResetEmail).send();
+  // }
 
   static get _actionCodeSettings() {
     const url = _get(config, 'clientUrl', undefined);

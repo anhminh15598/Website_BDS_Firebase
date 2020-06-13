@@ -1,5 +1,4 @@
 <template>
-  <el-card class="box-card" style="margin-bottom: 30px">
   <el-form
     :label-position="labelPosition"
     :label-width="labelWidthFilter"
@@ -10,57 +9,7 @@
     class="filter"
     ref="form"
   >
-    <el-row>
-      
-        <el-form-item :prop="fields.stallName.name">
-          <el-input :placeholder="fields.stallName.label" v-model="model[fields.stallName.name]"/>
-        </el-form-item>
-
-        <el-form-item :prop="fields.stallType.name">
-          <el-select :placeholder="fields.stallType.label" v-model="model[fields.stallType.name]">
-            <el-option :value="undefined">--</el-option>
-            <el-option
-              :key="option.id"
-              :label="option.label"
-              :value="option.id"
-              v-for="option in fields.stallType.options"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      
-        <el-form-item :prop="fields.stallLocation.name">
-          <el-input :placeholder="fields.stallLocation.label" v-model="model[fields.stallLocation.name]"/>
-        </el-form-item>
-      
-        <el-form-item :prop="fields.stallPhoneNumber.name">
-          <el-input :placeholder="fields.stallPhoneNumber.label" v-model="model[fields.stallPhoneNumber.name]"/>
-        </el-form-item>
-      
-        <el-form-item :prop="fields.stallIsStatus.name">
-          <el-select :placeholder="fields.stallIsStatus.label" v-model="model[fields.stallIsStatus.name]">
-            <el-option :value="undefined">--</el-option>
-            <el-option
-              :key="option.id"
-              :label="option.label"
-              :value="option.id"
-              v-for="option in fields.stallIsStatus.options"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-      
-    </el-row>
-
-    <div class="filter-buttons">
-      <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary" round>
-        <app-i18n code="common.search"></app-i18n>
-      </el-button>
-
-      <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo" round>
-        <app-i18n code="common.reset"></app-i18n>
-      </el-button>
-    </div>
   </el-form>
-  </el-card>
 </template>
 
 <script>
@@ -139,5 +88,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

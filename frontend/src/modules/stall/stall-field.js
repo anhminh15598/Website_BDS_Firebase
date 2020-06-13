@@ -18,7 +18,7 @@ export class StallField {
 
         return {
           id: record.id,
-          label: record.stallName,
+          label: record.teamName,
         };
       },
       options,
@@ -39,7 +39,7 @@ export class StallField {
 
         return {
           id: record.id,
-          label: record.stallName,
+          label: record.teamName,
         };
       },
       options,

@@ -7,7 +7,7 @@ import { getLanguageCode } from '@/i18n';
 
 const authAxios = Axios.create({
   baseURL: config.backendUrl,
-  paramsSerializer: function(params) {
+  paramsSerializer: function (params) {
     return Qs.stringify(params, {
       arrayFormat: 'brackets',
       filter: (prefix, value) => {
@@ -25,7 +25,7 @@ const authAxios = Axios.create({
 });
 
 authAxios.interceptors.request.use(
-  async function(options) {
+  async function (options) {
     const token = await AuthToken.get();
 
     if (token) {
@@ -36,7 +36,7 @@ authAxios.interceptors.request.use(
 
     return options;
   },
-  function(error) {
+  function (error) {
     console.log('Request error: ', error);
     return Promise.reject(error);
   },

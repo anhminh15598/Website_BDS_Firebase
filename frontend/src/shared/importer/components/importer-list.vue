@@ -5,31 +5,46 @@
       :data="pager.paginate(rows)"
       :default-sort="{
         prop: '_line',
-        order: 'ascending'
+        order: 'ascending',
       }"
       @sort-change="(args) => pager.sortChange(args)"
       ref="table"
       row-key="_line"
       style="width: 100%"
     >
-      <el-table-column :label="i18n('importer.line')" prop="_line" sortable="custom">
-        <template slot-scope="scope">{{ scope.row._line }}</template>
+      <el-table-column
+        align="center"
+        :label="i18n('importer.line')"
+        prop="_line"
+      >
+        <template slot-scope="scope">{{
+          scope.row._line - 1
+        }}</template>
       </el-table-column>
 
       <el-table-column
         :key="field.name"
         :label="field.label"
         :prop="field.name"
-        sortable="custom"
         v-for="field of fields"
+        width="250px"
       >
-        <template slot-scope="scope">{{ scope.row[field.name] }}</template>
+        <template slot-scope="scope">{{
+          scope.row[field.name]
+        }}</template>
       </el-table-column>
 
-      <el-table-column :label="i18n('importer.status')" prop="_status" sortable="custom">
+      <el-table-column
+        align="center"
+        width="250px"
+        :label="i18n('importer.status')"
+        prop="_status"
+        sortable="custom"
+      >
+        <!-- :errorMessage="scope.row._errorMessage" -->
+
         <template slot-scope="scope">
           <app-importer-status-row
-            :errorMessage="scope.row._errorMessage"
             :value="scope.row._status"
           ></app-importer-status-row>
         </template>
@@ -92,5 +107,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

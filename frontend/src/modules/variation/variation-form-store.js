@@ -98,11 +98,11 @@ export default {
       }
     },
 
-    async doUpdate({ commit }, { id, values }) {
+    async doUpdate({ commit }, { values }) {
       try {
         commit('UPDATE_STARTED');
 
-        await VariationService.update(id, values);
+        await VariationService.update(values);
 
         commit('UPDATE_SUCCESS');
         Message.success(i18n('entities.variation.update.success'));

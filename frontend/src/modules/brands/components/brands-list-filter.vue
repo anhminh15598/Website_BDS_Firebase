@@ -1,6 +1,6 @@
 <template>
-  <el-card class="box-card" style="margin-bottom: 30px">
   <el-form
+    style="border-bottom: 2px solid #ebeef5;"
     :label-position="labelPosition"
     :label-width="labelWidthFilter"
     :model="model"
@@ -10,15 +10,10 @@
     class="filter"
     ref="form"
   >
-    <el-row>
-        
-    </el-row>
+    <el-row></el-row>
 
-    <div class="filter-buttons">
-     
-    </div>
+    <div class="filter-buttons"></div>
   </el-form>
-  </el-card>
 </template>
 
 <script>
@@ -28,9 +23,7 @@ import { BrandsModel } from '@/modules/brands/brands-model';
 
 const { fields } = BrandsModel;
 
-const filterSchema = new FilterSchema([
-  fields.brandTitle,
-]);
+const filterSchema = new FilterSchema([fields.brandTitle]);
 
 export default {
   name: 'app-brands-list-filter',

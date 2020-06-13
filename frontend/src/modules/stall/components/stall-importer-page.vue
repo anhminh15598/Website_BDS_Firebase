@@ -8,16 +8,22 @@
         <app-i18n code="entities.stall.menu"></app-i18n>
       </el-breadcrumb-item>
       <el-breadcrumb-item>
-        <app-i18n code="entities.stall.importer.title"></app-i18n>
+        <app-i18n
+          code="entities.stall.importer.title"
+        ></app-i18n>
       </el-breadcrumb-item>
     </el-breadcrumb>
 
     <div class="app-content-page">
       <h1 class="app-content-title">
-        <app-i18n code="entities.stall.importer.title"></app-i18n>
+        <app-i18n
+          code="entities.stall.importer.title"
+        ></app-i18n>
       </h1>
 
-      <app-importer storePath="stall/importer"></app-importer>
+      <app-importer
+        storePath="stall/importer"
+      ></app-importer>
     </div>
   </div>
 </template>
@@ -28,5 +34,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

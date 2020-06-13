@@ -16,22 +16,23 @@ export default {
       return;
     }
 
-    if (
-      to.path !== '/auth/email-unverified' &&
-      !store.getters['auth/currentUser'].emailVerified
-    ) {
-      next({ path: '/auth/email-unverified' });
-      return;
-    }
+    // if (
+    //   to.path !== '/auth/email-unverified' &&
+    //   !store.getters['auth/currentUser'].emailVerified
+    // ) {
+    //   next({ path: '/auth/email-unverified' });
+    //   // next({ path: '' });
+    //   return;
+    // }
 
-    if (
-      to.path !== '/auth/empty-permissions' &&
-      store.getters['auth/currentUser'].emailVerified &&
-      !store.getters['auth/roles'].length
-    ) {
-      next({ path: '/auth/empty-permissions' });
-      return;
-    }
+    // if (
+    //   to.path !== '/auth/empty-permissions' &&
+    //   store.getters['auth/currentUser'].emailVerified &&
+    //   !store.getters['auth/roles'].length
+    // ) {
+    //   next({ path: '/auth/empty-permissions' });
+    //   return;
+    // }
 
     next();
   },

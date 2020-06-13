@@ -11,7 +11,9 @@
 
     <div class="app-content-page">
       <h1 class="app-content-title">
-        <app-i18n code="entities.units.list.title"></app-i18n>
+        <app-i18n
+          code="entities.units.list.title"
+        ></app-i18n>
       </h1>
 
       <app-units-list-toolbar></app-units-list-toolbar>
@@ -37,5 +39,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

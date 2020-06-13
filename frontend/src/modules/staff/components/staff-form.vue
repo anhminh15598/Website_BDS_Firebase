@@ -15,6 +15,34 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
+
+      <el-form-item
+        :label="fields.staffNames.label"
+        :prop="fields.staffNames.name"
+        :required="fields.staffNames.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input v-model="model[fields.staffNames.name]" />
+        </el-col>
+      </el-form-item>
+
+      <el-form-item
+        :label="fields.staffUserId.label"
+        :prop="fields.staffUserId.name"
+        :required="fields.staffUserId.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-iam-user-autocomplete-input
+            :fetchFn="fields.staffUserId.fetchFn"
+            :mapperFn="fields.staffUserId.mapperFn"
+            :showCreate="!modal"
+            v-model="model[fields.staffUserId.name]"
+            mode="single"
+          ></app-iam-user-autocomplete-input>
+        </el-col>
+      </el-form-item>
+
+      <!--
               <el-form-item
           :label="fields.staffProfile.label"
           :prop="fields.staffProfile.name"
@@ -195,6 +223,7 @@
             </el-radio-group>
           </el-col>
         </el-form-item>
+      -->
       <el-form-item>
         <div class="form-buttons">
           <el-button
@@ -251,6 +280,7 @@ export default {
   data() {
     return {
       rules: formSchema.rules(),
+
       model: null,
     };
   },

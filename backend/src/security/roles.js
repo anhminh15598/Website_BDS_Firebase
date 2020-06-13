@@ -2,10 +2,11 @@ class Roles {
   static get values() {
     return {
       admin: 'Admin',
-      giamDoc: 'Giám đốc',
-      truongPhong: 'Trưởng phòng',
-      phoPhong: 'Phó phòng',
-      nhanVien: 'Nhân viên',
+      giamDoc: 'Giám Đốc',
+      phoGiamDoc: 'Phó Giám Đốc',
+      truongPhong: 'Trưởng Phòng',
+      phoPhong: 'Phó Phòng',
+      nhanVien: 'Nhân Viên',
       owner: 'owner',
       editor: 'editor',
       viewer: 'viewer',
@@ -55,8 +56,10 @@ class Roles {
       leaveViewer: 'leaveViewer',
       leaveTypeEditor: 'leaveTypeEditor',
       leaveTypeViewer: 'leaveTypeViewer',
-      allowanceAndDeductionEditor: 'allowanceAndDeductionEditor',
-      allowanceAndDeductionViewer: 'allowanceAndDeductionViewer',
+      allowanceAndDeductionEditor:
+        'allowanceAndDeductionEditor',
+      allowanceAndDeductionViewer:
+        'allowanceAndDeductionViewer',
       payrollEditor: 'payrollEditor',
       payrollViewer: 'payrollViewer',
       attendanceEditor: 'attendanceEditor',

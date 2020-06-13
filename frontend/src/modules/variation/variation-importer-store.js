@@ -4,7 +4,7 @@ import variationImporterFields from '@/modules/variation/variation-importer-fiel
 import { i18n } from '@/i18n';
 
 export default importerStore(
-  VariationService.import,
+  VariationService.update,
   variationImporterFields,
   i18n('entities.variation.importer.fileName'),
   i18n('entities.variation.importer.hint'),

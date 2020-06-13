@@ -19,7 +19,11 @@
       active-text-color="#A569BD"
       @select="collapseMenuIfMobile()"
     >
-      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" index="/">
+      <el-menu-item
+        :class="classFor('/', true)"
+        :route="{ path: '/' }"
+        index="/"
+      >
         <i class="el-icon-fa-home"></i>
         <span slot="title">
           <app-i18n code="home.menu"></app-i18n>
@@ -45,6 +49,72 @@
             <app-i18n code="iam.menu"></app-i18n>
           </span>
         </el-menu-item>
+
+        <!-- 
+        <el-menu-item
+          :class="classFor('/variation')"
+          :route="{ path: '/variation' }"
+          index="/variation"
+          v-if="hasPermissionToVariation"
+        >
+          <i class="el-icon-fa-chevron-right"></i>
+          <span slot="title">
+            <app-i18n
+              code="entities.variation.menu"
+            ></app-i18n>
+          </span>
+        </el-menu-item>
+
+        <el-menu-item
+          :class="classFor('/staff')"
+          :route="{ path: '/staff' }"
+          index="/staff"
+          v-if="hasPermissionToStaff"
+        >
+          <i class="el-icon-fa-user-secret"></i>
+          <span slot="title">
+            <app-i18n code="entities.staff.menu"></app-i18n>
+          </span>
+        </el-menu-item>
+        <el-menu-item
+          :class="classFor('/products')"
+          :route="{ path: '/products' }"
+          index="/products"
+          v-if="hasPermissionToProducts"
+        >
+          <i class="el-icon-fa-cubes"></i>
+          <span slot="title">
+            <app-i18n
+              code="entities.products.menu"
+            ></app-i18n>
+          </span>
+        </el-menu-item>
+
+        <el-menu-item
+          :class="classFor('/tax-class')"
+          :route="{ path: '/tax-class' }"
+          index="/tax-class"
+          v-if="hasPermissionToTaxClass"
+        >
+          <i class="el-icon-fa-list"></i>
+          <span slot="title">
+            <app-i18n
+              code="entities.taxClass.menu"
+            ></app-i18n>
+          </span>
+        </el-menu-item>
+        <el-menu-item
+          :class="classFor('/stall')"
+          :route="{ path: '/stall' }"
+          index="/stall"
+          v-if="hasPermissionToStall"
+        >
+          <i class="el-icon-fa-home"></i>
+          <span slot="title">
+            <app-i18n code="entities.stall.menu"></app-i18n>
+          </span>
+        </el-menu-item> -->
+
         <!--
 
       </el-menu-item-group>
@@ -82,13 +152,36 @@
           index="/units"
           v-if="hasPermissionToUnits"
         >
-          <i class="el-icon-fa-filter"></i>
+          <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
             <app-i18n code="entities.units.menu"></app-i18n>
           </span>
         </el-menu-item>
-
+        <el-menu-item
+          :class="classFor('/stall')"
+          :route="{ path: '/stall' }"
+          index="/stall"
+          v-if="hasPermissionToStall"
+        >
+          <i class="el-icon-fa-circle-o"></i>
+          <span slot="title">
+            <app-i18n code="entities.stall.menu"></app-i18n>
+          </span>
+        </el-menu-item>
         <!--
+        <el-menu-item
+          :class="classFor('/stall')"
+          :route="{ path: '/stall' }"
+          index="/stall"
+          v-if="hasPermissionToStall"
+        >
+          <i class="el-icon-fa-home"></i>
+          <span slot="title">
+            <app-i18n code="entities.stall.menu"></app-i18n>
+          </span>
+        </el-menu-item>
+
+       
     
         <el-menu-item-group title="Products">
           <el-menu-item
@@ -154,9 +247,11 @@
           index="/brands"
           v-if="hasPermissionToBrands"
         >
-          <i class="el-icon-fa-adjust"></i>
+          <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n code="entities.brands.menu"></app-i18n>
+            <app-i18n
+              code="entities.brands.menu"
+            ></app-i18n>
           </span>
         </el-menu-item>
 
@@ -166,9 +261,11 @@
           index="/categories"
           v-if="hasPermissionToCategories"
         >
-          <i class="el-icon-fa-bandcamp"></i>
+          <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n code="entities.categories.menu"></app-i18n>
+            <app-i18n
+              code="entities.categories.menu"
+            ></app-i18n>
           </span>
         </el-menu-item>
 
@@ -385,7 +482,9 @@
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n code="entities.suppliers.menu"></app-i18n>
+            <app-i18n
+              code="entities.suppliers.menu"
+            ></app-i18n>
           </span>
         </el-menu-item>
       </el-submenu>

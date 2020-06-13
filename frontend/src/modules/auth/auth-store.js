@@ -193,24 +193,24 @@ export default {
       });
     },
 
-    async doSendEmailConfirmation({ commit, getters }) {
-      try {
-        commit('EMAIL_CONFIRMATION_START');
+    // async doSendEmailConfirmation({ commit, getters }) {
+    //   try {
+    //     commit('EMAIL_CONFIRMATION_START');
 
-        await service.sendEmailVerification(
-          getters.authenticationUser,
-        );
+    //     await service.sendEmailVerification(
+    //       getters.authenticationUser,
+    //     );
 
-        Message.success(
-          i18n('auth.verificationEmailSuccess'),
-        );
+    //     Message.success(
+    //       i18n('auth.verificationEmailSuccess'),
+    //     );
 
-        commit('EMAIL_CONFIRMATION_SUCCESS');
-      } catch (error) {
-        Errors.handle(error);
-        commit('EMAIL_CONFIRMATION_ERROR');
-      }
-    },
+    //     commit('EMAIL_CONFIRMATION_SUCCESS');
+    //   } catch (error) {
+    //     Errors.handle(error);
+    //     commit('EMAIL_CONFIRMATION_ERROR');
+    //   }
+    // },
 
     async doSendPasswordResetEmail({ commit }, email) {
       try {
@@ -278,7 +278,7 @@ export default {
         // currentUser.emailVerified =
         //   authenticationUser.emailVerified;
         // in background
-        // service.reauthenticateWithStorageToken();
+        service.reauthenticateWithStorageToken();
 
         commit('AUTH_SUCCESS', {
           // currentUser,

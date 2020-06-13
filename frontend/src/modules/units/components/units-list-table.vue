@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="padding">
     <el-table
       stripe
       :data="rows"
@@ -8,17 +8,34 @@
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <el-table-column width="40px"></el-table-column>
 
       <el-table-column
         :label="fields.unitsTitle.label"
         :prop="fields.unitsTitle.name"
         sortable="custom"
+        width="350px"
       >
-        <template slot-scope="scope">{{ presenter(scope.row, 'unitsTitle') }}</template>
+        <template slot-scope="scope">{{
+          presenter(scope.row, 'unitsTitle')
+        }}</template>
       </el-table-column>
 
       <el-table-column
+        :label="fields.productStall.label"
+        :prop="fields.productStall.name"
+      >
+        <template slot-scope="scope">
+          <app-list-item-relation-to-many
+            :label="fields.productStall.label"
+            :permission="fields.productStall.readPermission"
+            :url="fields.productStall.viewUrl"
+            :value="presenter(scope.row, 'productStall')"
+          ></app-list-item-relation-to-many>
+        </template>
+      </el-table-column>
+
+      <!-- <el-table-column
         :label="fields.unitsCode.label"
         :prop="fields.unitsCode.name"
         sortable="custom"
@@ -32,24 +49,34 @@
         sortable="custom"
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'unitsType') }}</template>
-      </el-table-column>
+      </el-table-column>-->
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
+      <el-table-column
+        :fixed="isMobile ? undefined : 'right'"
+        align="center"
+        width="180"
+      >
         <template slot-scope="scope">
           <div class="table-actions">
-
-            <router-link :to="`/units/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
-              <el-button type="info" icon="el-icon-edit" circle>
-              </el-button>
+            <router-link
+              :to="`/units/${scope.row.id}/edit`"
+              v-if="hasPermissionToEdit"
+            >
+              <el-button
+                type="info"
+                icon="el-icon-edit"
+                circle
+              ></el-button>
             </router-link>
 
             <el-button
               :disabled="destroyLoading"
               @click="doDestroyWithConfirm(scope.row.id)"
-              type="danger" icon="el-icon-delete" circle
+              type="danger"
+              icon="el-icon-delete"
+              circle
               v-if="hasPermissionToDestroy"
-            >
-            </el-button>
+            ></el-button>
           </div>
         </template>
       </el-table-column>
@@ -145,4 +172,6 @@ export default {
 </script>
 
 <style>
+.padding {
+}
 </style>

@@ -10,48 +10,48 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
+      <el-form-item
+        :label="fields.id.label"
+        :prop="fields.id.name"
+        v-if="isEditing"
+      >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :disabled="true" v-model="model[fields.id.name]" />
+          <el-input
+            :disabled="true"
+            v-model="model[fields.id.name]"
+          />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.unitsTitle.label"
-          :prop="fields.unitsTitle.name"
-          :required="fields.unitsTitle.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.unitsTitle.name]" ref="focus" />
-          </el-col>
-        </el-form-item>
 
-        <el-form-item
-          :label="fields.unitsCode.label"
-          :prop="fields.unitsCode.name"
-          :required="fields.unitsCode.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.unitsCode.name]" />
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.unitsTitle.label"
+        :prop="fields.unitsTitle.name"
+        :required="fields.unitsTitle.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input
+            v-model="model[fields.unitsTitle.name]"
+            ref="focus"
+          />
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.unitsType.label"
-          :prop="fields.unitsType.name"
-          :required="fields.unitsType.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-select placeholder v-model="model[fields.unitsType.name]">
-              <el-option :value="undefined">--</el-option>
-              <el-option
-                :key="option.id"
-                :label="option.label"
-                :value="option.id"
-                v-for="option in fields.unitsType.options"
-              ></el-option>
-            </el-select>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.productStall.label"
+        :prop="fields.productStall.name"
+        :required="fields.productStall.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-stall-autocomplete-input
+            :fetchFn="fields.productStall.fetchFn"
+            :mapperFn="fields.productStall.mapperFn"
+            :showCreate="!modal"
+            v-model="model[fields.productStall.name]"
+            mode="multiple"
+          ></app-stall-autocomplete-input>
+        </el-col>
+      </el-form-item>
+
       <el-form-item>
         <div class="form-buttons">
           <el-button
@@ -63,11 +63,19 @@
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
+          <el-button
+            :disabled="saveLoading"
+            @click="doReset"
+            icon="el-icon-fa-undo"
+          >
             <app-i18n code="common.reset"></app-i18n>
           </el-button>
 
-          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
+          <el-button
+            :disabled="saveLoading"
+            @click="doCancel"
+            icon="el-icon-fa-close"
+          >
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>
@@ -85,8 +93,7 @@ const { fields } = UnitsModel;
 const formSchema = new FormSchema([
   fields.id,
   fields.unitsTitle,
-  fields.unitsCode,
-  fields.unitsType,
+  fields.productStall,
 ]);
 
 export default {
@@ -145,5 +152,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

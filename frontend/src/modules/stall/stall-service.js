@@ -2,13 +2,14 @@ import authAxios from '@/shared/axios/auth-axios';
 
 export class StallService {
   static async update(id, data) {
+    const dataID = id;
     const body = {
-      id,
-      data,
+      id: id.id,
+      data: dataID,
     };
 
     const response = await authAxios.put(
-      `/stall/${id}`,
+      `/stall/${data.id}`,
       body,
     );
 
@@ -32,10 +33,7 @@ export class StallService {
       data,
     };
 
-    const response = await authAxios.post(
-      `/stall`,
-      body,
-    );
+    const response = await authAxios.post(`/stall`, body);
 
     return response.data;
   }
@@ -86,6 +84,7 @@ export class StallService {
         params,
       },
     );
+    // console.log(response.data[0]);
 
     return response.data;
   }

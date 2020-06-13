@@ -30,7 +30,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile1: new ImagesField(
@@ -39,7 +39,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile2: new ImagesField(
@@ -48,7 +48,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile3: new ImagesField(
@@ -57,7 +57,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile4: new ImagesField(
@@ -66,7 +66,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile5: new ImagesField(
@@ -75,7 +75,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile6: new ImagesField(
@@ -84,7 +84,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierProfile7: new ImagesField(
@@ -93,7 +93,7 @@ const fields = {
     'suppliers/supplierProfile',
     {
       required: true,
-      max: 1,
+      max: 10,
     },
   ),
   supplierNames: new StringField(
@@ -128,7 +128,7 @@ const fields = {
     'supplierLocation',
     label('supplierLocation'),
     {
-      // required: true,
+      required: true,
     },
   ),
   supplierPhoneNumber: new StringField(

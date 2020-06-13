@@ -15,17 +15,33 @@
           <span class="el-dropdown-link">
             <div class="el-dropdown-link-body">
               <div class="app-avatar" style="margin-right: 8px;">
-                <img :src="currentUserAvatar" v-if="currentUserAvatar">
+                <img :src="currentUserAvatar" v-if="currentUserAvatar" />
               </div>
-              <span v-if="!isMobile">{{ currentUserNameOrEmailPrefix }}</span>
+              <span v-if="!isMobile">
+                {{
+                currentUserNameOrEmailPrefix }}
+              </span>
               <i class="el-icon-arrow-down el-icon--right"></i>
             </div>
           </span>
+          <!-- <span class="el-dropdown-link">
+            <div class="el-dropdown-link-body">
+              <div class="app-avatar" style="margin-right: 8px;">
+                <img :src="currentUserAvatar" v-if="currentUserAvatar" />
+              </div>
+              <span
+                style="margin-right: 20px; font-size:20px"
+                v-if="!isMobile"
+              >{{ currentUserNameOrEmailPrefix }}</span>
+              <span style="margin-right: 20px; font-size:20px" v-if="!isMobile">Admin</span>
+              <i class="el-icon-arrow-down el-icon--right"></i>
+            </div>
+          </span>-->
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="doEditProfile">
+            <!-- <el-dropdown-item command="doEditProfile">
               <i class="el-icon-fa-user-o"></i> &#160;
               <app-i18n code="auth.profile.title"></app-i18n>
-            </el-dropdown-item>
+            </el-dropdown-item>-->
             <el-dropdown-item command="doSignout">
               <i class="el-icon-fa-sign-out"></i> &#160;
               <app-i18n code="auth.signout"></app-i18n>

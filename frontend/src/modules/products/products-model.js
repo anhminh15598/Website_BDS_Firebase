@@ -29,12 +29,12 @@ function enumeratorLabel(name, value) {
 
 const fields = {
   id: new IdField('id', label('id')),
-  productImage: new ImagesField('productImage', label('productImage'), 'products/productImage',{
+  productImage: new ImagesField('productImage', label('productImage'), 'products/productImage', {
     "required": true,
     "max": 3
   }),
   productName: new StringField('productName', label('productName'), {
-    "required": true
+    // "required": true
   }),
   productUnit: UnitsField.relationToOne('productUnit', label('productUnit'), {
     "required": true
@@ -51,7 +51,7 @@ const fields = {
   productEnableStock: new EnumeratorField('productEnableStock', label('productEnableStock'), [
     { id: 'enabled', label: enumeratorLabel('productEnableStock', 'enabled') },
     { id: 'disabled', label: enumeratorLabel('productEnableStock', 'disabled') },
-  ],{
+  ], {
     "required": true
   }),
   productAlertQuantity: new DecimalField('productAlertQuantity', label('productAlertQuantity'), {}),
@@ -63,7 +63,7 @@ const fields = {
     { id: 'barcode', label: enumeratorLabel('productCodeType', 'barcode') },
     { id: 'qr', label: enumeratorLabel('productCodeType', 'qr') },
     { id: 'other', label: enumeratorLabel('productCodeType', 'other') },
-  ],{}),
+  ], {}),
   productExpiry: new DateField('productExpiry', label('productExpiry'), {}),
   productCustomField: new StringField('productCustomField', label('productCustomField'), {}),
   productDesc: new StringField('productDesc', label('productDesc'), {
@@ -72,7 +72,7 @@ const fields = {
   productStatus: new EnumeratorField('productStatus', label('productStatus'), [
     { id: 'public', label: enumeratorLabel('productStatus', 'public') },
     { id: 'private', label: enumeratorLabel('productStatus', 'private') },
-  ],{
+  ], {
     "required": true
   }),
   productVariation: VariationField.relationToOne('productVariation', label('productVariation'), {}),

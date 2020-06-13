@@ -30,7 +30,10 @@
       >
         <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text>
 
-        <app-view-item-image :label="fields.stallCover.label" :value="presenter(record, 'stallCover')"></app-view-item-image>
+        <app-view-item-image
+          :label="fields.stallCover.label"
+          :value="presenter(record, 'stallCover')"
+        ></app-view-item-image>
 
         <app-view-item-text :label="fields.stallName.label" :value="presenter(record, 'stallName')"></app-view-item-text>
 
@@ -38,21 +41,39 @@
 
         <app-view-item-text :label="fields.stallInfo.label" :value="presenter(record, 'stallInfo')"></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallLocation.label" :value="presenter(record, 'stallLocation')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallLocation.label"
+          :value="presenter(record, 'stallLocation')"
+        ></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallPhoneNumber.label" :value="presenter(record, 'stallPhoneNumber')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallPhoneNumber.label"
+          :value="presenter(record, 'stallPhoneNumber')"
+        ></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallEmail.label" :value="presenter(record, 'stallEmail')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallEmail.label"
+          :value="presenter(record, 'stallEmail')"
+        ></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallIsStatus.label" :value="presenter(record, 'stallIsStatus')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallIsStatus.label"
+          :value="presenter(record, 'stallIsStatus')"
+        ></app-view-item-text>
 
         <app-view-item-text :label="fields.stallPos.label" :value="presenter(record, 'stallPos')"></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallLoyaltyPointValue.label" :value="presenter(record, 'stallLoyaltyPointValue')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallLoyaltyPointValue.label"
+          :value="presenter(record, 'stallLoyaltyPointValue')"
+        ></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallCustom1.label" :value="presenter(record, 'stallCustom1')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.stallCustom1.label"
+          :value="presenter(record, 'stallCustom1')"
+        ></app-view-item-text>
 
-        <app-view-item-text :label="fields.stallCustom2.label" :value="presenter(record, 'stallCustom2')"></app-view-item-text>
+        <app-view-item-text :label="fields.teamName.label" :value="presenter(record, 'teamName')"></app-view-item-text>
 
         <app-view-item-text :label="fields.createdAt.label" :value="presenter(record, 'createdAt')"></app-view-item-text>
 

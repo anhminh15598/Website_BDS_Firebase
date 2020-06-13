@@ -7,10 +7,15 @@ module.exports = class PermissionChecker {
     this.language = language;
     this.currentUser = currentUser;
   }
-
+  //note
   validateHas(permission) {
     if (!this.has(permission)) {
-      throw new ForbiddenError(this.language);
+      // throw new ForbiddenError(this.language);
+      return this.currentUserRolesIds.some((role) =>
+        permission.allowedRoles.some(
+          (allowedRole) => allowedRole === role,
+        ),
+      );
     }
   }
 

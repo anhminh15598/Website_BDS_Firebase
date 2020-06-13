@@ -4,7 +4,7 @@ import stallImporterFields from '@/modules/stall/stall-importer-fields';
 import { i18n } from '@/i18n';
 
 export default importerStore(
-  StallService.import,
+  StallService.update,
   stallImporterFields,
   i18n('entities.stall.importer.fileName'),
   i18n('entities.stall.importer.hint'),

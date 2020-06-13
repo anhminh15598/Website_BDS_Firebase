@@ -15,35 +15,35 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.taxClassName.label"
-          :prop="fields.taxClassName.name"
-          :required="fields.taxClassName.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.taxClassName.name]" ref="focus" />
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.taxClassName.label"
+        :prop="fields.taxClassName.name"
+        :required="fields.taxClassName.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input v-model="model[fields.taxClassName.name]" ref="focus" />
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.taxClassPercentage.label"
-          :prop="fields.taxClassPercentage.name"
-          :required="fields.taxClassPercentage.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="0" :step="1" v-model="model[fields.taxClassPercentage.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.taxClassPercentage.label"
+        :prop="fields.taxClassPercentage.name"
+        :required="fields.taxClassPercentage.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number :precision="0" :step="1" v-model="model[fields.taxClassPercentage.name]"></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.taxClassDetails.label"
-          :prop="fields.taxClassDetails.name"
-          :required="fields.taxClassDetails.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input :rows="4" type="textarea" v-model="model[fields.taxClassDetails.name]" />
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.taxClassDetails.label"
+        :prop="fields.taxClassDetails.name"
+        :required="fields.taxClassDetails.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input :rows="4" type="textarea" v-model="model[fields.taxClassDetails.name]" />
+        </el-col>
+      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button

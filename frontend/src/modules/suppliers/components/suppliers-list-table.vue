@@ -18,7 +18,9 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="presenter(scope.row, 'supplierProfile')"
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -30,7 +32,9 @@
         align="center"
       >
         <template slot-scope="scope">
-          <el-tag type="info">{{ presenter(scope.row, 'supplierStatus') }}</el-tag>
+          <el-tag type="info">{{
+            presenter(scope.row, 'supplierStatus')
+          }}</el-tag>
         </template>
       </el-table-column>
 
@@ -51,7 +55,7 @@
       <el-table-column
         align="center"
         width="180"
-        :label="fields.soTien.label"
+        label="Số tiền (VNĐ)"
         :prop="fields.soTien.name"
       ></el-table-column>
 
@@ -62,7 +66,11 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile1')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile1')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -73,7 +81,11 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile2')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile2')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -84,7 +96,11 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile3')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile3')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -95,7 +111,11 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile4')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile4')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -106,7 +126,11 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile5')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile5')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
@@ -117,15 +141,30 @@
         align="center"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar :value="presenter(scope.row, 'supplierProfile6')"></app-list-item-app-avatar>
+          <app-list-item-app-avatar
+            :value="
+              presenter(scope.row, 'supplierProfile6')
+            "
+          ></app-list-item-app-avatar>
         </template>
       </el-table-column>
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="right" width="80">
+      <el-table-column
+        :fixed="isMobile ? undefined : 'right'"
+        align="right"
+        width="80"
+      >
         <template slot-scope="scope">
           <div class="table-actions">
-            <router-link :to="`/suppliers/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
-              <el-button type="info" icon="el-icon-edit" circle></el-button>
+            <router-link
+              :to="`/suppliers/${scope.row.id}/edit`"
+              v-if="hasPermissionToEdit"
+            >
+              <el-button
+                type="info"
+                icon="el-icon-edit"
+                circle
+              ></el-button>
             </router-link>
           </div>
         </template>
@@ -224,5 +263,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

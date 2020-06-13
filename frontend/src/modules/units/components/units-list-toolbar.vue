@@ -1,11 +1,18 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link :to="{ path: '/units/new' }" v-if="hasPermissionToCreate">
-      <el-button icon="el-icon-fa-plus" type="primary" round>
+    <router-link
+      :to="{ path: '/units/new' }"
+      v-if="hasPermissionToCreate"
+    >
+      <el-button
+        icon="el-icon-fa-plus"
+        type="primary"
+        round
+      >
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
-
+    <!-- 
     <el-tooltip
       :content="destroyButtonTooltip"
       :disabled="!destroyButtonTooltip"
@@ -34,6 +41,21 @@
     </router-link>
 
     <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
+      <span>
+        <el-button
+          :disabled="exportButtonDisabled"
+          @click="doExport()"
+          round
+          icon="el-icon-fa-file-excel-o"
+        >
+          <app-i18n code="common.export"></app-i18n>
+        </el-button>
+      </span>
+    </el-tooltip>-->
+    <el-tooltip
+      :content="exportButtonTooltip"
+      :disabled="!exportButtonTooltip"
+    >
       <span>
         <el-button
           :disabled="exportButtonDisabled"
@@ -84,8 +106,7 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new UnitsPermissions(this.currentUser)
-        .destroy;
+      return new UnitsPermissions(this.currentUser).destroy;
     },
 
     exportButtonDisabled() {
@@ -150,12 +171,10 @@ export default {
   methods: {
     ...mapActions({
       doExport: 'units/list/doExport',
-      doRemoveAllSelected:
-        'units/list/doRemoveAllSelected',
+      doRemoveAllSelected: 'units/list/doRemoveAllSelected',
       doDisableAllSelected:
         'units/list/doDisableAllSelected',
-      doEnableAllSelected:
-        'units/list/doEnableAllSelected',
+      doEnableAllSelected: 'units/list/doEnableAllSelected',
       doDestroyAll: 'units/destroy/doDestroyAll',
     }),
 
@@ -182,5 +201,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

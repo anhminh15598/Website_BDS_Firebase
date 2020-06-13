@@ -28,10 +28,10 @@ const fields = {
     "required": true
   }),
   staffNames: new StringField('staffNames', label('staffNames'), {
-    "required": true
+    // "required": true
   }),
   staffUserId: UserField.relationToOne('staffUserId', label('staffUserId'), {
-    "required": true
+    // "required": true
   }),
   staffPhoneNumber: new StringField('staffPhoneNumber', label('staffPhoneNumber'), {}),
   staffAbout: new StringField('staffAbout', label('staffAbout'), {}),

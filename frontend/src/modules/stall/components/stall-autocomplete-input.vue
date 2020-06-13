@@ -1,7 +1,16 @@
 <template>
   <div style="display: flex">
-    <app-autocomplete-one-input :fetchFn="fetchFn" v-if="mode !== 'multiple'" v-model="model"></app-autocomplete-one-input>
-    <app-autocomplete-many-input :fetchFn="fetchFn" v-if="mode === 'multiple'" v-model="model"></app-autocomplete-many-input>
+    <app-autocomplete-one-input
+      :fetchFn="fetchFn"
+      v-if="mode !== 'multiple'"
+      v-model="model"
+    ></app-autocomplete-one-input>
+
+    <app-autocomplete-many-input
+      :fetchFn="fetchFn"
+      v-if="mode === 'multiple'"
+      v-model="model"
+    ></app-autocomplete-many-input>
     <el-button
       @click="doOpenModal()"
       icon="el-icon-plus"
@@ -42,6 +51,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
+      key: '',
     };
   },
 
@@ -61,8 +71,7 @@ export default {
     },
 
     hasPermissionToCreate() {
-      return new StallPermissions(this.currentUser)
-        .create;
+      return new StallPermissions(this.currentUser).create;
     },
   },
 

@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import GenericField from '@/shared/fields/generic-field';
 import { i18n } from '@/i18n';
 
-export default class ImagesField extends GenericField {
+export default class ImagesField2 extends GenericField {
   constructor(
     name,
     label,

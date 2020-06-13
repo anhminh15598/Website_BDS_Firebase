@@ -8,8 +8,6 @@
       row-key="id"
       v-loading="loading"
     >
- 
-
       <el-table-column
         :label="fields.categoryCover.label"
         :prop="fields.categoryCover.name"
@@ -25,34 +23,30 @@
         :label="fields.categoryTitle.label"
         :prop="fields.categoryTitle.name"
         width="200"
-        sortable="custom">
+        sortable="custom"
+      >
         <template slot-scope="scope">{{ presenter(scope.row, 'policyName') }}</template>
       </el-table-column>
 
+      <el-table-column></el-table-column>
 
-      <el-table-column>
-      </el-table-column>
-       
+      <el-table-column></el-table-column>
 
-      <el-table-column>
-      </el-table-column>
- 
       <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
         <template slot-scope="scope">
           <div class="table-actions">
-
             <router-link :to="`/categories/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
-              <el-button type="info" icon="el-icon-edit" circle>
-              </el-button>
+              <el-button type="info" icon="el-icon-edit" circle></el-button>
             </router-link>
 
             <el-button
               :disabled="destroyLoading"
               @click="doDestroyWithConfirm(scope.row.id)"
-              type="danger" icon="el-icon-delete" circle
+              type="danger"
+              icon="el-icon-delete"
+              circle
               v-if="hasPermissionToDestroy"
-            >
-            </el-button>
+            ></el-button>
           </div>
         </template>
       </el-table-column>
@@ -99,11 +93,13 @@ export default {
     }),
 
     hasPermissionToEdit() {
-      return new CategoriesPermissions(this.currentUser).edit;
+      return new CategoriesPermissions(this.currentUser)
+        .edit;
     },
 
     hasPermissionToDestroy() {
-      return new CategoriesPermissions(this.currentUser).destroy;
+      return new CategoriesPermissions(this.currentUser)
+        .destroy;
     },
 
     fields() {

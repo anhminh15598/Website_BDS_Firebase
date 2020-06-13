@@ -2,13 +2,21 @@ const AbstractEntityRepository = require('./abstractEntityRepository');
 const admin = require('firebase-admin');
 const FirebaseQuery = require('../utils/firebaseQuery');
 const Products = require('../models/products');
+const Products2 = require('../models/products2');
+
 const AuditLogRepository = require('./auditLogRepository');
 
 class ProductsRepository extends AbstractEntityRepository {
   async create(data, options) {
     const record = {
       id: this.newId(),
+      // id2: this.newId(),
       ...new Products().cast(data),
+
+      // doanhso: {
+      //   2020: {
+      //   }
+      // },
       createdBy: this.getCurrentUser(options).id,
       createdAt: this.serverTimestamp(),
       updatedBy: this.getCurrentUser(options).id,
@@ -22,7 +30,15 @@ class ProductsRepository extends AbstractEntityRepository {
         .doc(`${new Products().collectionName}/${record.id}`),
       record,
       options,
-    );
+    ), AbstractEntityRepository.executeOrAddToBatch(
+      'set',
+      admin
+        .firestore()
+        .doc(`${new Products2().collectionName}/${record.id}`),
+      record,
+      options,
+    )
+
 
     await this._auditLogs(
       AuditLogRepository.CREATE,
@@ -180,12 +196,12 @@ class ProductsRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,

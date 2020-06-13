@@ -1,7 +1,6 @@
 <template>
-  <el-card class="box-card" style="margin-bottom: 20px">
-
   <el-form
+    style="border-bottom: 2px solid #ebeef5;"
     :label-position="labelPosition"
     :label-width="labelWidthFilter"
     :model="model"
@@ -10,16 +9,10 @@
     @submit.native.prevent="doFilter"
     ref="form"
   >
-    <el-row>
-    
-    </el-row>
+    <el-row></el-row>
 
-    <div class="filter-buttons">
- 
-    </div>
+    <div class="filter-buttons"></div>
   </el-form>
-    
-  </el-card>
 </template>
 
 <script>

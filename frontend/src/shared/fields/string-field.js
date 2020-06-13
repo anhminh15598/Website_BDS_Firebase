@@ -122,9 +122,9 @@ export default class StringField extends GenericField {
       yupChain = yupChain.max(this.max);
     }
 
-    if (this.matches) {
-      yupChain = yupChain.matches(/^[0-9]/);
-    }
+    // if (this.matches) {
+    //   yupChain = yupChain.matches(/^[0-9]/);
+    // }
 
     return yupChain;
   }

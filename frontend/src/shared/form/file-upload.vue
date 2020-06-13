@@ -43,9 +43,9 @@ export default {
 
       return (
         (this.max &&
-          (hasInputReference &&
+          hasInputReference &&
             this.$refs.files.uploadFiles.length >=
-              this.max)) ||
+              this.max) ||
         (!hasInputReference &&
           (this.value || []).length >= this.max)
       );

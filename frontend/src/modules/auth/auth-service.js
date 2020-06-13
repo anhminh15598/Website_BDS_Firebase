@@ -63,16 +63,17 @@ export default class AuthService {
     return firebase.auth().sendPasswordResetEmail(email);
   }
 
-  // static async createUser(
-  //   email,
-  //   password,
-  // ) {
-  //   const credentials = await firebase
-  //     .auth()
-  //     .createUserWithEmailAndPassword(email, password);
-  //   // this.sendEmailVerification(credentials.user);
-  //   return credentials.user;
-  // }
+  static async createUser(
+    email,
+    password,
+  ) {
+    firebase.auth().signout();
+    const credentials = await firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password);
+    // this.sendEmailVerification(credentials.user);
+    return credentials;
+  }
 
 
   static async registerWithEmailAndPassword(

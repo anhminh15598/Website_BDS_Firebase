@@ -1,27 +1,30 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link :to="{ path: '/stall/new' }" v-if="hasPermissionToCreate">
+    <!-- <router-link :to="{ path: '/stall/new' }" v-if="hasPermissionToCreate">
       <el-button icon="el-icon-fa-plus" type="primary" round>
         <app-i18n code="common.new"></app-i18n>
       </el-button>
-    </router-link>
+    </router-link>-->
 
-    <router-link :to="{ path: '/stall/import' }" v-if="hasPermissionToImport">
+    <!-- <router-link :to="{ path: '/stall/import' }" v-if="hasPermissionToImport">
       <el-button icon="el-icon-fa-upload" type="info" round>
         <app-i18n code="common.import"></app-i18n>
       </el-button>
-    </router-link>
+    </router-link>-->
 
-    <router-link
+    <!-- <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'stall' } }"
       v-if="hasPermissionToAuditLogs"
     >
       <el-button icon="el-icon-fa-history" round>
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
-    </router-link>
+    </router-link>-->
 
-    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
+    <el-tooltip
+      :content="exportButtonTooltip"
+      :disabled="!exportButtonTooltip"
+    >
       <span>
         <el-button
           :disabled="exportButtonDisabled"
@@ -72,8 +75,7 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new StallPermissions(this.currentUser)
-        .destroy;
+      return new StallPermissions(this.currentUser).destroy;
     },
 
     exportButtonDisabled() {
@@ -138,12 +140,10 @@ export default {
   methods: {
     ...mapActions({
       doExport: 'stall/list/doExport',
-      doRemoveAllSelected:
-        'stall/list/doRemoveAllSelected',
+      doRemoveAllSelected: 'stall/list/doRemoveAllSelected',
       doDisableAllSelected:
         'stall/list/doDisableAllSelected',
-      doEnableAllSelected:
-        'stall/list/doEnableAllSelected',
+      doEnableAllSelected: 'stall/list/doEnableAllSelected',
       doDestroyAll: 'stall/destroy/doDestroyAll',
     }),
 
@@ -170,5 +170,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
