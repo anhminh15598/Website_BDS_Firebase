@@ -15,10 +15,10 @@ export class UnitsField {
         if (!record) {
           return null;
         }
+
         return {
           id: record.id,
           label: record.unitsTitle,
-          productStall: record.productStall,
         };
       },
       options,

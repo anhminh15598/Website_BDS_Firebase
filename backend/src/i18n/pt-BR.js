@@ -1,6 +1,6 @@
 const ptBR = {
   app: {
-    title: 'Aplicação'
+    title: 'Ứng dụng',
   },
 
   auth: {

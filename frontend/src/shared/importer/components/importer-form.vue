@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class>
     <el-upload
       :accept="accept"
       :auto-upload="false"
@@ -53,4 +53,6 @@ export default {
 </script>
 
 <style>
+.width {
+}
 </style>

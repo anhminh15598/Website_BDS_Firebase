@@ -10,16 +10,9 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item
-        :label="fields.id.label"
-        :prop="fields.id.name"
-        v-if="isEditing"
-      >
+      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            :disabled="true"
-            v-model="model[fields.id.name]"
-          />
+          <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
 
@@ -29,12 +22,10 @@
         :required="fields.unitsTitle.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            v-model="model[fields.unitsTitle.name]"
-            ref="focus"
-          />
+          <el-input v-model="model[fields.unitsTitle.name]" ref="focus" />
         </el-col>
       </el-form-item>
+      <!-- :fetchFn="fields.productStall.fetchFn" -->
 
       <el-form-item
         :label="fields.productStall.label"
@@ -43,7 +34,6 @@
       >
         <el-col :lg="11" :md="16" :sm="24">
           <app-stall-autocomplete-input
-            :fetchFn="fields.productStall.fetchFn"
             :mapperFn="fields.productStall.mapperFn"
             :showCreate="!modal"
             v-model="model[fields.productStall.name]"
@@ -63,19 +53,11 @@
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doReset"
-            icon="el-icon-fa-undo"
-          >
+          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
             <app-i18n code="common.reset"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doCancel"
-            icon="el-icon-fa-close"
-          >
+          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>

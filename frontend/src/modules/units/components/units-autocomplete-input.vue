@@ -1,21 +1,15 @@
 <template>
   <div style="display: flex">
-    <!-- <app-autocomplete-one-input
-      :fetchFn="fetchFn"
-      v-if="mode === 'single'"
-      v-model="model"
-    ></app-autocomplete-one-input> -->
     <app-autocomplete-one-input
       :fetchFn="fetchFn"
-      v-if="mode === 'single'"
+      v-if="mode !== 'multiple'"
       v-model="model"
     ></app-autocomplete-one-input>
-    <!-- <app-autocomplete-one-input
+    <app-autocomplete-many-input
       :fetchFn="fetchFn"
-      v-if="mode === 'single'"
+      v-if="mode === 'multiple'"
       v-model="model"
-    ></app-autocomplete-one-input> -->
-
+    ></app-autocomplete-many-input>
     <el-button
       @click="doOpenModal()"
       icon="el-icon-plus"
@@ -70,8 +64,6 @@ export default {
       },
 
       set: function(value) {
-        console.log(value.productStall);
-
         this.$emit('input', value);
       },
     },

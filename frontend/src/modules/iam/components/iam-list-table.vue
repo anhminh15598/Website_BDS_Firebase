@@ -8,10 +8,7 @@
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column
-        type="selection"
-        width="55"
-      ></el-table-column>
+      <el-table-column type="selection" width="55"></el-table-column>
 
       <el-table-column
         :label="fields.avatarsIam.label"
@@ -20,9 +17,7 @@
         width="100px"
       >
         <template slot-scope="scope">
-          <app-list-item-app-avatar
-            :value="presenter(scope.row, 'avatarsIam')"
-          ></app-list-item-app-avatar>
+          <app-list-item-app-avatar :value="presenter(scope.row, 'avatarsIam')"></app-list-item-app-avatar>
         </template>
       </el-table-column>
       <!--
@@ -33,13 +28,16 @@
       </el-table-column>
       -->
       <el-table-column
+        sortable="custom"
         :label="fields.maSo.label"
         :prop="fields.maSo.name"
         width="100px"
       >
-        <template slot-scope="scope">{{
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'maSo')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
       <el-table-column
@@ -55,10 +53,11 @@
                 ? 'danger'
                 : ''
             "
-            >{{
-              presenter(scope.row, 'disabledAsStatus')
-            }}</el-tag
           >
+            {{
+            presenter(scope.row, 'disabledAsStatus')
+            }}
+          </el-tag>
         </template>
       </el-table-column>
 
@@ -69,13 +68,8 @@
         sortable="custom"
       >
         <template slot-scope="scope">
-          <div
-            :key="roleId"
-            v-for="roleId in scope.row.roles"
-          >
-            <el-tooltip
-              :content="roleDescriptionOf(roleId)"
-            >
+          <div :key="roleId" v-for="roleId in scope.row.roles">
+            <el-tooltip :content="roleDescriptionOf(roleId)">
               <span>{{ roleLabelOf(roleId) }}</span>
             </el-tooltip>
           </div>
@@ -83,13 +77,16 @@
       </el-table-column>
 
       <el-table-column
+        sortable="custom"
         :label="fields.fullName.label"
         :prop="fields.fullName.name"
         width="200px"
       >
-        <template slot-scope="scope">{{
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'fullName')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
       <el-table-column
@@ -97,19 +94,19 @@
         :prop="fields.phoneNumber.name"
         width="150px"
       >
-        <template slot-scope="scope">{{
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'phoneNumber')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.email.label"
-        :prop="fields.email.name"
-        width="280px"
-      >
-        <template slot-scope="scope">{{
+      <el-table-column :label="fields.email.label" :prop="fields.email.name" width="280px">
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'email')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
       <el-table-column
@@ -149,26 +146,22 @@
         :prop="fields.staffDateOfBirth.name"
         width="105px"
       >
-        <template slot-scope="scope">{{
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'staffDateOfBirth')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.diaChi.label"
-        :prop="fields.diaChi.name"
-        width="500px"
-      >
-        <template slot-scope="scope">{{
+      <el-table-column :label="fields.diaChi.label" :prop="fields.diaChi.name" width="500px">
+        <template slot-scope="scope">
+          {{
           presenter(scope.row, 'diaChi')
-        }}</template>
+          }}
+        </template>
       </el-table-column>
 
-      <el-table-column
-        :fixed="isMobile ? undefined : 'right'"
-        align="center"
-        width="60"
-      >
+      <el-table-column :fixed="isMobile ? undefined : 'right'" align="center" width="60">
         <template slot-scope="scope">
           <div class="table-actions">
             <!--
@@ -177,15 +170,8 @@
               </el-button>
             </router-link>
             -->
-            <router-link
-              :to="`/iam/${scope.row.id}/edit`"
-              v-if="hasPermissionToEdit"
-            >
-              <el-button
-                type="info"
-                icon="el-icon-edit"
-                circle
-              ></el-button>
+            <router-link :to="`/iam/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
+              <el-button type="info" icon="el-icon-edit" circle></el-button>
             </router-link>
           </div>
         </template>

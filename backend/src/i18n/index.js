@@ -1,9 +1,9 @@
-const en = require('./en');
+// const en = require('./en');
 const ptBR = require('./pt-BR');
 const _get = require('lodash/get');
 
 const languages = {
-  en: en,
+  // en: en,
   'pt-BR': ptBR,
 };
 

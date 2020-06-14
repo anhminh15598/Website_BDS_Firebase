@@ -2434,7 +2434,7 @@ const ptBR = {
       name: 'Nhóm',
       label: 'Nhóm',
       menu: 'Nhóm',
-      exporterFileName: 'team_export',
+      exporterFileName: 'team',
       list: {
         menu: 'Nhóm',
         title: 'Nhóm',

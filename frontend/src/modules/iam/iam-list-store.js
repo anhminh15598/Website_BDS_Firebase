@@ -220,8 +220,13 @@ export default {
 
     async doExport({ commit, getters }) {
       try {
-        if (!iamListExporterFields || !iamListExporterFields.length) {
-          throw new Error('iamListExporterFields is required');
+        if (
+          !iamListExporterFields ||
+          !iamListExporterFields.length
+        ) {
+          throw new Error(
+            'iamListExporterFields is required',
+          );
         }
 
         commit('EXPORT_STARTED');
@@ -237,7 +242,7 @@ export default {
 
         new Exporter(
           iamListExporterFields,
-          i18n('iam.users.exporterFileName'),
+          'Doanh_số_nhân_viên',
         ).transformAndExportAsExcelFile(response.rows);
 
         commit('EXPORT_SUCCESS');

@@ -19,11 +19,7 @@
       active-text-color="#A569BD"
       @select="collapseMenuIfMobile()"
     >
-      <el-menu-item
-        :class="classFor('/', true)"
-        :route="{ path: '/' }"
-        index="/"
-      >
+      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" index="/">
         <i class="el-icon-fa-home"></i>
         <span slot="title">
           <app-i18n code="home.menu"></app-i18n>
@@ -113,7 +109,7 @@
           <span slot="title">
             <app-i18n code="entities.stall.menu"></app-i18n>
           </span>
-        </el-menu-item> -->
+        </el-menu-item>-->
 
         <!--
 
@@ -157,7 +153,7 @@
             <app-i18n code="entities.units.menu"></app-i18n>
           </span>
         </el-menu-item>
-        <el-menu-item
+        <!-- <el-menu-item
           :class="classFor('/stall')"
           :route="{ path: '/stall' }"
           index="/stall"
@@ -167,7 +163,7 @@
           <span slot="title">
             <app-i18n code="entities.stall.menu"></app-i18n>
           </span>
-        </el-menu-item>
+        </el-menu-item>-->
         <!--
         <el-menu-item
           :class="classFor('/stall')"
@@ -249,9 +245,7 @@
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n
-              code="entities.brands.menu"
-            ></app-i18n>
+            <app-i18n code="entities.brands.menu"></app-i18n>
           </span>
         </el-menu-item>
 
@@ -263,9 +257,7 @@
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n
-              code="entities.categories.menu"
-            ></app-i18n>
+            <app-i18n code="entities.categories.menu"></app-i18n>
           </span>
         </el-menu-item>
 
@@ -482,9 +474,7 @@
         >
           <i class="el-icon-fa-circle-o"></i>
           <span slot="title">
-            <app-i18n
-              code="entities.suppliers.menu"
-            ></app-i18n>
+            <app-i18n code="entities.suppliers.menu"></app-i18n>
           </span>
         </el-menu-item>
       </el-submenu>

@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
-    "@firebase/app": "^0.6.5",
-    "@firebase/firestore": "^1.15.1",
     "axios": "^0.19.2",
     "chart.js": "2.7.3",
     "core-js": "^3.6.4",
@@ -42,7 +40,6 @@
     "uuid": "3.3.2",
     "vue": "2.6.11",
     "vue-currency-input": "^1.18.4",
-    "vue-firestore": "^0.3.30",
     "vue-gmaps": "^0.2.2",
     "vue-money": "^0.4.1",
     "vue-multiselect": "^2.1.6",

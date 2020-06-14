@@ -557,7 +557,7 @@ const fields = {
     'productStall',
     label('productStall'),
     {
-      // required: true,
+      required: true,
     },
   ),
 

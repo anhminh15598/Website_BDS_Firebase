@@ -1,14 +1,7 @@
 <template>
   <div class="app-page-toolbar">
-    <router-link
-      :to="{ path: '/units/new' }"
-      v-if="hasPermissionToCreate"
-    >
-      <el-button
-        icon="el-icon-fa-plus"
-        type="primary"
-        round
-      >
+    <router-link :to="{ path: '/units/new' }" v-if="hasPermissionToCreate">
+      <el-button icon="el-icon-fa-plus" type="primary" round>
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
@@ -52,10 +45,13 @@
         </el-button>
       </span>
     </el-tooltip>-->
-    <el-tooltip
-      :content="exportButtonTooltip"
-      :disabled="!exportButtonTooltip"
-    >
+    <router-link :to="{ path: '/stall'}">
+      <el-button icon="el-icon-fa-users" type="accsess" round>
+        <app-i18n code="Nhóm"></app-i18n>
+      </el-button>
+    </router-link>
+
+    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
       <span>
         <el-button
           :disabled="exportButtonDisabled"

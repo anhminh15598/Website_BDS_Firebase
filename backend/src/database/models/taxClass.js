@@ -4,7 +4,6 @@ const AbstractEntityModel = require('./abstractEntityModel');
 module.exports = class TaxClass extends AbstractEntityModel {
   constructor() {
     super('taxClass', 'taxClass', {
-      roles: new types.StringArray(),
       year: new types.Number(null, null),
       quy01: new types.Number(null, null),
       quy02: new types.Number(null, null),

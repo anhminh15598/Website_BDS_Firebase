@@ -35,10 +35,7 @@
         :required="fields.phoneNumber.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            prefix-icon="el-icon-fa-plus"
-            v-model="model[fields.phoneNumber.name]"
-          />
+          <el-input prefix-icon="el-icon-fa-plus" v-model="model[fields.phoneNumber.name]" />
         </el-col>
       </el-form-item>
 
@@ -65,11 +62,7 @@
         :required="fields.rolesRequired.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-select
-            multiple
-            placeholder
-            v-model="model[fields.rolesRequired.name]"
-          >
+          <el-select multiple placeholder v-model="model[fields.rolesRequired.name]">
             <el-option
               :key="option.value"
               :label="option.label"
@@ -86,11 +79,7 @@
         :required="fields.staffDateOfBirth.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-date-picker
-            placeholder
-            type="date"
-            v-model="model[fields.staffDateOfBirth.name]"
-          ></el-date-picker>
+          <el-date-picker placeholder type="date" v-model="model[fields.staffDateOfBirth.name]"></el-date-picker>
         </el-col>
       </el-form-item>
 
@@ -166,31 +155,6 @@
         </el-col>
       </el-form-item>
 
-      <!---->
-      <el-form-item
-        :label="fields.productUnit.label"
-        :prop="fields.productUnit.name"
-        :required="fields.productUnit.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <app-units-autocomplete-input
-            :fetchFn="fields.productUnit.fetchFn"
-            :mapperFn="fields.productUnit.mapperFn"
-            v-model="model[fields.productUnit.name]"
-            mode="single"
-          ></app-units-autocomplete-input>
-        </el-col>
-      </el-form-item>
-
-      <!-- <select
-        name="LeaveType"
-        @change="onChange($event)"
-        class="form-control"
-      >
-        <option value="1">Annual Leave/ Off-Day</option>
-        <option value="2">On Demand Leave</option>
-      </select> -->
-
       <el-form-item>
         <div class="form-buttons">
           <el-button
@@ -203,19 +167,11 @@
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doReset"
-            icon="el-icon-fa-undo"
-          >
+          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
             <app-i18n code="common.reset"></app-i18n>
           </el-button>
 
-          <el-button
-            :disabled="saveLoading"
-            @click="doCancel"
-            icon="el-icon-fa-close"
-          >
+          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>
@@ -240,10 +196,6 @@ import { i18n } from '@/i18n';
 
 import * as firebase from 'firebase/app';
 // import * as admin from 'firebase-admin';
-
-//---------------
-
-//--------------
 
 const { fields } = UserModel;
 const singleFormSchema = new FormSchema([
@@ -279,18 +231,10 @@ const multipleFormSchema = new FormSchema([
 export default {
   name: 'app-iam-new-form',
 
-  props: [
-    'saveLoading',
-    'single',
-    'value',
-    'fetchFn',
-    'mode',
-  ],
+  props: ['saveLoading', 'single'],
 
   data() {
     return {
-      documents: [],
-
       long: null,
       lat: null,
       vm: {
@@ -300,7 +244,6 @@ export default {
           geometry: {},
         },
       },
-      key: '',
 
       rules: this.single
         ? singleFormSchema.rules()
@@ -340,10 +283,6 @@ export default {
   },
 
   methods: {
-    onChange(event) {
-      console.log(event.target.mapperFn);
-    },
-
     // randomNumber : function(){
     //   return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
     // },

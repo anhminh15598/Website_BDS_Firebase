@@ -1,11 +1,11 @@
 import importerStore from '@/shared/importer/importer-store';
 import { IamService } from '@/modules/iam/iam-service';
 import iamImporterFields from '@/modules/iam/iam-importer-fields';
-import { i18n } from '@/i18n';
+// import { i18n } from '@/i18n';
 
 export default importerStore(
   IamService.edit,
   iamImporterFields,
-  i18n('iam.importer.fileName'),
-  i18n('iam.importer.hint'),
+  'Mẫu_doanh_số_nhân_viên',
+  // i18n('iam.importer.hint'),
 );

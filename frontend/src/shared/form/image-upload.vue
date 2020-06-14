@@ -17,7 +17,7 @@
     </el-upload>
 
     <el-dialog :visible.sync="dialogVisible">
-      <img :src="dialogImageUrl" alt width="100%">
+      <img :src="dialogImageUrl" alt width="100%" />
     </el-dialog>
   </div>
 </template>
@@ -48,9 +48,9 @@ export default {
 
       return (
         (this.max &&
-          (hasInputReference &&
-            this.$refs.files.uploadFiles.length >=
-              this.max)) ||
+          hasInputReference &&
+          this.$refs.files.uploadFiles.length >=
+            this.max) ||
         (!hasInputReference &&
           (this.value || []).length >= this.max)
       );
@@ -94,9 +94,7 @@ export default {
 
       this.$emit(
         'input',
-        (this.value || []).filter(
-          (item) => item.id !== id,
-        ),
+        (this.value || []).filter((item) => item.id !== id),
       );
     },
 

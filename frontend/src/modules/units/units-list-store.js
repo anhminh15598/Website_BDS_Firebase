@@ -190,8 +190,11 @@ export default {
 
     async doExport({ commit, getters }) {
       try {
-        if (!unitsListExporterFields || !unitsListExporterFields.length) {
-          throw new Error('unitsListExporterFields is required');
+        if (
+          !unitsListExporterFields ||
+          !unitsListExporterFields.length
+        ) {
+          throw new Error('Yêu cầu có doanh số');
         }
 
         commit('EXPORT_STARTED');
@@ -207,7 +210,7 @@ export default {
 
         new Exporter(
           unitsListExporterFields,
-          'units',
+          'Doanh_Số_Phòng',
         ).transformAndExportAsExcelFile(response.rows);
 
         commit('EXPORT_SUCCESS');

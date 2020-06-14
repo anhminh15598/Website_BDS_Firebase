@@ -21,10 +21,7 @@
       </el-button>
     </router-link>-->
 
-    <el-tooltip
-      :content="exportButtonTooltip"
-      :disabled="!exportButtonTooltip"
-    >
+    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
       <span>
         <el-button
           :disabled="exportButtonDisabled"

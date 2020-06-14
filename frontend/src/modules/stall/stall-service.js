@@ -84,7 +84,6 @@ export class StallService {
         params,
       },
     );
-    // console.log(response.data[0]);
 
     return response.data;
   }

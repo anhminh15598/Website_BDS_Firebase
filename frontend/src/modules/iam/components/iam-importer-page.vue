@@ -41,4 +41,7 @@ export default {
 </script>
 
 <style>
+.width {
+  width: 100%;
+}
 </style>

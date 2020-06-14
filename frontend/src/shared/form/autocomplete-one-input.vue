@@ -19,12 +19,7 @@
       :value="initialOption"
       v-if="initialOption"
     ></el-option>
-    <el-option
-      :key="record.id"
-      :label="record.label"
-      :value="record"
-      v-for="record in dataSource"
-    ></el-option>
+    <el-option :key="record.id" :label="record.label" :value="record" v-for="record in dataSource"></el-option>
   </el-select>
 </template>
 
@@ -100,7 +95,6 @@ export default {
   methods: {
     onChange(value) {
       this.$emit('input', value || null);
-      // console.log(value);
     },
 
     async handleSearch(value) {
@@ -178,4 +172,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

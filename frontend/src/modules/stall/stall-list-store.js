@@ -190,8 +190,13 @@ export default {
 
     async doExport({ commit, getters }) {
       try {
-        if (!stallListExporterFields || !stallListExporterFields.length) {
-          throw new Error('stallListExporterFields is required');
+        if (
+          !stallListExporterFields ||
+          !stallListExporterFields.length
+        ) {
+          throw new Error(
+            'stallListExporterFields is required',
+          );
         }
 
         commit('EXPORT_STARTED');
@@ -207,7 +212,7 @@ export default {
 
         new Exporter(
           stallListExporterFields,
-          'stall',
+          'Doanh_số_nhóm',
         ).transformAndExportAsExcelFile(response.rows);
 
         commit('EXPORT_SUCCESS');

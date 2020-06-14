@@ -97,7 +97,6 @@ export class UnitsService {
         params,
       },
     );
-    // await console.log(response.data);
 
     return response.data;
   }

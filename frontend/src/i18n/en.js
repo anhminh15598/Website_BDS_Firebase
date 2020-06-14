@@ -1952,7 +1952,7 @@ const en = {
       name: 'stall',
       label: 'Stalls',
       menu: 'Stalls',
-      exporterFileName: 'stall_export',
+      exporterFileName: 'team_export',
       list: {
         menu: 'Stalls',
         title: 'Stalls',
