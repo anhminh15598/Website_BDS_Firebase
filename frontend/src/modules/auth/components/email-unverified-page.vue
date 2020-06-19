@@ -14,8 +14,7 @@
 
         <el-button :loading="loading" @click="doSubmit" class="w-100" type="primary">
           <app-i18n code="auth.emailUnverified.submit"></app-i18n>
-        </el-button>
-
+        </el-button>s
         <div class="other-actions">
           <el-button @click="doSignout" type="text">
             <app-i18n code="auth.signout"></app-i18n>
@@ -25,13 +24,12 @@
           </el-button>
         </div>
         <div class="other-actions">
-            <router-link :to="{ path: '/auth/signin' }">
-              <el-button type="text">
-                <app-i18n code="common.cancel"></app-i18n>
-              </el-button>
-            </router-link>
-          </div>
-        
+          <router-link :to="{ path: '/auth/signin' }">
+            <el-button type="text">
+              <app-i18n code="common.cancel"></app-i18n>
+            </el-button>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -46,8 +44,7 @@ const { fields } = UserModel;
 export default {
   name: 'app-email-unverified-page',
 
-    props: ['isEditing', 'record', 'saveLoading', 'modal'],
-
+  props: ['isEditing', 'record', 'saveLoading', 'modal'],
 
   data() {
     return {
